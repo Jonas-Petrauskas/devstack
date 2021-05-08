@@ -14,7 +14,6 @@ export class CompanyDashboardComponent implements OnInit {
   selectedDevType: {name: string, id: number} = {name: 'name', id: 0};
   selectedTechs: {name: string, id: number}[] = [];
   selectedExp: {name: string, id: number} = {name: 'name', id: 0};
-
   searchQuery: string = '';
 
 

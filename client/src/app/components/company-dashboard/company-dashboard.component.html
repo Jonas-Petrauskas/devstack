@@ -1,7 +1,7 @@
 
 <div class="dashboard-container">
 
-  <div class="navbar"></div>
+  <div class="navbar"> navbar</div>
 
   <div class="content-container">
 
@@ -9,15 +9,17 @@
       <!-- container on the left for the selectors -->
       <div class="dev-type">
           <!-- TODO Dropdown component -->
+            <app-dropdown [selectorName]="'Developer Type'" [dropOptions]="devTypes"></app-dropdown>
       </div>
       <div class="techs">
 
       </div>
       <div class="experience">
         <!-- TODO Dropdown component -->
+        <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevel"></app-dropdown>
       </div>
       <div class="search-button">
-        
+        Find me devs!
       </div>
 
     </div>

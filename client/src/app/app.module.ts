@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app-component/app.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyDashboardComponent,
     CompanyLoginComponent,
-    DropdownComponent
+    DropdownComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
