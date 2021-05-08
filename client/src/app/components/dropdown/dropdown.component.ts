@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dropdown.component.scss']
 })
 export class DropdownComponent implements OnInit {
-
-  selectorName: string = 'Selector';
-  dropOptions: {name: string, id: number}[] = [{name: 'name1', id: 1},{name: 'name2', id: 2},{name: 'name3', id: 3}];
+  @Input()
+  selectorName: string = '';
+  @Input()
+  dropOptions: {name: string, id: number}[] = [];
   isVisible: boolean = false;
+  
   selected: {name: string, id: number} = {name: '', id: 0};
 
 
