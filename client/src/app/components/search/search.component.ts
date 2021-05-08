@@ -19,12 +19,15 @@ export class SearchComponent implements OnInit {
   }
 
   search(query: string): void {
-    this.searchString = query;
-    const regex = new RegExp(`^${query}`)
-    this.optionsToRender = this.options.filter( (option) => {
-      if (option.name.match(regex)) return true;
-      return false;
-    })
+    // if (query.length === 0) this.optionsToRender = [];
+    // else {
+      console.log(query.length)
+      this.searchString = query;
+      const regex = new RegExp(`^${query}`)
+      this.optionsToRender = query.length ? this.options.filter( (option) => 
+        option.name.match(regex) ? true : false
+      ) : [];
+    // }
   }
 
 
