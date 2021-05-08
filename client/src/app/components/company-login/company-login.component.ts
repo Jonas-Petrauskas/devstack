@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CompanyLoginForm} from './company-login-form';
 
 @Component({
   selector: 'app-company-login',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./company-login.component.scss']
 })
 export class CompanyLoginComponent implements OnInit {
+  
+  companyLoginForm = new CompanyLoginForm();
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
