@@ -6,6 +6,10 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
       unique: true,
     },
+    path: {
+      type: Datatypes.TEXT,
+      allowNull: false,
+    },
   }, {
     tableName: 'technologies',
     updatedAt: true,
