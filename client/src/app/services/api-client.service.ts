@@ -24,14 +24,14 @@ export class ApiClientService {
   getDeveloperTypes(): Observable<DeveloperType[]> {
     return this.http
       .get<DeveloperType[]>(`${this.baseUrl}/developer_types`)
-      .pipe(map((devs: DeveloperType[]) => devs.map(dev => ({...dev, tagName: dev.type}))))
+      .pipe(map((devs: DeveloperType[]) => devs.map(dev => ({...dev, tagName: dev.name}))))
       .pipe(catchError(this.handleError<DeveloperType[]>([])));
   }
 
   getExperienceLevels(): Observable<ExperienceLevel[]> {
     return this.http
       .get<ExperienceLevel[]>(`${this.baseUrl}/experience_levels`)
-      .pipe(map((levels: ExperienceLevel[]) => levels.map(level => ({...level, tagName: level.level}))))
+      .pipe(map((levels: ExperienceLevel[]) => levels.map(level => ({...level, tagName: level.name}))))
       .pipe(catchError(this.handleError<ExperienceLevel[]>([])));
   }
 

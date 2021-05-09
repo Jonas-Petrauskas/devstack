@@ -28,9 +28,9 @@ export const mockUser: User = {
   min_salary: 40,
   technologies: [],
   employment_history: [],
-  country: {id: 1, name: 'ESSPPAANNNYAAA'},
+  country: { id: 1, tagName: 'ESSPPAANNNYAAA', name: 'ESSPPAANNNYAAA' },
   eligible_countries: [],
   bio: 'I work late',
-  developer_type: {id: 1, type: 'FrontEnd', tagName: 'hi'},
-  experience_level: {tagName:'experience level', level:'Beginer', id: 1 },
+  developer_type: { id: 1, tagName: 'hi', name: 'FrontEnd'},
+  experience_level: { id: 1, tagName:'experience level', name:'Beginer' },
 }
