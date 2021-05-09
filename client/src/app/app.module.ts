@@ -10,6 +10,8 @@ import { CompanyLoginComponent } from './components/company-login/company-login.
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SearchComponent } from './components/search/search.component';
 import { DevCardComponent } from './components/dev-card/dev-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { DevCardComponent } from './components/dev-card/dev-card.component';
     CompanyLoginComponent,
     DropdownComponent,
     SearchComponent,
-    DevCardComponent
+    DevCardComponent,
+    NavbarComponent,
+    NavbarDropdownComponent
   ],
   imports: [
     BrowserModule,
