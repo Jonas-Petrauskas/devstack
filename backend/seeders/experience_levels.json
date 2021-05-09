@@ -1,14 +1,14 @@
 [
   {
-    "level": "Entry"
+    "name": "Entry"
   },
   {
-    "level": "Junior"
+    "name": "Junior"
   },
   {
-    "level": "Intermediate"
+    "name": "Intermediate"
   },
   {
-    "level": "Senior"
+    "name": "Senior"
   }
 ]

@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
   const DeveloperType = sequelize.define('DeveloperType', {
-    type: {
+    name: {
       type: Datatypes.STRING,
       allowNull: false,
       unique: true,

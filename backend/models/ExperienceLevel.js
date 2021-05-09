@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
   const ExperienceLevel = sequelize.define('ExperienceLevel', {
-    level: {
+    name: {
       type: Datatypes.STRING,
       allowNull: false,
       unique: true,

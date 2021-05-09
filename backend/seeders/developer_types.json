@@ -1,11 +1,11 @@
 [
   {
-    "type": "Front End"
+    "name": "Front End"
   },
   {
-    "type": "Back End"
+    "name": "Back End"
   },
   {
-    "type": "Full Stack"
+    "name": "Full Stack"
   }
 ]
