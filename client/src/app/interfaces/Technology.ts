@@ -1,4 +1,5 @@
-export interface Technology {
-  id: number;
+import { TaggedItem } from "./TaggedItem";
+
+export interface Technology extends TaggedItem {
   name: string;
 }
