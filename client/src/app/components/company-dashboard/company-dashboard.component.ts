@@ -5,6 +5,7 @@ import { ApiClientService } from 'src/app/services/api-client.service';
 import { DeveloperType } from 'src/app/interfaces/DeveloperType';
 import { Technology } from 'src/app/interfaces/Technology';
 import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
+import { mockUser, User } from 'src/app/interfaces/User';
 
 @Component({
   selector: 'app-company-dashboard',
@@ -22,6 +23,7 @@ export class CompanyDashboardComponent implements OnInit {
   selectedTechs: Technology[] = [];
   selectedExp: ExperienceLevel = {tagName: '',level: 'name', id: 0};
   searchQuery: string = '';
+  filteredUsers: User[] = [mockUser];
 
 
   constructor(private client: ApiClientService) { }

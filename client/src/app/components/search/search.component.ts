@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
   selector: 'app-search',
@@ -10,8 +11,10 @@ export class SearchComponent implements OnInit {
   searchString: string = '';
   @Input()
   placeString: string = '';
-  options: {name: string, id: number}[] = [{name: '', id: 1}];
-  optionsToRender: {name: string, id: number}[] = [{name: '', id: 1}];
+  @Input()
+  allOptions: TaggedItem[] = [];
+  
+  filteredOptions: TaggedItem[] = [];
   
   constructor() { }
 
@@ -19,10 +22,10 @@ export class SearchComponent implements OnInit {
   }
 
   search(query: string): void {
-      this.searchString = query;
-      const regex = new RegExp(`^${query}`)
-      this.optionsToRender = query.length ? this.options.filter( (option) => 
-        option.name.match(regex) ? true : false
+      this.searchString = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`^${query}`,'i')
+      this.filteredOptions = query.length ? this.allOptions.filter( (option) => 
+        option.tagName.match(regex) ? true : false
       ) : [];
   }
 
