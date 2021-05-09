@@ -1,0 +1,19 @@
+
+<div class="button">
+
+  <div class="button__persistent" (click)="clickHandler()">
+    <div class="button__persistent__name">{{buttonName}}</div>
+    <img
+      class="button__persistent__arrow"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png"
+    >
+  </div>
+
+  <div *ngIf="expanded" class="button__dropdowns">
+    <div
+      *ngFor="let option of dropdownOptions"
+      class="button__dropdowns__dropdown"
+    >{{option.label}}</div>
+  </div>
+
+</div>

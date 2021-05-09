@@ -1,0 +1,31 @@
+
+<nav class="navbar">
+  <div class="navbar__logo">DevStack</div>
+
+  <div *ngIf="state === 'loggedOut'" class="navbar__buttons">
+
+    <app-navbar-dropdown
+      class="navbar__buttons__button"
+      [expanded]="loginExpanded"
+      (expand)="onLoginExpand($event)"
+      (collapse)="onLoginCollapse($event)"
+      buttonName="LOG IN"
+      [dropdownOptions]="getLoginOptions()"
+    ></app-navbar-dropdown>
+
+    <app-navbar-dropdown
+      class="navbar__buttons__button"
+      [expanded]="signupExpanded"
+      (expand)="onSignupExpand($event)"
+      (collapse)="onSignupCollapse($event)"
+      buttonName="SIGN UP"
+      [dropdownOptions]="getSignupOptions()"
+    ></app-navbar-dropdown>
+
+  </div>
+
+  <div *ngIf="state !== 'loggedOut'">
+    <div>USER IS LOGGED IN</div>
+  </div>
+
+</nav>
