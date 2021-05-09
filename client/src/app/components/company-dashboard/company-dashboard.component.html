@@ -1,4 +1,3 @@
-<div>test</div>
 <div class="dashboard-container">
 
   <div class="navbar"> navbar</div>
@@ -12,7 +11,7 @@
       </div>
       <div class="techs">
 
-        <app-search [placeString]="'Technologies'"></app-search>
+        <app-search [placeString]="'Technologies'" [allOptions]="techs" ></app-search>
       </div>
       <div class="experience">
         <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevels"></app-dropdown>
@@ -25,6 +24,9 @@
 
     <div class="user-container">
       <!-- container to render the users -->
+      <div *ngFor="let user of filteredUsers">
+        <app-dev-card></app-dev-card>
+      </div>
 
     </div>
 

@@ -1,6 +1,6 @@
 <div>
   <input #userInput (input)="search(userInput.value)" [placeholder]="placeString">
-  <div *ngFor="let option of optionsToRender">
-    {{option.name}}
+  <div *ngFor="let option of filteredOptions">
+    {{option.tagName}}
   </div>
 </div>
