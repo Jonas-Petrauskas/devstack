@@ -1,5 +1,5 @@
+import { TaggedItem } from "./TaggedItem";
 
-export interface Country {
-  id: number,
+export interface Country extends TaggedItem {
   name: string
 }
