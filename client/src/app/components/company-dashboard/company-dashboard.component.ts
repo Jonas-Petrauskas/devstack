@@ -9,7 +9,7 @@ export class CompanyDashboardComponent implements OnInit {
   devTypes: {name: string, id: number}[] = [];
   techs: {name: string, id: number}[] = [];
   experienceLevel: {name: string, id: number}[] = [];
-  sortBy: {name: string, id: number}[] = [];
+  sortBy: string = '';
 
   selectedDevType: {name: string, id: number} = {name: 'name', id: 0};
   selectedTechs: {name: string, id: number}[] = [];
