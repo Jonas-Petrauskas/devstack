@@ -10,7 +10,7 @@ export class SearchComponent implements OnInit {
   searchString: string = '';
   @Input()
   placeString: string = '';
-  options: {name: string, id: number}[] = [{name: 'test', id: 1}];
+  options: {name: string, id: number}[] = [{name: '', id: 1}];
   optionsToRender: {name: string, id: number}[] = [{name: '', id: 1}];
   
   constructor() { }
@@ -19,15 +19,11 @@ export class SearchComponent implements OnInit {
   }
 
   search(query: string): void {
-    // if (query.length === 0) this.optionsToRender = [];
-    // else {
-      console.log(query.length)
       this.searchString = query;
       const regex = new RegExp(`^${query}`)
       this.optionsToRender = query.length ? this.options.filter( (option) => 
         option.name.match(regex) ? true : false
       ) : [];
-    // }
   }
 
 

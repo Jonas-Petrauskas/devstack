@@ -1,0 +1,89 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  border-radius: .5rem;
+  background-color: rgb(226, 226, 226);
+}
+
+.user-photo {
+  height: 120px;
+  width: 120px;
+  padding: .5rem;
+  border-radius: 5rem;
+}
+
+.photo-name {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  
+  height: 10vh;
+}
+
+.name-location {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.name-text {
+  flex: 1 1 auto;
+  font-size: 32;
+  padding: .5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.exp-position {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  margin: .5rem;
+  height: .5vh;
+
+}
+
+.exp-item {
+  flex: 1 1 auto;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.techs-container {
+  display: flex;
+  flex-direction: row;
+  padding: .5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tech {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.tech-image {
+  height: 50px;
+  width: 50px;
+}
+
+.bio {
+  flex: 1 1 auto;
+  margin: .5rem;
+  text-align: center;
+  padding: .5rem;
+  height: 1vh;
+  
+}

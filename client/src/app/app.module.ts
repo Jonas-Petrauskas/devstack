@@ -7,6 +7,7 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SearchComponent } from './components/search/search.component';
+import { DevCardComponent } from './components/dev-card/dev-card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchComponent } from './components/search/search.component';
     CompanyDashboardComponent,
     CompanyLoginComponent,
     DropdownComponent,
-    SearchComponent
+    SearchComponent,
+    DevCardComponent
   ],
   imports: [
     BrowserModule,

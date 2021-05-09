@@ -1,0 +1,33 @@
+<div class="card-container">
+
+  <div class="photo-name">
+    <div class="photo-container">
+      <img [src]="photo.url" alt="" class="user-photo">
+    </div>
+
+    <div class="name-location">
+      <div class="name-text">{{names.name}}</div>
+      <div class="name-text">{{location.name}}</div>
+    </div>
+      <!-- end of first container with photo name and location -->
+  </div>
+
+  <div class="exp-position">
+    <div class="exp-item">{{experience.name}}</div>
+    <div class="exp-item">{{position.name}} Developer</div>
+  </div>
+
+  <div class="techs-container">
+    <div *ngFor="let tech of technologies">
+      <!-- <div class="tech">{{tech.name}}</div> -->
+      <img [src]="tech.url" alt="" class="tech-image">
+    </div>
+
+  </div>
+
+
+  <div class="bio">
+    <div>{{bio.desc}}</div>
+  </div>
+
+</div>
