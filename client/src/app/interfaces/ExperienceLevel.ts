@@ -1,4 +1,5 @@
-export interface ExperienceLevel {
-  id: number;
+import { TaggedItem } from "./TaggedItem";
+
+export interface ExperienceLevel extends TaggedItem {
   level: string;
 }
