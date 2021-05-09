@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
   const Country = sequelize.define('Country', {
-    country: {
+    name: {
       type: Datatypes.STRING,
       allowNull: false,
       unique: true,

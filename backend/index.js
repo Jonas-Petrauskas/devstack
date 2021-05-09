@@ -32,10 +32,8 @@ const db = require('./models/_index');
 (async () => {
   await db.sequelize.sync();
 
-  // * DATABASE SEEDERS
-  await require('./seeders/technologies')(db);
-  await require('./seeders/experience_levels')(db);
-  await require('./seeders/developer_types')(db);
+  // * DATABASE SEEDER
+  await require('./seeders/_seeder')(db);
 
   app.listen(port, () => {
     console.log(`Server listening on: http://${host}:${port}/`);
