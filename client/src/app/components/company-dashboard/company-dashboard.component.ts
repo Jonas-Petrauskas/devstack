@@ -1,37 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ApiClientService } from 'src/app/services/api-client.service';
+
+import { DeveloperType } from 'src/app/interfaces/DeveloperType';
+import { Technology } from 'src/app/interfaces/Technology';
+import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
+
 @Component({
   selector: 'app-company-dashboard',
   templateUrl: './company-dashboard.component.html',
   styleUrls: ['./company-dashboard.component.scss']
 })
 export class CompanyDashboardComponent implements OnInit {
-  devTypes: {name: string, id: number}[] = [];
-  techs: {name: string, id: number}[] = [];
-  experienceLevel: {name: string, id: number}[] = [];
+  devTypes: DeveloperType[] = [];
+  techs: Technology[] = [];
+  experienceLevels: ExperienceLevel[] = [];
   sortBy: string = '';
 
-  selectedDevType: {name: string, id: number} = {name: 'name', id: 0};
-  selectedTechs: {name: string, id: number}[] = [];
-  selectedExp: {name: string, id: number} = {name: 'name', id: 0};
+  selectedDevType: DeveloperType = {tagName: '',type: 'name', id: 0};
+  selectedTechs: Technology[] = [];
+  selectedExp: ExperienceLevel = {tagName: '',level: 'name', id: 0};
   searchQuery: string = '';
 
 
-  constructor() { }
+  constructor(private client: ApiClientService) { }
 
   ngOnInit(): void {
-    this.getAllFeilds();
+    console.log("HELLO")
+    this.getAllFields();
   }
 
-  getAllFeilds(): void {
-    // TODO  api fetch dev types techs and experience levels
-
-    // TODO update  variables for type/tech/exper
-
+  getAllFields(): void {
+    this.client.getDeveloperTypes()
+      .subscribe((devTypes) => this.devTypes = devTypes);
+    this.client.getExperienceLevels()
+      .subscribe((expLvls) => this.experienceLevels = expLvls);
+    this.client.getTechnologies()
+      .subscribe((techs) => this.techs = techs);
+  
 
   }
 
-  updateSelected(type: {name: string, id: number}, tech: {name: string, id: number}[], xp: {name: string, id: number}): void {
+  updateSelected(type: DeveloperType, tech: Technology[], xp: ExperienceLevel): void {
     this.selectedDevType = type;
     this.selectedTechs = tech;
     this.selectedExp = xp;

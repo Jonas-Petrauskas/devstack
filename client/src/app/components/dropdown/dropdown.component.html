@@ -5,7 +5,7 @@
     
     <div *ngIf="isVisible">
       <div *ngFor="let options of dropOptions">
-        <div class="option" (click)="updateSelected(options)">{{options.name}}</div>
+        <div class="option" (click)="updateSelected(options)">{{options.tagName}}</div>
       </div>
     </div>
 

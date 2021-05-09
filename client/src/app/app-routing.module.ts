@@ -7,6 +7,7 @@ import { CompanyLoginComponent } from './components/company-login/company-login.
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { SearchComponent } from './components/search/search.component';
 import { DevCardComponent } from './components/dev-card/dev-card.component';
+
 const routes: Routes = [
   { path: '', component: CompanyDashboardComponent },
   // { path: '', component: CompanyLoginComponent },

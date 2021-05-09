@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
   selector: 'app-dropdown',
@@ -9,10 +10,10 @@ export class DropdownComponent implements OnInit {
   @Input()
   selectorName: string = '';
   @Input()
-  dropOptions: {name: string, id: number}[] = [];
+  dropOptions: TaggedItem[] = [];
   isVisible: boolean = false;
   
-  selected: {name: string, id: number} = {name: '', id: 0};
+  selected: TaggedItem = {tagName: '', id: 0};
 
 
   constructor() { }
@@ -22,10 +23,10 @@ export class DropdownComponent implements OnInit {
   toggleVisibility(): void {
     this.isVisible ? this.isVisible = false : this.isVisible = true;
   }
-  updateSelected(option: {name: string, id: number}): void {
+  updateSelected(option: TaggedItem): void {
     this.selected = option;
-    this.selectorName = option.name
-    console.log(this.selected);
+    this.selectorName = option.tagName
+    this.isVisible = false;
   }
 
 
