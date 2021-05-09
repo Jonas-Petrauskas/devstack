@@ -1,4 +1,5 @@
-export interface DeveloperType {
-  id: number;
+import { TaggedItem } from "./TaggedItem";
+
+export interface DeveloperType extends TaggedItem {
   type: string;
 }
