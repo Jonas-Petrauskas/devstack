@@ -12,6 +12,7 @@ import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
   styleUrls: ['./company-dashboard.component.scss']
 })
 export class CompanyDashboardComponent implements OnInit {
+
   devTypes: DeveloperType[] = [];
   techs: Technology[] = [];
   experienceLevels: ExperienceLevel[] = [];
@@ -26,7 +27,6 @@ export class CompanyDashboardComponent implements OnInit {
   constructor(private client: ApiClientService) { }
 
   ngOnInit(): void {
-    console.log("HELLO")
     this.getAllFields();
   }
 
@@ -37,17 +37,12 @@ export class CompanyDashboardComponent implements OnInit {
       .subscribe((expLvls) => this.experienceLevels = expLvls);
     this.client.getTechnologies()
       .subscribe((techs) => this.techs = techs);
-  
-
   }
 
   updateSelected(type: DeveloperType, tech: Technology[], xp: ExperienceLevel): void {
     this.selectedDevType = type;
     this.selectedTechs = tech;
     this.selectedExp = xp;
-
   }
-
-
 
 }

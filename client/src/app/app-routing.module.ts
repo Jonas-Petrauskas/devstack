@@ -14,8 +14,6 @@ const routes: Routes = [
   // { path: '', component: DropdownComponent },
   // { path: '', component: SearchComponent },
   // { path: '', component: DevCardComponent },
-
-
 ];
 
 @NgModule({
