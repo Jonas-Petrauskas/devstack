@@ -9,7 +9,6 @@ module.exports = (sequelize, Datatypes) => {
     path: {
       type: Datatypes.TEXT,
       allowNull: false,
-      unique: true,
     },
   }, {
     tableName: 'technologies',
