@@ -18,3 +18,12 @@
   padding-top: 20px;
   color: #c4c4c4;
 }
+
+.home__job__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 70px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
