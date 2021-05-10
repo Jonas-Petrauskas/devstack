@@ -4,9 +4,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+import { Country } from '../interfaces/Country';
 import { DeveloperType } from '../interfaces/DeveloperType';
 import { ExperienceLevel } from '../interfaces/ExperienceLevel';
 import { Technology } from '../interfaces/Technology';
+import { User } from '../interfaces/User';
 
 
 @Injectable({
@@ -20,6 +22,13 @@ export class ApiClientService {
     private http: HttpClient,
     // private otherService: OtherService, // * other services
   ) { }
+
+  getCountries(): Observable<Country[]> {
+    return this.http
+      .get<Country[]>(`${this.baseUrl}/countries`)
+      .pipe(map((techs: Country[]) => techs.map(country => ({...country, tagName: country.name}))))
+      .pipe(catchError(this.handleError<Country[]>([])));
+  }
 
   getDeveloperTypes(): Observable<DeveloperType[]> {
     return this.http
@@ -40,6 +49,12 @@ export class ApiClientService {
       .get<Technology[]>(`${this.baseUrl}/technologies`)
       .pipe(map((techs: Technology[]) => techs.map(tech => ({...tech, tagName: tech.name}))))
       .pipe(catchError(this.handleError<Technology[]>([])));
+  }
+
+  getAllUsers(): Observable<User[]> {
+    return this.http
+      .get<User[]>(`${this.baseUrl}/users`)
+      .pipe(catchError(this.handleError<User[]>([])));
   }
 
   private handleError<T>(result?: T) {
