@@ -34,6 +34,7 @@ module.exports = (sequelize, Datatypes) => {
         name: 'country_id',
         allowNull: false,
       },
+      as: 'country',
       onDelete: 'cascade'
     });
 
@@ -42,6 +43,7 @@ module.exports = (sequelize, Datatypes) => {
         name: 'developer_type_id',
         allowNull: false,
       },
+      as: 'developer_type',
       onDelete: 'cascade'
     });
 
@@ -50,6 +52,7 @@ module.exports = (sequelize, Datatypes) => {
         name: 'experience_level_id',
         allowNull: false,
       },
+      as: 'experience_level',
       onDelete: 'cascade'
     });
 
