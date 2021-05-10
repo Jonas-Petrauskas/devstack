@@ -1,6 +1,11 @@
-<div>
+<div class="selector">
   <input #userInput (input)="search(userInput.value)" [placeholder]="placeString">
-  <div *ngFor="let option of filteredOptions">
+  <div *ngFor="let selected of selectedOptions" class="selected-option"
+    (click)="unSelectOption(selected)"
+  >
+      {{selected.tagName}}
+  </div>
+  <div *ngFor="let option of filteredOptions" (click)="selectOption(option)" class="option">
     {{option.tagName}}
   </div>
 </div>

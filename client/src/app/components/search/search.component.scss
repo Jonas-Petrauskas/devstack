@@ -1,0 +1,17 @@
+@use "../../../themes/colors" as color;
+
+.selector {
+  text-align: center;
+}
+
+.option {
+  text-align: center;
+}
+
+.option:active {
+  background-color: color.$dropdown_selected;
+}
+
+.selected-option {
+  background-color: color.$dropdown_selected;
+}

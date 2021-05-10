@@ -31,6 +31,6 @@ export const mockUser: User = {
   country: { id: 1, tagName: 'ESSPPAANNNYAAA', name: 'ESSPPAANNNYAAA' },
   eligible_countries: [],
   bio: 'I work late',
-  developer_type: { id: 1, tagName: 'hi', name: 'FrontEnd'},
+  developer_type: { id: 1, tagName: 'hi', name: 'Front End'},
   experience_level: { id: 1, tagName:'experience level', name:'Beginer' },
 }
