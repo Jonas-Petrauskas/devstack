@@ -1,0 +1,29 @@
+@use "../../../themes/colors" as color;
+
+.home-main-display {
+  padding-top: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.home__top__jobs__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200px;
+  color: color.$text;
+}
+
+.home__top__jobs__text p {
+  padding-top: 20px;
+  color: #c4c4c4;
+}
+
+.home__job__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 70px;
+  padding-left: 200px;
+  padding-right: 200px;
+}

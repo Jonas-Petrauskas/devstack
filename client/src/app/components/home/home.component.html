@@ -1,0 +1,25 @@
+  <app-navbar></app-navbar>
+<div class="home-main-display">
+  <app-home-main-display></app-home-main-display>
+</div>
+<div class="home__top__jobs__text">
+  <h1>Top Jobs for Top Tech Talent</h1>
+  <p>Be part of the top 10% and connect with Europe’s top tech companies.</p>
+</div>
+<div class="home__job__cards">
+  <app-home-job-card
+    [name]="cards[0]['name']"
+    [title]="cards[0]['title']"
+    [description] = "cards[0]['description']"
+  ></app-home-job-card>
+  <app-home-job-card
+    [name]="cards[0]['name']"
+    [title]="cards[0]['title']"
+    [description] = "cards[0]['description']"
+  ></app-home-job-card>
+  <app-home-job-card
+    [name]="cards[0]['name']"
+    [title]="cards[0]['title']"
+    [description] = "cards[0]['description']"
+  ></app-home-job-card>
+</div>
