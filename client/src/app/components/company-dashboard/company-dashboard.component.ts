@@ -6,6 +6,7 @@ import { DeveloperType } from 'src/app/interfaces/DeveloperType';
 import { Technology } from 'src/app/interfaces/Technology';
 import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
 import { mockUser, User } from 'src/app/interfaces/User';
+import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
   selector: 'app-company-dashboard',
@@ -24,6 +25,7 @@ export class CompanyDashboardComponent implements OnInit {
   selectedExp: ExperienceLevel = {tagName: '',name: 'name', id: 0};
   searchQuery: string = '';
   filteredUsers: User[] = [mockUser];
+  selectedSkills: TaggedItem[] = [];
 
 
   constructor(private client: ApiClientService) { }
@@ -46,5 +48,16 @@ export class CompanyDashboardComponent implements OnInit {
     this.selectedTechs = tech;
     this.selectedExp = xp;
   }
-
+  cLog():void {
+    console.log(this.selectedSkills)
+  }
+  updateSelectedOpts(selectedOptions: TaggedItem[]): void {
+    this.selectedSkills = [...selectedOptions]
+  }
+  updateSelectedType(selectedType: any): void {
+    this.selectedDevType = selectedType;
+  }
+  updateSelectedExperience(selectedExps: any): void {
+    this.selectedExp = selectedExps;
+  }
 }

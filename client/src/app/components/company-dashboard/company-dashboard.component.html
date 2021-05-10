@@ -8,16 +8,17 @@
     <div class="selector-container">
       <!-- container on the left for the selectors -->
       <div class="dev-type">
-            <app-dropdown [selectorName]="'Developer Type'" [dropOptions]="devTypes"></app-dropdown>
+            <app-dropdown [selectorName]="'Developer Type'" [dropOptions]="devTypes" (selectedOption)="updateSelectedType($event)"></app-dropdown>
       </div>
       <div class="techs">
 
-        <app-search [placeString]="'Technologies'" [allOptions]="techs" ></app-search>
+        <app-search [placeString]="'Technologies'" [allOptions]="techs" (selectOptsEvent)="updateSelectedOpts($event)" ></app-search>
       </div>
       <div class="experience">
-        <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevels"></app-dropdown>
+        <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevels" (selectedOption)="updateSelectedExperience($event)"></app-dropdown>
       </div>
-      <div class="search-button">
+      <div class="search-button" (click)="cLog()"> 
+        search
         
       </div>
 
@@ -26,7 +27,7 @@
     <div class="user-container">
       <!-- container to render the users -->
       <div *ngFor="let user of filteredUsers">
-        <app-dev-card></app-dev-card>
+        <app-dev-card [userDetails]="user"></app-dev-card>
       </div>
 
     </div>
@@ -34,3 +35,4 @@
 
   </div>
 </div>
+
