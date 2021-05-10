@@ -1,3 +1,6 @@
+// @use "../../../themes/colors" as color;
+// @use "../../../themes/sizes" as size;
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -39,6 +42,10 @@
 
 .bottom-left__buttons {
   padding-top: 15px;
+}
+
+.button__hiring {
+  padding-left: 100px;
 }
 
 .bottom-right__image {
