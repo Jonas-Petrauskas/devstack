@@ -21,15 +21,15 @@ export class NavbarComponent implements OnInit {
 
   getLoginOptions(): {label: string, link: string}[] {
     return [
-      {label: 'COMPANY', link: ''},
-      {label: 'CANDIDATE', link: ''},
+      {label: 'COMPANY', link: '/company/login'},
+      {label: 'CANDIDATE', link: '/candidate/login'},
     ]
   }
 
   getSignupOptions(): {label: string, link: string}[] {
     return [
-      {label: 'COMPANY', link: ''},
-      {label: 'CANDIDATE', link: ''},
+      {label: 'COMPANY', link: '/company/signup'},
+      {label: 'CANDIDATE', link: '/candidate/signup'},
     ]
   }
 

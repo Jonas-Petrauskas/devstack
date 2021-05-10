@@ -23,9 +23,23 @@
   width: 20px;
 }
 
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: position(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
 .button__dropdowns {
   background: none;
   position: absolute;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
 }
 
 .button__dropdowns__dropdown {
