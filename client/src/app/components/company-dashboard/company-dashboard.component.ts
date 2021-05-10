@@ -19,9 +19,9 @@ export class CompanyDashboardComponent implements OnInit {
   experienceLevels: ExperienceLevel[] = [];
   sortBy: string = '';
 
-  selectedDevType: DeveloperType = {tagName: '',type: 'name', id: 0};
+  selectedDevType: DeveloperType = {tagName: '',name: 'name', id: 0};
   selectedTechs: Technology[] = [];
-  selectedExp: ExperienceLevel = {tagName: '',level: 'name', id: 0};
+  selectedExp: ExperienceLevel = {tagName: '',name: 'name', id: 0};
   searchQuery: string = '';
   filteredUsers: User[] = [mockUser];
 
