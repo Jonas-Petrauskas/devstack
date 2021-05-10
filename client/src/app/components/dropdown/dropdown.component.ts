@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
@@ -15,6 +15,9 @@ export class DropdownComponent implements OnInit {
   
   selected: TaggedItem = {tagName: '', id: 0};
 
+  @Output()
+  selectedOption = new EventEmitter<TaggedItem>();
+
 
   constructor() { }
 
@@ -26,6 +29,7 @@ export class DropdownComponent implements OnInit {
   updateSelected(option: TaggedItem): void {
     this.selected = option;
     this.selectorName = option.tagName
+    this.selectedOption.emit(this.selected)
     this.isVisible = false;
   }
 
