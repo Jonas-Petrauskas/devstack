@@ -27,14 +27,34 @@ module.exports = (sequelize, Datatypes) => {
   User.associate = (model) => {
     User.hasOne(model.UserCredentials);
 
-    User.hasMany(model.Technology);
     User.hasMany(model.EmploymentHistory);
 
-    User.belongsTo(model.Country);
-    User.belongsTo(model.DeveloperType);
-    User.belongsTo(model.ExperienceLevel);
+    User.belongsTo(model.Country, {
+      foreignKey: {
+        name: 'country_id',
+        allowNull: false,
+      },
+      onDelete: 'cascade'
+    });
 
-    User.belongsToMany(model.Country, { through: 'UserEligibleCountries' });
+    User.belongsTo(model.DeveloperType, {
+      foreignKey: {
+        name: 'developer_type_id',
+        allowNull: false,
+      },
+      onDelete: 'cascade'
+    });
+
+    User.belongsTo(model.ExperienceLevel, {
+      foreignKey: {
+        name: 'experience_level_id',
+        allowNull: false,
+      },
+      onDelete: 'cascade'
+    });
+
+    User.belongsToMany(model.Technology, { as: 'technologies', through: 'UserTechnologies'} );
+    User.belongsToMany(model.Country, { as: 'eligible_countries', through: 'UserEligibleCountries'});
   };
 
   return User;

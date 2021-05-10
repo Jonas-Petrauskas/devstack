@@ -30,7 +30,7 @@ const host = env.SERVER_HOST || 'localhost';
 const db = require('./models/_index');
 
 (async () => {
-  await db.sequelize.sync();
+  await db.sequelize.sync({force: true});
 
   // * DATABASE SEEDER
   await require('./seeders/_seeder')(db);

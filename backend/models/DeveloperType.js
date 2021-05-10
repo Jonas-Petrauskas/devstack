@@ -13,7 +13,6 @@ module.exports = (sequelize, Datatypes) => {
   });
 
   DeveloperType.associate = (model) => {
-    DeveloperType.hasMany(model.User);
   };
 
   return DeveloperType;

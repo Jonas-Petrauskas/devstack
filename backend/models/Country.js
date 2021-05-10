@@ -6,6 +6,10 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
       unique: true,
     },
+    is_european_union: {
+      type: Datatypes.BOOLEAN,
+      allowNull: false,
+    },
   }, {
     tableName: 'countries',
     updatedAt: true,
@@ -13,7 +17,6 @@ module.exports = (sequelize, Datatypes) => {
   });
 
   Country.associate = (model) => {
-    Country.hasMany(model.User);
   };
 
   return Country;

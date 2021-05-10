@@ -1,0 +1,35 @@
+[
+  {
+    "email": "john_doe@gmail.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "min_salary": 40000,
+    "country_id": 1,
+    "developer_type_id": 1,
+    "experience_level_id": 2,
+    "technologies": [12, 5, 9],
+    "eligible_countries": [9, 3]
+  },
+  {
+    "email": "bernat_duran@gmail.com",
+    "first_name": "Bernat",
+    "last_name": "Duran",
+    "min_salary": 10000,
+    "country_id": 5,
+    "developer_type_id": 2,
+    "experience_level_id": 1,
+    "technologies": [5, 6],
+    "eligible_countries": [5, 7]
+  },
+  {
+    "email": "sean_dillon@gmail.com",
+    "first_name": "Sean",
+    "last_name": "Dillon",
+    "min_salary": 15000,
+    "country_id": 10,
+    "developer_type_id": 1,
+    "experience_level_id": 2,
+    "technologies": [1, 2, 3, 7, 8, 9],
+    "eligible_countries": [1, 2, 9, 11]
+  }
+]

@@ -13,7 +13,6 @@ module.exports = (sequelize, Datatypes) => {
   });
 
   ExperienceLevel.associate = (model) => {
-    ExperienceLevel.hasMany(model.User);
   };
 
   return ExperienceLevel;

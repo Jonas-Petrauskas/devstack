@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-// TODO: import controllers
+const userController = require('../controllers/UserController');
 
-// TODO: add endpoints
+router.get('/users', userController.getUsers);
 
 module.exports = router;

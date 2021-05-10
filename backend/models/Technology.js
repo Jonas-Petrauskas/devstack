@@ -17,7 +17,6 @@ module.exports = (sequelize, Datatypes) => {
   });
 
   Technology.associate = (model) => {
-    Technology.belongsToMany(model.User, { through: 'UserTechnologies' });
   };
 
   return Technology;

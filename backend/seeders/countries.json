@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Argentina",
+    "is_european_union": false
+  },
+  {
+    "name": "Australia",
+    "is_european_union": false
+  },
+  {
+    "name": "Belgium",
+    "is_european_union": true
+  },
+  {
+    "name": "Brazil",
+    "is_european_union": false
+  },
+  {
+    "name": "Canada",
+    "is_european_union": false
+  },
+  {
+    "name": "China",
+    "is_european_union": false
+  },
+  {
+    "name": "Colombia",
+    "is_european_union": false
+  },
+  {
+    "name": "France",
+    "is_european_union": true
+  },
+  {
+    "name": "Germany",
+    "is_european_union": true
+  },
+  {
+    "name": "Greece",
+    "is_european_union": true
+  },
+  {
+    "name": "India",
+    "is_european_union": false
+  },
+  {
+    "name": "Israel",
+    "is_european_union": false
+  },
+  {
+    "name": "Italy",
+    "is_european_union": true
+  },
+  {
+    "name": "Japan",
+    "is_european_union": false
+  },
+  {
+    "name": "Portugal",
+    "is_european_union": true
+  },
+  {
+    "name": "Russia",
+    "is_european_union": false
+  },
+  {
+    "name": "South Korea",
+    "is_european_union": false
+  },
+  {
+    "name": "Spain",
+    "is_european_union": true
+  },
+  {
+    "name": "United Kingdom",
+    "is_european_union": false
+  },
+  {
+    "name": "United States of America",
+    "is_european_union": false
+  },
+  {
+    "name": "Vietnam",
+    "is_european_union": false
+  }
+]
