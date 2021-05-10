@@ -1,0 +1,52 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 1300px;
+}
+
+.top__image {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 800px;
+}
+.image__top {
+  width: 100%;
+  height: 800px;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom-left__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 500px;
+}
+
+.bottom-left__text h1 {
+  font-size: 48px;
+}
+
+.bottom-left__text p {
+  padding-top: 15px;
+  font-size: 36px;
+}
+
+.bottom-left__buttons {
+  padding-top: 15px;
+}
+
+.bottom-right__image {
+  width: 50%;
+  height: 500px;
+}
+
+.image__bottom {
+  height: 500px;
+  width: 100%;
+}
