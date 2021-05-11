@@ -1,55 +1,65 @@
+$gray: #e5e5e5;
 
-$gray: #E5E5E5;
-
-
-
+@font-face {
+  font-family: "Saira";
+  src: local("Saira"),
+    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
+}
 
 .login-container {
-
+  position: absolute;
   background-color: $gray;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 85vh;
-  width: 50%;
-  
+  height: 100vh;
+  width: 30vw;
+  border-radius: 0.7rem;
 }
 
 .login-text {
+  background-color: $gray;
   font-size: 28px;
   margin-top: 10vh;
   margin-bottom: 1vh;
-
+  font-family: "Saira";
 }
 
 .auth0-container {
+  background-color: $gray;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 1vh;
+  margin-top: 2vh;
+  width: 70%;
+  height: 5vh;
 }
 
 .google-auth {
-  margin: 5px;
   width: 10vw;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: white;
   border: 1px white solid;
-  border-radius: 5%;
-  
+  border-radius: 0.7rem;
+  font-family: "Saira";
 }
 
 .github-auth {
-  margin: 5px;
   width: 10vw;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: white;
   border: 1px white solid;
-  border-radius: 5%;
+  border-radius: 0.7rem;
+  font-family: "Saira";
 }
 
 a {
@@ -59,54 +69,79 @@ a {
 
 .line-or__line {
   border-top: 2px solid black;
-  margin: 2px;
+  margin: 5px;
   width: 35%;
   height: 2px;
 }
 
+.or {
+  background-color: $gray;
+  font-size: 24px;
+  font-family: "Saira";
+}
+
 .line-or {
+  background-color: $gray;
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: center;
   padding-bottom: 5px;
   align-items: center;
-  margin-top: 1vh;
+  margin-top: 2vh;
   margin-bottom: 1vh;
 }
 .form-container {
+  background-color: $gray;
   width: 70%;
+  font-family: "Saira";
 }
 
 .text-input {
-  margin-top: 2px; 
+  margin-top: 2vh;
+  background-color: $gray;
 }
 
-
-input[type=text] {
+input[type="text"] {
   width: 100%;
-  height: 35px;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.7rem;
 }
 
 .remember-me {
   display: flex;
   flex-direction: row;
+  background-color: $gray;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  font-family: "Saira";
+}
+
+.me {
+  background-color: $gray;
 }
 
 .checkbox {
-  margin-right: 5x;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
 }
 
 .login-button {
+  background-color: $gray;
+}
+
+.login-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 35px;
-  border-radius: .5rem;
+  height: 40px;
+  box-sizing: border-box;
   border: none;
-  background-color: white;
-  margin-top: 1vh;
+  border-radius: 0.7rem;
+  font-family: "Saira";
 }
