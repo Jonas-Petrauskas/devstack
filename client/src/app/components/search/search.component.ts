@@ -18,8 +18,18 @@ export class SearchComponent implements OnInit {
   selectedOptions: TaggedItem[] = [];
   @Output()
   selectOptsEvent = new EventEmitter<TaggedItem[]>();
+  @Input()
+  isHidden: boolean = false;
+
   
-  constructor() { }
+  constructor() { 
+    window.addEventListener('click', ({target}) => {
+      if ((target as HTMLElement).title !== 'searchBar') {
+        this.search('');
+      }
+      else return;
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -48,6 +58,14 @@ export class SearchComponent implements OnInit {
     this.selectOptsEvent.emit(this.selectedOptions);
   }
 
+  clearSearch(): void {
+    if (this.selectedOptions.length) {
+      this.searchString = '';
+      this.search(''); 
+    }
+   
+   console.log(this.searchString)
+  }
 
 
 }
