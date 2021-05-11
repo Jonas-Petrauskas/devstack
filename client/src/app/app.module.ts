@@ -12,6 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DevCardComponent } from './components/dev-card/dev-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dropdown.component';
+import { SvgItemComponent } from './components/svg-item/svg-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dro
     SearchComponent,
     DevCardComponent,
     NavbarComponent,
-    NavbarDropdownComponent
+    NavbarDropdownComponent,
+    SvgItemComponent,
   ],
   imports: [
     BrowserModule,

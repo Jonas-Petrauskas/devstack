@@ -1,4 +1,4 @@
 export interface TaggedItem {
   id: number;
-  tagName: string;
+  name: string;
 }

@@ -28,7 +28,7 @@ export class SearchComponent implements OnInit {
       this.searchString = query.toLowerCase()
       const regex = new RegExp(`^${query}`,'i')
       this.filteredOptions = query.length ? this.allOptions.filter( (option) =>  
-        option.tagName.toLowerCase().includes(this.searchString, 0)
+        option.name.toLowerCase().includes(this.searchString, 0)
         && !this.selectedOptions.includes(option)
       ) : [];
    

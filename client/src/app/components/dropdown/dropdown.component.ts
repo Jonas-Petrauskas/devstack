@@ -13,7 +13,7 @@ export class DropdownComponent implements OnInit {
   dropOptions: TaggedItem[] = [];
   isVisible: boolean = false;
   
-  selected: TaggedItem = {tagName: '', id: 0};
+  selected: TaggedItem = {name: '', id: 0};
 
   @Output()
   selectedOption = new EventEmitter<TaggedItem>();
@@ -28,7 +28,7 @@ export class DropdownComponent implements OnInit {
   }
   updateSelected(option: TaggedItem): void {
     this.selected = option;
-    this.selectorName = option.tagName
+    this.selectorName = option.name
     this.selectedOption.emit(this.selected)
     this.isVisible = false;
   }

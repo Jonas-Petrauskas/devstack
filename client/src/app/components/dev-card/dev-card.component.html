@@ -1,4 +1,5 @@
-<div class="card-container">
+
+<div class="card-container" *ngIf="user">
 
   <div class="photo-name">
     <div class="photo-container">
@@ -7,32 +8,37 @@
 
     <div class="name-location">
       <div>
-        <div class="name-text">{{userDetails.first_name}}</div>
-        <div class="name-text">{{userDetails.last_name}}</div>
+        <div class="name-text">{{user.first_name}}</div>
+        <div class="name-text">{{user.last_name}}</div>
       </div>
       
 
-      <div class="name-text">{{userDetails.country.name}}</div>
+      <div class="name-text">{{user.country.name}}</div>
     </div>
       <!-- end of first container with photo name and location -->
   </div>
 
   <div class="exp-position">
-    <div class="exp-item">{{userDetails.experience_level.name}}</div>
-    <div class="exp-item">{{userDetails.developer_type.name}} Developer</div>
+    <div class="exp-item">{{user.experience_level.name}}</div>
+    <div class="exp-item">{{user.developer_type.name}} Developer</div>
   </div>
 
   <div class="techs-container">
-    <div *ngFor="let tech of technologies">
-      <!-- <div class="tech">{{tech.name}}</div> -->
-      <img [src]="tech.url" alt="" class="tech-image">
+    <div *ngFor="let tech of user.technologies">
+      <div class="tech"></div>
+      <app-svg-item 
+        [svgPath]="tech.path"
+        [label]="tech.name"
+        [height]="50"
+        [width]="50"
+      ></app-svg-item>
     </div>
 
   </div>
 
 
   <div class="bio">
-    <div>{{bio.desc}}</div>
+    <div>{{user.bio}}</div>
   </div>
 
 </div>

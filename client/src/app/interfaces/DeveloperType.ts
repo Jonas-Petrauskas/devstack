@@ -1,5 +1,9 @@
 import { TaggedItem } from "./TaggedItem";
 
 export interface DeveloperType extends TaggedItem {
-  name: string;
+}
+
+export const defaultDeveloperType: DeveloperType = {
+  name: '',
+  id: 1
 }

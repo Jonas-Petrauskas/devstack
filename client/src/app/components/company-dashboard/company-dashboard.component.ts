@@ -5,7 +5,7 @@ import { ApiClientService } from 'src/app/services/api-client.service';
 import { DeveloperType } from 'src/app/interfaces/DeveloperType';
 import { Technology } from 'src/app/interfaces/Technology';
 import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
-import { mockUser, User } from 'src/app/interfaces/User';
+import { User, defaultUser } from 'src/app/interfaces/User';
 import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
@@ -20,11 +20,11 @@ export class CompanyDashboardComponent implements OnInit {
   experienceLevels: ExperienceLevel[] = [];
   sortBy: string = '';
 
-  selectedDevType: DeveloperType = {tagName: '',name: 'name', id: 0};
+  selectedDevType: DeveloperType = {name: 'name', id: 0};
   selectedTechs: Technology[] = [];
-  selectedExp: ExperienceLevel = {tagName: '',name: 'name', id: 0};
+  selectedExp: ExperienceLevel = {name: 'name', id: 0};
   searchQuery: string = '';
-  filteredUsers: User[] = [mockUser];
+  filteredUsers: User[] = [];
   selectedSkills: TaggedItem[] = [];
 
 
@@ -41,16 +41,25 @@ export class CompanyDashboardComponent implements OnInit {
       .subscribe((expLvls) => this.experienceLevels = expLvls);
     this.client.getTechnologies()
       .subscribe((techs) => this.techs = techs);
+    this.client.getAllUsers()
+    .subscribe((users) => this.filteredUsers = users);
   }
 
-  updateSelected(type: DeveloperType, tech: Technology[], xp: ExperienceLevel): void {
-    this.selectedDevType = type;
-    this.selectedTechs = tech;
-    this.selectedExp = xp;
+  
+  searchUsers():void {
+    let comaSeperated: string = '';
+    this.selectedSkills.forEach((tech) => comaSeperated+= tech.id+',')
+    comaSeperated= comaSeperated.substr(0, comaSeperated.length-1);
+    this.searchQuery = `technologies=${comaSeperated};developer_type=${this.selectedDevType.id};experience_level=${this.selectedExp.id}`
+    
+    this.client.getFilteredUsers(this.searchQuery)
+      .subscribe((users) => {
+        this.filteredUsers = users
+        console.log(users)
+      })
+      console.log(this.searchQuery)
   }
-  cLog():void {
-    console.log(this.selectedSkills)
-  }
+  
   updateSelectedOpts(selectedOptions: TaggedItem[]): void {
     this.selectedSkills = [...selectedOptions]
   }

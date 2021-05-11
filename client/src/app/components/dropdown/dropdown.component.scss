@@ -1,6 +1,7 @@
+@use "../../../themes/colors" as color;
+
 .dropdown {
-  
-  width: 150px;
+  width: 20vw;
   border-radius: 3px;
 
 }
@@ -10,10 +11,13 @@
   padding: 2px;
   text-align: center;
   cursor: pointer;
+  border: none;
+  background-color: color.$dropdown_selected;
+  border-radius: .2rem;
 }
 .selector-name:hover {
   opacity: 0.8;
-  background-color: rgb(168, 168, 168);
+  background-color: color.$dropdown_selected;
 }
 
 .option {
@@ -22,7 +26,7 @@
   margin-top: 2px;
   margin-bottom: 2px;
   border: none;
-  background-color: rgb(221, 220, 220);
+  background-color: color.$dropdown_selected;
   border-radius: 3px;
   cursor: pointer;
 
