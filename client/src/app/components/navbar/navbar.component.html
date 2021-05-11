@@ -7,8 +7,8 @@
     <app-navbar-dropdown
       class="navbar__buttons__button"
       [expanded]="loginExpanded"
-      (expand)="onLoginExpand($event)"
-      (collapse)="onLoginCollapse($event)"
+      (toggle)="onLoginToggle($event)"
+      (sliderHandler)="sliderHandler($event)"
       buttonName="LOG IN"
       [dropdownOptions]="getLoginOptions()"
     ></app-navbar-dropdown>
@@ -16,8 +16,8 @@
     <app-navbar-dropdown
       class="navbar__buttons__button"
       [expanded]="signupExpanded"
-      (expand)="onSignupExpand($event)"
-      (collapse)="onSignupCollapse($event)"
+      (toggle)="onSignupToggle($event)"
+      (sliderHandler)="sliderHandler($event)"
       buttonName="SIGN UP"
       [dropdownOptions]="getSignupOptions()"
     ></app-navbar-dropdown>
@@ -28,4 +28,12 @@
     <div>USER IS LOGGED IN</div>
   </div>
 
+
 </nav>
+
+<div *ngIf="showCompanyLogin" class="login">
+  <div class="login__page-filler" (click)="hideCompanyLogin()"></div>
+  <div class="login__window">
+    <app-company-login></app-company-login>
+  </div>
+</div>

@@ -8,8 +8,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarDropdownComponent implements OnInit {
 
   @Input() expanded: boolean = false;
-  @Output() expand: EventEmitter<any> = new EventEmitter();
-  @Output() collapse: EventEmitter<any> = new EventEmitter();
+  @Output() toggle: EventEmitter<string> = new EventEmitter();
+  @Output() sliderHandler: EventEmitter<string> = new EventEmitter();
 
   @Input()
   buttonName: string = '';
@@ -22,9 +22,6 @@ export class NavbarDropdownComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clickHandler() {
-    if (!this.expanded) this.expand.emit(this.buttonName);
-    else this.collapse.emit(this.buttonName);
-  }
-
+  clickHandler() { this.toggle.emit(this.buttonName); }
+  dropdownClickHandler(link: string) { this.sliderHandler.emit(link); }
 }
