@@ -23,5 +23,8 @@ export class NavbarDropdownComponent implements OnInit {
   }
 
   clickHandler() { this.toggle.emit(this.buttonName); }
-  dropdownClickHandler(link: string) { this.sliderHandler.emit(link); }
+  dropdownClickHandler(link: string) {
+    this.sliderHandler.emit(link);
+    this.clickHandler();
+  }
 }
