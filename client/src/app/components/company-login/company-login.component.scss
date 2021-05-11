@@ -6,30 +6,32 @@ $gray: #e5e5e5;
     url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
 }
 
-.login-container {
-  position: absolute;
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login {
   background-color: $gray;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  width: 600px;
+  height: 100vh;
+  width: 40rem;
   border-radius: 0.5rem 0rem 0rem 0.5rem;
-  box-shadow: 0px 0px 5px 0px #000000;
+  box-shadow: 0px 0px 5px 0px #202020;
+  font-family: "Saira";
 }
 
-.login-text {
-  background-color: $gray;
+.login__title {
   font-size: 28px;
   margin-top: 100px;
   margin-bottom: 10px;
-  font-family: "Saira";
   user-select: none;
 }
 
-.auth0-container {
-  background-color: $gray;
+.login__OAuth {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -39,7 +41,7 @@ $gray: #e5e5e5;
   width: 420px;
 }
 
-.google-auth {
+.login__OAuth__button {
   width: 150px;
   height: 40px;
   display: flex;
@@ -48,46 +50,12 @@ $gray: #e5e5e5;
   background-color: white;
   border: 1px white solid;
   border-radius: 0.5rem;
-  font-family: "Saira";
   user-select: none;
   box-shadow: 0px 0px 5px 0px #000000;
-}
-
-.github-auth {
-  width: 150px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  border: 1px white solid;
-  border-radius: 0.5rem;
-  font-family: "Saira";
-  user-select: none;
-  box-shadow: 0px 0px 5px 0px #000000;
-}
-
-a {
   font-size: 18px;
-  text-decoration: none;
 }
 
-.line-or__line {
-  border-top: 2px solid black;
-  margin: 5px;
-  width: 210px;
-  height: 2px;
-}
-
-.or {
-  background-color: $gray;
-  font-size: 24px;
-  font-family: "Saira";
-  user-select: none;
-}
-
-.line-or {
-  background-color: $gray;
+.login__or {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -96,21 +64,20 @@ a {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.form-container {
-  background-color: $gray;
-  font-family: "Saira";
+
+.login__or__line {
+  border-top: 2px solid;
+  margin: 20px;
+  width: 210px;
+  height: 2px;
 }
 
-.text-input {
-  margin-top: 20px;
-  background-color: $gray;
+.login__or__text {
+  font-size: 24px;
+  user-select: none;
 }
 
-.text-input input:focus {
-  outline-width: 0;
-}
-
-input[type="text"] {
+.login__form__input {
   width: 420px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -118,34 +85,23 @@ input[type="text"] {
   border: none;
   border-radius: 0.5rem;
   box-shadow: 0px 0px 5px 0px #000000;
+  outline-width: 0;
 }
 
-.remember-me {
+.login__form__remember-me {
   display: flex;
   flex-direction: row;
-  background-color: $gray;
+  align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
-  font-family: "Saira";
   user-select: none;
 }
 
-.me {
-  background-color: $gray;
+.login__form__remember-me__text {
+  margin-left: 1rem;
 }
 
-.checkbox {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
-  background-color: $gray;
-}
-
-.login-button {
-  background-color: $gray;
-}
-
-.login-button a {
+.login__form__submit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,6 +110,5 @@ input[type="text"] {
   box-sizing: border-box;
   border: none;
   border-radius: 0.5rem;
-  font-family: "Saira";
   box-shadow: 0px 0px 5px 0px #000000;
 }

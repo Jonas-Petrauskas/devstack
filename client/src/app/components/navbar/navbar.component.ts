@@ -14,6 +14,9 @@ export class NavbarComponent implements OnInit {
   loginExpanded: boolean = false;
   signupExpanded: boolean = false;
 
+  showCompanyLogin: boolean = false;
+  showCandidateLogin: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -33,18 +36,28 @@ export class NavbarComponent implements OnInit {
     ]
   }
 
-  onLoginExpand($event: any) {
-    if (this.signupExpanded) this.signupExpanded = false;
-    this.loginExpanded = true;
+  onLoginToggle($event: string): void {
+    if (this.loginExpanded) { this.loginExpanded = false; }
+    else {
+      this.signupExpanded = false;
+      this.loginExpanded = true;
+    }
   }
 
-  onLoginCollapse($event: any) { this.loginExpanded = false; }
-
-  onSignupExpand($event: any) {
-    if (this.loginExpanded) this.loginExpanded = false;
-    this.signupExpanded = true;
+  onSignupToggle($event: string): void {
+    if (this.signupExpanded) { this.signupExpanded = false; }
+    else {
+      this.loginExpanded = false;
+      this.signupExpanded = true;
+    }
   }
 
-  onSignupCollapse($event: any) { this.signupExpanded = false; }
+  sliderHandler($event: string): void {
+    if ($event === '/company/login') this.showCompanyLogin = true;
+    if ($event === '/candidate/login') this.showCandidateLogin = true;
+  }
+
+  hideCompanyLogin() { this.showCompanyLogin = false; }
+  hideCandidateLogin() { this.showCandidateLogin = false; }
 
 }
