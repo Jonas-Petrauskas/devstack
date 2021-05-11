@@ -21,10 +21,32 @@
 
 .dropdown {
   margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 1vh;
   
 }
+ .techs {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+ }
 
 .dev-types {
   margin-top: 20vh;
+}
+
+.search-button {
+
+
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+}
+
+.user-card {
+  
 }

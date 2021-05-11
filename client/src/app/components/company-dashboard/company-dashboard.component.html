@@ -11,25 +11,23 @@
       </div>
       <div class="techs">
 
-        <app-search [placeString]="'Technologies'" [allOptions]="techs" (selectOptsEvent)="updateSelectedOpts($event)" ></app-search>
+        <app-search [placeString]="'Technologies'" [allOptions]="techs" (selectOptsEvent)="updateSelectedOpts($event)" class="search-bar"></app-search>
       </div>
       <div class="experience">
         <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevels" (selectedOption)="updateSelectedExperience($event)"></app-dropdown>
       </div>
       <div class="search-button" (click)="searchUsers()"> 
         search
-        
       </div>
 
     </div>
 
     <div class="user-container">
       <!-- container to render the users -->
-      <div *ngFor="let user of filteredUsers">
+      <div *ngFor="let user of filteredUsers" class="user-card">
         <app-dev-card [user]="user"></app-dev-card>
       </div>
     </div>
-
 
   </div>
 </div>
