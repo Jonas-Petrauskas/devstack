@@ -81,7 +81,7 @@ const getFilteredUsers = async (req, res) => {
     });
 
     // TODO: FIX THIS TO BE DONE ON THE QUERY ABOVE
-    if (queries.technologies) {
+    if (queries.technologies && Number.isInteger(queries.technologies[0])) {
       users = users.filter((user) => {
         const userTechIds = user.technologies.map(tech => tech.dataValues.id);
 
