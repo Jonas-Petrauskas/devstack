@@ -1,11 +1,11 @@
 <div class="selector">
-  <input #userInput (input)="search(userInput.value)" [placeholder]="placeString">
+  <input #userInput (input)="search(userInput.value)" [placeholder]="placeString" class="search-input">
   <div *ngFor="let selected of selectedOptions" class="selected-option"
     (click)="unSelectOption(selected)"
   >
-      {{selected.tagName}}
+      {{selected.name}}
   </div>
   <div *ngFor="let option of filteredOptions" (click)="selectOption(option)" class="option">
-    {{option.tagName}}
+    {{option.name}}
   </div>
 </div>

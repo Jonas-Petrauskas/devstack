@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { mockUser, User } from 'src/app/interfaces/User';
+import { User, defaultUser } from 'src/app/interfaces/User';
+import { ApiClientService } from 'src/app/services/api-client.service';
 
 @Component({
   selector: 'app-dev-card',
@@ -9,30 +10,16 @@ import { mockUser, User } from 'src/app/interfaces/User';
 
 export class DevCardComponent implements OnInit {
   @Input()
-  firstName: string = '';
-  @Input()
-  lastName: string = '';
-  @Input()
-  location: {name: string, id:number} = {name: 'Barcelona Spain', id: 1};
-  @Input()
   photo: {url: string, id: number} = {url: 'https://ca.slack-edge.com/T0WU5R8NT-U014XEG2PJ4-bb2847571bc1-512', id: 1};
   @Input()
-  experience: {name: string, id: number, tagName: string} = {name: 'Junior', id: 1, tagName: ''};
-  @Input()
-  position: {name: string, id: number} = {name: 'Fullstack', id: 1};
-  @Input()
-  technologies: {name: string, id: number, url: string}[] = [{name: 'CSS', id: 1, url: 'https://img.icons8.com/color/72/css3.png'},{name: 'Java', id: 2, url: 'https://img.icons8.com/color/2x/java-coffee-cup-logo.png'}, {name: 'C#', id: 3, url:"https://img.icons8.com/ios-filled/72/c-sharp-logo.png"}];
-  @Input()
   bio: {desc: string, id: number} = {desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', id: 1};
-  @Input()
-  userId: number = 1;
 
   @Input()
-  userDetails: User = mockUser;
+  user?: User;
 
-  constructor() { }
+  constructor(private client: ApiClientService) { }
 
   ngOnInit(): void {
   }
-
+  
 }

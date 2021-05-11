@@ -57,6 +57,12 @@ export class ApiClientService {
       .pipe(catchError(this.handleError<User[]>([])));
   }
 
+  getFilteredUsers(query: string): Observable<User[]> {
+    return this.http
+      .get<User[]>(`${this.baseUrl}/users/${query}`)
+      .pipe(catchError(this.handleError<User[]>([])));
+  }
+
   private handleError<T>(result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

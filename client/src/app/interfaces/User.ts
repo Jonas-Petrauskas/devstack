@@ -1,4 +1,4 @@
-import { Country } from './Country'
+import { Country } from './Country';
 import { DeveloperType } from './DeveloperType';
 import { EmploymentHistory } from './EmploymentHistory';
 import { ExperienceLevel } from './ExperienceLevel';
@@ -16,21 +16,22 @@ export interface User {
   eligible_countries: Country[],
   bio: string,
   developer_type: DeveloperType,
-  experience_level: ExperienceLevel,
+  experience_level: ExperienceLevel
 
 }
 
-export const mockUser: User = {
-  id: 1,
-  email: 'hi@gmail.com',
-  first_name: 'Bernie',
-  last_name: 'LastName',
-  min_salary: 40,
+export const defaultUser: User = {
+  id: -1,
+  email: '',
+  first_name: '',
+  last_name: '',
+  min_salary: 0,
   technologies: [],
   employment_history: [],
-  country: { id: 1, tagName: 'ESSPPAANNNYAAA', name: 'ESSPPAANNNYAAA' },
+  country: { id: 1, name: "Argentina", is_european_union : false},
   eligible_countries: [],
-  bio: 'I work late',
-  developer_type: { id: 1, tagName: 'hi', name: 'Front End'},
-  experience_level: { id: 1, tagName:'experience level', name:'Beginer' },
+  bio: '',
+  developer_type: {id: -1, name: ''},
+  experience_level: {name: '', id: -1},
 }
+
