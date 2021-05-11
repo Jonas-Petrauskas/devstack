@@ -1,7 +1,7 @@
 
-<div class="button">
+<div class="button" (mouseenter)="clickHandler()" (mouseleave)="clickHandler()">
 
-  <div class="button__persistent" (click)="clickHandler()">
+  <div class="button__persistent">
     <div class="button__persistent__name">{{buttonName}}</div>
     <img
       class="button__persistent__arrow"
