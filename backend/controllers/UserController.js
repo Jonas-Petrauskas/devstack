@@ -51,7 +51,6 @@ const getFilteredUsers = async (req, res) => {
 
     if (queries.experience_level) where.experience_level_id = queries.experience_level;
     if (queries.developer_type) where.developer_type_id = queries.developer_type;
-    if (queries.technologies) where['$technologies.id$'] = queries.technologies;
 
     let users = await db.User.findAll({
       where: where,
