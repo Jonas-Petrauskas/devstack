@@ -6,6 +6,7 @@ button {
   transition-duration: 0.5s;
   font-size: 0.9rem;
   font-weight: 500;
+  cursor: pointer;
 }
 button:hover {
   transform: scale(1.05);
