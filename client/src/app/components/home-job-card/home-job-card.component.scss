@@ -1,42 +1,44 @@
+@font-face {
+  font-family: "Saira";
+  src: local("Saira"),
+    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
+}
+
 .card-container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 550px;
   background-color: #e5e5e5;
-  border-radius: 5px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px 0px #000000;
 }
 
 .card__img {
-  padding-top: 15px;
+  margin-top: 20px;
   background-color: #e5e5e5;
 }
 
 .card__name {
-  display: flex;
-  justify-content: center;
-  padding-top: 40px;
-  width: 300px;
-  font-size: 36px;
+  margin-top: 40px;
+  font-size: 1.5rem;
   background-color: #e5e5e5;
+  font-family: "Saira";
 }
 
 .card__title {
-  display: flex;
-  justify-content: center;
-  padding-top: 25px;
+  margin-top: 25px;
   background-color: #e5e5e5;
-  font-size: 24px;
+  font-size: 1rem;
+  font-family: "Saira";
 }
 
 .card__description {
-  display: flex;
-  // justify-content: center;
-  // align-items: center;
-  width: 300px;
-  font-size: 24px;
-  padding-top: 80px;
+  width: 200px;
+  font-size: 1rem;
+  margin-top: 70px;
   background-color: #e5e5e5;
-  text-align-last: center;
+  text-align: center;
+  font-family: "Saira";
 }
