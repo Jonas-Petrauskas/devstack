@@ -1,11 +1,3 @@
-// @use "../../../themes/colors" as color;
-// @use "../../../themes/sizes" as size;
-@font-face {
-  font-family: "Saira";
-  src: local("Saira"),
-    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -38,13 +30,11 @@
 
 .bottom-left__text h1 {
   font-size: 48px;
-  font-family: "Saira";
 }
 
 .bottom-left__text p {
   padding-top: 15px;
   font-size: 36px;
-  font-family: "Saira";
 }
 
 .bottom-left__buttons {
