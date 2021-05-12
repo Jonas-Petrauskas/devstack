@@ -9,6 +9,7 @@ import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 export class SearchComponent implements OnInit {
 
   searchString: string = '';
+
   @Input()
   placeString: string = '';
   @Input()
@@ -35,26 +36,28 @@ export class SearchComponent implements OnInit {
   }
 
   search(query: string): void {
-      this.searchString = query.toLowerCase()
-      const regex = new RegExp(`^${query}`,'i')
-      this.filteredOptions = query.length ? this.allOptions.filter( (option) =>  
-        option.name.toLowerCase().includes(this.searchString, 0)
-        && !this.selectedOptions.includes(option)
-      ) : [];
+    this.searchString = query.toLowerCase()
+    const regex = new RegExp(`^${query}`,'i')
+    this.filteredOptions = query.length ? this.allOptions.filter( (option) =>  
+      option.name.toLowerCase().includes(this.searchString, 0)
+      && !this.selectedOptions.includes(option)
+    ) : [];
    
   }
 
   selectOption(option: TaggedItem): void {
     this.selectedOptions.push(option);
-    const index = this.filteredOptions.indexOf(option)
-    this.filteredOptions.splice(index, 1)
+    this.filteredOptions = this.filteredOptions.filter((opt) => opt !== option)
+    this.search(this.searchString)
     this.selectOptsEvent.emit(this.selectedOptions);
   }
   
   unSelectOption(option: TaggedItem): void {
-    this.filteredOptions.push(option)
-    const index = this.selectedOptions.indexOf(option)
-    this.selectedOptions.splice(index, 1)
+    // const index = this.selectedOptions.indexOf(option)
+    // this.selectedOptions.splice(index, 1)
+    this.selectedOptions = this.selectedOptions.filter((opt) => opt !== option)
+    // this.allOptions.push(option)
+    this.search(this.searchString)
     this.selectOptsEvent.emit(this.selectedOptions);
   }
 
