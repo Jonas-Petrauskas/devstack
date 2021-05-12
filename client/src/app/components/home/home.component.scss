@@ -1,50 +1,32 @@
 @use "../../../themes/colors" as color;
 
-@font-face {
-  font-family: "Saira";
-  src: local("Saira"),
-    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
-}
-
-.main {
-  position: absolute;
-}
-
-.home-main-display {
-  padding-top: 100px;
-  padding-left: 200px;
-  padding-right: 200px;
-}
-
-.home__top__jobs__text {
-  position: static;
-  display: flex;
+.home {
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-  margin-left: 200px;
-  margin-right: 200px;
-  color: color.$text;
+  padding-bottom: 5rem;
 }
 
-.home__top__jobs__text h1 {
-  font-family: "Saira";
+.home__main-display {
+  margin: 0rem 3rem 3rem 3rem;
 }
 
-.home__top__jobs__text p {
-  margin-top: 20px;
+.home__header {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.home__subheader {
+  text-align: center;
   color: #c4c4c4;
-  font-family: "Saira";
 }
 
-.home__job__cards {
+.home__job-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 3rem;
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 50px;
+  margin: 3rem 6rem;
 }
 
 .home-company__text {
@@ -55,37 +37,19 @@
   margin-top: 200px;
 }
 
-.home-company__text p {
-  font-family: "Saira";
-}
-
 .home-company__icons {
   margin-top: 40px;
   margin-left: 200px;
   margin-right: 200px;
 }
 
-.sounds__interesting {
+.home__job-button {
   display: flex;
   justify-content: center;
-  padding-top: 150px;
-  font-size: 36px;
-  font-weight: bold;
 }
 
-.sounds__interesting p {
-  font-family: "Saira";
-}
-
-.home__job__button {
+.home__employer-link {
   display: flex;
   justify-content: center;
-  padding-top: 30px;
-}
-
-.home__employer__link {
-  display: flex;
-  justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 100px;
+  padding: 30px;
 }
