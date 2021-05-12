@@ -26,6 +26,7 @@ export class CompanyDashboardComponent implements OnInit {
   searchQuery: string = '';
   filteredUsers: User[] = [];
   selectedSkills: TaggedItem[] = [];
+  searchAlertMessage: boolean = false;
 
 
   constructor(private client: ApiClientService) { }
@@ -47,17 +48,24 @@ export class CompanyDashboardComponent implements OnInit {
 
   
   searchUsers():void {
-    let comaSeperated: string = '';
-    this.selectedSkills.forEach((tech) => comaSeperated+= tech.id+',')
-    comaSeperated= comaSeperated.substr(0, comaSeperated.length-1);
-    this.searchQuery = `technologies=${comaSeperated};developer_type=${this.selectedDevType.id};experience_level=${this.selectedExp.id}`
-    
-    this.client.getFilteredUsers(this.searchQuery)
-      .subscribe((users) => {
-        this.filteredUsers = users
-        console.log(users)
-      })
-      console.log(this.searchQuery)
+    if (this.selectedDevType.id !== 0 && this.selectedExp.id !== 0 && this.selectedSkills.length) {
+
+      let comaSeperated: string = '';
+      this.selectedSkills.forEach((tech) => comaSeperated+= tech.id+',')
+      comaSeperated= comaSeperated.substr(0, comaSeperated.length-1);
+      this.searchQuery = `technologies=${comaSeperated};developer_type=${this.selectedDevType.id};experience_level=${this.selectedExp.id}`
+      
+      console.log(this.selectedDevType)
+      this.client.getFilteredUsers(this.searchQuery)
+        .subscribe((users) => {
+          this.filteredUsers = users
+          console.log(users)
+        })
+        this.searchAlertMessage = false;
+    } else {
+      this.searchAlertMessage = true;
+    }
+
   }
   
   updateSelectedOpts(selectedOptions: TaggedItem[]): void {
