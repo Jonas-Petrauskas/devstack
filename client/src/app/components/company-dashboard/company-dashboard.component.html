@@ -7,14 +7,14 @@
     <div class="selector-container">
       <!-- container on the left for the selectors -->
       <div class="dev-type" class="dropdown">
-            <app-dropdown  [selectorName]="'Developer Type'" [dropOptions]="devTypes" (selectedOption)="updateSelectedType($event)"></app-dropdown>
+            <app-dropdown  [selectorName]="'Developer Type ⌄'" [dropOptions]="devTypes" (selectedOption)="updateSelectedType($event)"></app-dropdown>
       </div>
       <div class="techs">
 
         <app-search [placeString]="'Technologies'" [allOptions]="techs" (selectOptsEvent)="updateSelectedOpts($event)" class="search-bar"></app-search>
       </div>
       <div class="experience">
-        <app-dropdown [selectorName]="'Experience'" [dropOptions]="experienceLevels" (selectedOption)="updateSelectedExperience($event)"></app-dropdown>
+        <app-dropdown [selectorName]="'Experience ⌄'" [dropOptions]="experienceLevels" (selectedOption)="updateSelectedExperience($event)"></app-dropdown>
       </div>
       <div class="search-button" (click)="searchUsers()"> 
         search
