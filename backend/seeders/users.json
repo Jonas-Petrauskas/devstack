@@ -7,7 +7,7 @@
     "country_id": 1,
     "developer_type_id": 1,
     "experience_level_id": 2,
-    "technologies": [12, 5, 9],
+    "technologies": [12, 5, 9, 25],
     "eligible_countries": [9, 3]
   },
   {
@@ -18,7 +18,7 @@
     "country_id": 5,
     "developer_type_id": 2,
     "experience_level_id": 1,
-    "technologies": [5, 6],
+    "technologies": [5, 6, 23],
     "eligible_countries": [5, 7]
   },
   {
@@ -37,7 +37,7 @@
     "first_name": "Alessandro",
     "last_name": "Zanardi",
     "min_salary": 5000,
-    "country_id": 15,
+    "country_id": 13,
     "developer_type_id": 3,
     "experience_level_id": 1,
     "technologies": [12, 13, 5, 7, 8, 9],
@@ -51,7 +51,29 @@
     "country_id": 19,
     "developer_type_id": 1,
     "experience_level_id": 4,
-    "technologies": [1, 2, 3, 4, 5, 7, 8, 9, 16, 17, 18],
+    "technologies": [1, 2, 3, 4, 5, 7, 8, 9, 16, 17, 24],
     "eligible_countries": [19, 20, 21]
+  },
+  {
+    "email": "joe_biden@hotmail.com",
+    "first_name": "Joe",
+    "last_name": "Biden",
+    "min_salary": 120000,
+    "country_id": 20,
+    "developer_type_id": 2,
+    "experience_level_id": 1,
+    "technologies": [6, 11, 12, 15, 16, 19],
+    "eligible_countries": [5, 7, 19, 20, 21]
+  },
+  {
+    "email": "donald_trump@yahoo.com",
+    "first_name": "Donald",
+    "last_name": "Trump",
+    "min_salary": 40000,
+    "country_id": 20,
+    "developer_type_id": 2,
+    "experience_level_id": 2,
+    "technologies": [13, 17, 18, 20],
+    "eligible_countries": [5, 7, 19, 20, 21]
   }
 ]
