@@ -4,19 +4,19 @@
 }
 
 .content-container {
-  border: solid black 1px;
   display: flex;
   flex-direction: row;
-
 }
 
 .selector-container {
-  border: solid 1px black;
   width: 22vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 8px;
+  margin-left: 1vw;
 }
 
 .dropdown {
