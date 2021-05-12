@@ -1,6 +1,8 @@
 .background-img {
   position: fixed;
   width: 100%;
-  height: auto;
+  min-width: 800px;
+  min-height: 100%;
+  overflow: hidden;
   z-index: -1;
 }
