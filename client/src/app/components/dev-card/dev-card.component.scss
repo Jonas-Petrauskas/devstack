@@ -2,12 +2,25 @@
 
 .card-container {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
-  min-height: 400px;
-  min-width: 400px;
-  padding: .5rem;
-  margin: .5rem;
+  align-items: center;
+  width: 63vw;
+  height: 71vh;
+  margin-bottom: 2vh;
+  
   @include components.container_style;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-name {
+  display: flex;
+  flex-direction: row;
+  height: 26vh;
+  margin-top: 3vh;
 }
 
 .user-photo {
@@ -15,26 +28,39 @@
   width: 120px;
   padding: .5rem;
   border-radius: 5rem;
+  margin-top: 3vh;
+  margin-left: 6vh;
+
 }
 
-.photo-name {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: row;
-  height: 10vh;
+.carreer-details {
+  display: inline-flex;
+  margin-top: 2vh;
+  font-size: 20px;
+  
 }
 
 .name-location {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  width: 34vw;
+  height: 25vh;
+  margin-top: 1vh;
+  
+}
 
+
+.names {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 3.5vh;
+  margin-top: 22px;
 }
 
 .name-text {
-  flex: 1 1 auto;
   font-size: 32;
   padding: .5rem;
   text-align: center;
@@ -46,7 +72,6 @@
 }
 
 .exp-position {
-  flex: 1 1 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -58,9 +83,7 @@
 }
 
 .exp-item {
-  flex: 1 1 auto;
-  padding: .5rem;
-  margin: .5rem;
+  margin-left: 1vw;
 }
 
 .techs-container {
@@ -82,10 +105,12 @@
 }
 
 .bio {
-  flex: 1 1 auto;
   margin: .5rem;
   text-align: center;
   padding: .5rem;
-  height: 1vh;
-  
+  height: 1vh;  
+}
+
+.tech {
+  padding:0 1vw;
 }

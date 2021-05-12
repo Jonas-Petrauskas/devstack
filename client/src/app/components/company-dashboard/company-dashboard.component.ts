@@ -44,6 +44,7 @@ export class CompanyDashboardComponent implements OnInit {
       .subscribe((techs) => this.techs = techs);
     this.client.getAllUsers()
     .subscribe((users) => this.filteredUsers = users);
+    
   }
 
   
