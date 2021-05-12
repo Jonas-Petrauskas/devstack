@@ -31,5 +31,27 @@
     "experience_level_id": 2,
     "technologies": [1, 2, 3, 7, 8, 9],
     "eligible_countries": [1, 2, 9, 11]
+  },
+  {
+    "email": "alex_zan@gmail.com",
+    "first_name": "Alessandro",
+    "last_name": "Zanardi",
+    "min_salary": 5000,
+    "country_id": 15,
+    "developer_type_id": 3,
+    "experience_level_id": 1,
+    "technologies": [12, 13, 5, 7, 8, 9],
+    "eligible_countries": [1, 2, 9, 11, 19, 15]
+  },
+  {
+    "email": "jane_doe@gmail.com",
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "min_salary": 50000,
+    "country_id": 19,
+    "developer_type_id": 1,
+    "experience_level_id": 4,
+    "technologies": [1, 2, 3, 4, 5, 7, 8, 9, 16, 17, 18],
+    "eligible_countries": [19, 20, 21]
   }
 ]
