@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Saira";
+  src: local("Saira"),
+    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
+}
+
 .card-container {
   display: flex;
   align-items: center;
@@ -5,7 +11,8 @@
   width: 300px;
   height: 550px;
   background-color: #e5e5e5;
-  border-radius: 5px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px 0px #000000;
 }
 
 .card__img {
@@ -17,12 +24,14 @@
   margin-top: 40px;
   font-size: 1.5rem;
   background-color: #e5e5e5;
+  font-family: "Saira";
 }
 
 .card__title {
   margin-top: 25px;
   background-color: #e5e5e5;
   font-size: 1rem;
+  font-family: "Saira";
 }
 
 .card__description {
@@ -31,4 +40,5 @@
   margin-top: 70px;
   background-color: #e5e5e5;
   text-align: center;
+  font-family: "Saira";
 }
