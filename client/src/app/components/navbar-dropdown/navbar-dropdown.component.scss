@@ -2,7 +2,6 @@
 
 .button__persistent {
   display: flex;
-  background: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -14,7 +13,6 @@
 }
 
 .button__persistent__name {
-  background: none;
   margin-right: 15px;
 }
 
@@ -36,14 +34,12 @@
 }
 
 .button__dropdowns {
-  background: none;
   position: absolute;
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
 }
 
 .button__dropdowns__dropdown {
-  background: none;
   text-align: center;
   line-height: size.$navbar_dropdown_height;
   width: size.$navbar_dropdown_width;

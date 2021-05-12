@@ -1,16 +1,5 @@
 @use "../../../themes/sizes" as size;
-
-@font-face {
-  font-family: "Saira";
-  src: local("Saira"),
-    url(../../../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local("Roboto"),
-    url(../../../assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
-}
+@use "../../../themes/fonts" as font;
 
 .navbar {
   display: flex;
@@ -23,7 +12,7 @@
 .navbar__logo {
   font-weight: bold;
   font-size: size.$navbar_logo_text;
-  font-family: "Saira";
+  font-family: font.$logo;
   margin-left: 20px;
   cursor: pointer;
 }
@@ -35,7 +24,6 @@
 }
 
 .navbar__buttons__button {
-  font-family: "Roboto";
   font-weight: bold;
   margin-right: 15px;
 }
@@ -64,10 +52,8 @@
   animation: color-fill 0.8s forwards;
 }
 .login__page-filler {
-  background: none;
   width: 100%;
 }
 .login__window {
-  background: none;
   animation: slide-left 0.8s forwards;
 }
