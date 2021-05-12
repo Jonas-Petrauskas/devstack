@@ -1,0 +1,19 @@
+button {
+  background-color: #bbbbbb;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  transition-duration: 0.5s;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+button:hover {
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+  background-color: #eeffff;
+}
+button:active {
+  transform: scale(1);
+  background-color: #bbbbbb;
+  transition-duration: 0.1s;
+}
