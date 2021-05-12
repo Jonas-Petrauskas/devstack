@@ -48,18 +48,16 @@ export class CompanyDashboardComponent implements OnInit {
 
   
   searchUsers():void {
-    if (this.selectedDevType.id !== 0 && this.selectedExp.id !== 0 && this.selectedSkills.length) {
+    if (this.selectedDevType.id !== 0 && this.selectedExp.id !== 0) {
 
       let comaSeperated: string = '';
       this.selectedSkills.forEach((tech) => comaSeperated+= tech.id+',')
       comaSeperated= comaSeperated.substr(0, comaSeperated.length-1);
       this.searchQuery = `technologies=${comaSeperated};developer_type=${this.selectedDevType.id};experience_level=${this.selectedExp.id}`
       
-      console.log(this.selectedDevType)
       this.client.getFilteredUsers(this.searchQuery)
         .subscribe((users) => {
           this.filteredUsers = users
-          console.log(users)
         })
         this.searchAlertMessage = false;
     } else {
