@@ -7,6 +7,12 @@
   align-items: center;
   height: size.$navbar_height;
   user-select: none;
+  transition: all 1s;
+}
+
+.blurred {
+  background-color: rgba($color: #ffffff, $alpha: 0.6);
+  transition: all 1s;
 }
 
 .navbar__logo {
