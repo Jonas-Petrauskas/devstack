@@ -8,6 +8,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class NavbarDropdownComponent implements OnInit {
 
   @Input() expanded: boolean = false;
+  @Input() blurBackground: boolean = false;
   @Output() toggle: EventEmitter<string> = new EventEmitter();
   @Output() sliderHandler: EventEmitter<string> = new EventEmitter();
 

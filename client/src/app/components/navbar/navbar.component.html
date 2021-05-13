@@ -1,12 +1,13 @@
 
-<nav class="navbar">
+<nav class="navbar" [ngClass]="blurBackground ? 'blurred' : ''">
   <div class="navbar__logo" routerLink="/">DevStack</div>
 
-  <div *ngIf="state === 'loggedOut'" class="navbar__buttons">
+  <div *ngIf="state === 'loggedOut'" class="navbar__buttons" >
 
     <app-navbar-dropdown
       class="navbar__buttons__button"
       [expanded]="loginExpanded"
+      [blurBackground]="blurBackground"
       (toggle)="onLoginToggle($event)"
       (sliderHandler)="sliderHandler($event)"
       buttonName="LOG IN"
@@ -16,6 +17,7 @@
     <app-navbar-dropdown
       class="navbar__buttons__button"
       [expanded]="signupExpanded"
+      [blurBackground]="blurBackground"
       (toggle)="onSignupToggle($event)"
       (sliderHandler)="sliderHandler($event)"
       buttonName="SIGN UP"

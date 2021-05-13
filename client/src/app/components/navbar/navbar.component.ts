@@ -11,6 +11,9 @@ export class NavbarComponent implements OnInit {
   @Input()
   state: "loggedOut" | "company" | "developer" = "loggedOut";
 
+  @Input()
+  blurBackground: boolean = false;
+
   loginExpanded: boolean = false;
   signupExpanded: boolean = false;
 
