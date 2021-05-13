@@ -28,7 +28,7 @@ export class DeveloperLoginComponent implements OnInit {
     // TODO: Authentication here!
     if (true) {
       this.router.navigate(['developer/dashboard']);
-      this.appState.loginAsCompany();
+      this.appState.loginAsDeveloper();
       this.appState.hideLogins();
     }
     else {
