@@ -1,0 +1,14 @@
+<div class="user-container">
+
+    <!-- container to render the users -->
+    <div *ngIf="user" class="user-main-container">
+    
+      <app-developer-dashboard-main [user]="user"></app-developer-dashboard-main>
+      <app-developer-dashboard-other [user]="user"></app-developer-dashboard-other>
+    </div>
+
+    <div class="user-chat-container">
+      <app-developer-dashboard-chat></app-developer-dashboard-chat>
+    </div>
+
+</div>
