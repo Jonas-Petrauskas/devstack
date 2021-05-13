@@ -3,17 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
-import { CompanyLoginComponent } from './components/company-login/company-login.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
-import { SearchComponent } from './components/search/search.component';
-import { DevCardComponent } from './components/dev-card/dev-card.component';
+import { HomeComponent } from './components/home/home.component';
+import { CompanySignUpComponent } from './components/company-sign-up/company-sign-up.component';
+
 
 const routes: Routes = [
-  { path: '', component: CompanyDashboardComponent },
-  // { path: '', component: CompanyLoginComponent },
-  // { path: '', component: DropdownComponent },
-  // { path: '', component: SearchComponent },
-  // { path: '', component: DevCardComponent },
+  { path: '', component: HomeComponent },
+  { path: 'company/signup', component: CompanySignUpComponent },
+  { path: 'company/dashboard', component: CompanyDashboardComponent },
+  // { path: 'developer/signup', component: DeveloperSignUpComponent },
+  // { path: 'developer/dashboard', component: DeveloperDashboardComponent },
+  { path: '**', redirectTo: '' }, // TODO: redirect to 404 component in the future!
 ];
 
 @NgModule({

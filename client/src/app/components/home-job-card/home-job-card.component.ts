@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { emptyCard } from './emptyCard';
+
 @Component({
   selector: 'app-home-job-card',
   templateUrl: './home-job-card.component.html',
@@ -7,12 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeJobCardComponent implements OnInit {
 
-  @Input()
-  name: string = '';
-  @Input()
-  title: string = '';
-  @Input()
-  description: string = '';
+  @Input() cardData = emptyCard;
 
   constructor() { }
 
