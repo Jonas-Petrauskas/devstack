@@ -36,14 +36,14 @@ export class NavbarComponent implements OnInit {
   getLoginOptions(): {label: string, link: string}[] {
     return [
       {label: 'COMPANY', link: '/company/login'},
-      {label: 'CANDIDATE', link: '/candidate/login'},
+      {label: 'CANDIDATE', link: '/developer/login'},
     ]
   }
 
   getSignupOptions(): {label: string, link: string}[] {
     return [
       {label: 'COMPANY', link: '/company/signup'},
-      {label: 'CANDIDATE', link: '/candidate/signup'},
+      {label: 'CANDIDATE', link: '/developer/signup'},
     ]
   }
 
@@ -66,8 +66,8 @@ export class NavbarComponent implements OnInit {
   sliderHandler($event: string): void {
     if ($event === '/company/login') this.showCompanyLogin = true;
     if ($event === '/company/signup') this.router.navigate([$event]);
-    if ($event === '/candidate/login') this.showDeveloperLogin = true;
-    if ($event === '/candidate/signup') this.router.navigate([$event]);
+    if ($event === '/developer/login') this.showDeveloperLogin = true;
+    if ($event === '/developer/signup') this.router.navigate([$event]);
   }
 
   hideLogin() { this.appState.hideLogins(); }
