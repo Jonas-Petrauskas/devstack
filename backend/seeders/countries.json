@@ -1,86 +1,86 @@
 [
   {
     "name": "Argentina",
-    "is_european_union": false
+    "region": "SA"
   },
   {
     "name": "Australia",
-    "is_european_union": false
+    "region": "OC"
   },
   {
     "name": "Belgium",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "Brazil",
-    "is_european_union": false
+    "region": "SA"
   },
   {
     "name": "Canada",
-    "is_european_union": false
+    "region": "NA"
   },
   {
     "name": "China",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "Colombia",
-    "is_european_union": false
+    "region": "SA"
   },
   {
     "name": "France",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "Germany",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "Greece",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "India",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "Israel",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "Italy",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "Japan",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "Portugal",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "Russia",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "South Korea",
-    "is_european_union": false
+    "region": "AS"
   },
   {
     "name": "Spain",
-    "is_european_union": true
+    "region": "EU"
   },
   {
     "name": "United Kingdom",
-    "is_european_union": false
+    "region": "UK"
   },
   {
     "name": "United States of America",
-    "is_european_union": false
+    "region": "NA"
   },
   {
     "name": "Vietnam",
-    "is_european_union": false
+    "region": "AS"
   }
 ]
