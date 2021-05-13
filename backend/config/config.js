@@ -11,4 +11,14 @@ module.exports = {
       logging: false
     }
   },
+  production: {
+    database: '',
+    username: '',
+    password: '',
+    params: {
+      host: '',
+      dialect: '',
+      logging: false
+    }
+  },
 };
