@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { AppStateService } from '../../services/app-state.service';
+
 @Component({
   selector: 'app-navbar-logout',
   templateUrl: './navbar-logout.component.html',
@@ -10,9 +12,13 @@ export class NavbarLogoutComponent implements OnInit {
   @Input()
   buttonName: string = '';
 
-  constructor() { }
+  constructor(private appState: AppStateService) { }
 
   ngOnInit(): void {
+  }
+
+  logoutUser() {
+    this.appState.logout();
   }
 
 }
