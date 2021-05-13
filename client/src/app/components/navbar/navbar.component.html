@@ -37,8 +37,15 @@
 </nav>
 
 <div *ngIf="showCompanyLogin" class="login">
-  <div class="login__page-filler" (click)="hideCompanyLogin()"></div>
+  <div class="login__page-filler" (click)="hideLogin()"></div>
   <div class="login__window">
     <app-company-login></app-company-login>
+  </div>
+</div>
+
+<div *ngIf="showDeveloperLogin" class="login">
+  <div class="login__page-filler" (click)="hideLogin()"></div>
+  <div class="login__window">
+    <app-developer-login></app-developer-login>
   </div>
 </div>

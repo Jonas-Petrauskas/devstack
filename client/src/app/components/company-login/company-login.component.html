@@ -1,21 +1,31 @@
 
 <div class="login">
 
-    <!-- login text -->
   <div class="login__title">Login</div>
 
-  <!-- form  -->
-  <form class="login__form">
+  <form class="login__form" (keydown)="submitOnEnter($event)">
 
-    <input class="login__form__input" placeholder="Username" ><br>
-    <input class="login__form__input" placeholder="Password"><br>
+    <input
+      name="username"
+      class="login__form__input"
+      placeholder="Username"
+      [(ngModel)]="username"
+    >
+    <br>
+    <input
+      name="password"
+      class="login__form__input"
+      placeholder="Password"
+      [(ngModel)]="password"
+    >
+    <br>
 
     <div class="login__form__remember-me">
       <input class="login__form__remember-me__checkbox" type="checkbox">
       <div class="login__form__remember-me__text">Remember me</div>
     </div>
 
-    <a class="login__form__submit">Login</a>
+    <a type="submit" (click)="submit()" class="login__form__submit">Login</a>
 
   </form>
 </div>
