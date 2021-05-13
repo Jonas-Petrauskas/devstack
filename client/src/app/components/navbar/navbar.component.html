@@ -26,8 +26,11 @@
 
   </div>
 
-  <div *ngIf="state !== 'loggedOut'">
-    <div>USER IS LOGGED IN</div>
+  <div *ngIf="state !== 'loggedOut'" class="navbar__buttons">
+    <app-navbar-logout
+      buttonName="LOG OUT"
+      class="navbar__buttons__button"
+    ></app-navbar-logout>
   </div>
 
 
