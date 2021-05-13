@@ -1,7 +1,7 @@
 
   <div class="card-container">
-    <img class="card__img" src="../../../assets/img/Rectangle 31.png">
-    <div class="card__name">{{name}}</div>
-    <div class="card__title">{{title}}</div>
-    <div class="card__description">{{description}}</div>
+    <img class="card__img" [src]="cardData.photoPath">
+    <div class="card__name">{{cardData.name}}</div>
+    <div class="card__title">{{cardData.title}}</div>
+    <div class="card__description">{{cardData.description}}</div>
   </div>

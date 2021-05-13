@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { cardData } from './card-data';
+import { card1, card2, card3 } from './cards';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,9 @@ import { cardData } from './card-data';
 })
 export class HomeComponent implements OnInit {
 
-  cards = cardData;
+  card1 = card1;
+  card2 = card2;
+  card3 = card3;
 
   constructor() { }
 

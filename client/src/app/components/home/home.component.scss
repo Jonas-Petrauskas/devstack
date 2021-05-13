@@ -1,55 +1,76 @@
 @use "../../../themes/colors" as color;
+@use "../../../themes/components" as components;
+@use "../../../themes/buttons";
 
-.home {
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.home-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 5rem;
+  padding: 3rem;
 }
 
-.home__main-display {
-  margin: 0rem 3rem 3rem 3rem;
-}
-
-.home__header {
-  font-size: 3rem;
+.cards-container {
+  @include components.container_style;
   text-align: center;
+  padding: 2rem;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.dim-subheader {
+  font-size: 1.1rem;
+  color: #606060;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.cards__middle {
+  margin: 0 3rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 
-.home__subheader {
-  text-align: center;
-  color: #c4c4c4;
+.row img {
+  @include components.container_style;
+  height: 20rem;
 }
 
-.home__job-cards {
+.get-started-container {
+  @include components.container_style;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 3rem;
-  margin: 3rem 6rem;
+  flex-direction: column;
+  margin-left: 3rem;
+  max-width: 40rem;
+  padding: 2rem;
+  height: 20rem;
+  justify-content: space-between;
 }
 
-.home-company__text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 38px;
-  margin-top: 200px;
+.large-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
-.home-company__icons {
-  margin-top: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
-}
-
-.home__job-button {
+.button-row {
   display: flex;
   justify-content: center;
-}
-
-.home__employer-link {
-  display: flex;
-  justify-content: center;
-  padding: 30px;
 }
