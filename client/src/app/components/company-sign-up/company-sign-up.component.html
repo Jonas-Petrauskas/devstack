@@ -1,38 +1,35 @@
 
-<div class="main-container">
+<div class="signup">
 
-  <div class="signup">
+  <form class="signup__form">
 
-    <form class="signup__form">
+    <div class="signup__title">Get in Touch</div>
 
-      <div class="signup__title">Sign Up</div>
+    <input
+      required
+      type="text"
+      class="signup__form__line"
+      placeholder="Company name"
+    >
 
-      <input
-        required
-        type="text"
-        class="signup__form__line"
-        placeholder="Company name"
-      >
+    <input
+      required
+      type="email"
+      class="signup__form__line"
+      placeholder="Email"
+      name="email"
+    >
 
-      <input
-        required
-        type="email"
-        class="signup__form__line"
-        placeholder="Email"
-        name="email"
-      >
+    <textarea
+      rows="5"
+      cols="5"
+      name="txt"
+      class="signup__form__textbox"
+      placeholder="Message"
+    ></textarea>
 
-      <textarea
-        rows="5"
-        cols="5"
-        name="txt"
-        class="signup__form__textbox"
-        placeholder="Message"
-      ></textarea>
+    <button>Send</button>
 
-      <button>Send</button>
+  </form>
 
-    </form>
-
-  </div>
 </div>

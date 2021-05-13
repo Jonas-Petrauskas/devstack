@@ -1,38 +1,33 @@
 @use "../../../themes/components" as components;
 @use "../../../themes/buttons";
 
-.main-container {
-  height: 100vh;
-}
-
 .signup {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 92%;
+  height: 100%;
+  padding-top: 3rem;
 }
 
 .signup__form {
   @include components.container_style;
-  width: 500px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 3rem;
 }
 
 .signup__title {
   font-size: 36px;
-  margin-bottom: 50px;
+  margin-bottom: 2rem;
   user-select: none;
 }
 
 .signup__form__line {
   width: 400px;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
   border-radius: 0.5rem;
   box-sizing: border-box;
   border: none;
@@ -43,9 +38,9 @@
 
 .signup__form__textbox {
   padding: 1rem;
-  width: 400px;
-  height: 100px;
-  margin-bottom: 70px;
+  min-width: 400px;
+  min-height: 100px;
+  margin-bottom: 2rem;
   border-radius: 0.5rem;
   box-sizing: border-box;
   border: none;
@@ -55,5 +50,5 @@
 }
 
 button {
-  width: 400px;
+  width: 100%;
 }
