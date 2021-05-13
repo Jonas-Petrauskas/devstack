@@ -14,6 +14,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dropdown.component';
 import { SvgItemComponent } from './components/svg-item/svg-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarLogoutComponent } from './components/navbar-logout/navbar-logout.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     NavbarDropdownComponent,
     SvgItemComponent,
+    NavbarLogoutComponent,
   ],
   imports: [
     BrowserModule,

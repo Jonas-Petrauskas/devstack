@@ -31,10 +31,6 @@
       <!-- end of first container with photo name and location -->
   </div>
 
-  <div class="exp-position">
-    
-  </div>
-
   <div class="techs-container">
     <div *ngFor="let tech of user.technologies">
       <div class="tech">
@@ -49,11 +45,17 @@
 
   </div>
 
-  <div class="expand" (click)="showExpanded()">Bio ⌄</div>
-
-  <div class="bio" *ngIf="expanded">
-    Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim. Labore est nostrud exercitation cupidatat ea qui consectetur voluptate nisi deserunt exercitation.
+  <div class="button" (click)="showExpanded('bio')">
+    <div *ngIf="expanded === false" class="bioButton">Bio<div class="arrow">⌄</div></div>
+    <div *ngIf="expanded">Bio ⌃</div>
   </div>
+  <div class="bio" *ngIf="expanded">
+    <div>Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor.</div>
+    <div (click)="showExpanded('career')" class="expand"><div class="arrow">Job History ⌄</div></div>
+    <div *ngIf="careerExpanded" >In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim.</div>
+
+  </div>
+
 
 
 </div>

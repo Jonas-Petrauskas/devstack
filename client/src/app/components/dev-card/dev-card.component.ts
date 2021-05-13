@@ -18,14 +18,21 @@ export class DevCardComponent implements OnInit {
   user?: User;
 
   expanded: boolean = false;
+  careerExpanded: boolean = false; 
+
 
   constructor(private client: ApiClientService) { }
 
   ngOnInit(): void {
   }
 
-  showExpanded(): void {
-  !this.expanded ? this.expanded = true : this.expanded = false;
+  showExpanded(selectedDrop: string): void {
+    if (selectedDrop === 'bio') {
+      !this.expanded ? this.expanded = true : this.expanded = false;
+    }
+    if (selectedDrop === 'career') {
+      !this.careerExpanded ? this.careerExpanded = true : this.careerExpanded = false
+    }
   }
   
 }
