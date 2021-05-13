@@ -17,9 +17,15 @@ export class DevCardComponent implements OnInit {
   @Input()
   user?: User;
 
+  expanded: boolean = false;
+
   constructor(private client: ApiClientService) { }
 
   ngOnInit(): void {
+  }
+
+  showExpanded(): void {
+  !this.expanded ? this.expanded = true : this.expanded = false;
   }
   
 }
