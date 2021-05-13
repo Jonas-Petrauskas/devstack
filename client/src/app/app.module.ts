@@ -13,6 +13,7 @@ import { DevCardComponent } from './components/dev-card/dev-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dropdown.component';
 import { SvgItemComponent } from './components/svg-item/svg-item.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SvgItemComponent } from './components/svg-item/svg-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

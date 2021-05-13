@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms' 
+
 
 @Component({
   selector: 'app-company-sign-up',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanySignUpComponent implements OnInit {
 
+    profileForm = new FormGroup ({
+    username: new FormControl(''),
+    email: new FormControl(''),
+    message: new FormControl('')
+  })
+
+
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onSubmit() {
+    this.profileForm.reset();
   }
 
 }
