@@ -37,6 +37,7 @@ import { SvgItemComponent } from './components/svg-item/svg-item.component';
     NavbarLogoutComponent,
     SearchComponent,
     SvgItemComponent,
+    NavbarLogoutComponent,
   ],
   imports: [
     BrowserModule,
