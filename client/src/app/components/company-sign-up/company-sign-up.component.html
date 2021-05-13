@@ -1,46 +1,45 @@
 
-<div class="main-container"> 
-  
+<div class="main-container">
+
   <div class="signup">
-    
-    <!-- form -->
-    <form class="signup__form"
-    action="https://formspree.io/f/xbjqgdbz"
-    method="POST"
-    [formGroup]="profileForm" (ngSubmit)="onSubmit()" 
+
+    <form
+      class="signup__form"
+      action="https://formspree.io/f/xbjqgdbz"
+      method="POST"
     >
-      
+
       <div class="signup__title">Sign Up</div>
-      
-      <input 
-        formControlName="username" 
-        required 
-        type="text" 
-        class="signup__form__line" 
+
+      <input
+        formControlName="username"
+        required
+        type="text"
+        class="signup__form__line"
         placeholder="Company name"
       >
 
-      <input 
-        formControlName="email" 
-        required 
-        type="email" 
-        class="signup__form__line" 
-        placeholder="Email"  
+      <input
+        formControlName="email"
+        required
+        type="email"
+        class="signup__form__line"
+        placeholder="Email"
         name="email"
       >
 
-      <textarea 
+      <textarea
         formControlName="message"
-        rows="5" 
-        cols="5" 
-        name="txt" 
+        rows="5"
+        cols="5"
+        name="txt"
         class="signup__form__textbox"
         placeholder="Message"
       ></textarea>
-  
+
       <button type="submit">Send</button>
-    
+
     </form>
-  
+
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AppStateService } from 'src/app/services/app-state.service';
 
@@ -19,13 +20,17 @@ export class NavbarComponent implements OnInit {
   signupExpanded: boolean = false;
 
   showCompanyLogin: boolean = false;
-  showCandidateLogin: boolean = false;
+  showDeveloperLogin: boolean = false;
 
-  constructor(private appState: AppStateService) { }
+  constructor(
+    private appState: AppStateService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.appState.appState.subscribe((state) => this.state = state);
-    this.appState.loginAsDeveloper();
+    this.appState.companyLoginShown.subscribe((state) => this.showCompanyLogin = state);
+    this.appState.developerLoginShown.subscribe((state) => this.showDeveloperLogin = state);
   }
 
   getLoginOptions(): {label: string, link: string}[] {
@@ -60,10 +65,11 @@ export class NavbarComponent implements OnInit {
 
   sliderHandler($event: string): void {
     if ($event === '/company/login') this.showCompanyLogin = true;
-    if ($event === '/candidate/login') this.showCandidateLogin = true;
+    if ($event === '/company/signup') this.router.navigate([$event]);
+    if ($event === '/candidate/login') this.showDeveloperLogin = true;
+    if ($event === '/candidate/signup') this.router.navigate([$event]);
   }
 
-  hideCompanyLogin() { this.showCompanyLogin = false; }
-  hideCandidateLogin() { this.showCandidateLogin = false; }
+  hideLogin() { this.appState.hideLogins(); }
 
 }
