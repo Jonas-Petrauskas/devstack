@@ -3,9 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
+import { CompanySignUpComponent } from './components/company-sign-up/company-sign-up.component';
+import { DeveloperDashboardComponent } from './components/developer-dashboard/developer-dashboard.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { HomeComponent } from './components/home/home.component';
-import { CompanySignUpComponent } from './components/company-sign-up/company-sign-up.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: 'company/signup', component: CompanySignUpComponent },
   { path: 'company/dashboard', component: CompanyDashboardComponent },
   // { path: 'developer/signup', component: DeveloperSignUpComponent },
-  // { path: 'developer/dashboard', component: DeveloperDashboardComponent },
+  { path: 'developer/dashboard', component: DeveloperDashboardComponent },
   { path: '**', redirectTo: '' }, // TODO: redirect to 404 component in the future!
 ];
 
