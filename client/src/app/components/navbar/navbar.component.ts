@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NavbarDropdownComponent } from '../navbar-dropdown/navbar-dropdown.component';
+
+import { AppStateService } from 'src/app/services/app-state.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +10,6 @@ import { NavbarDropdownComponent } from '../navbar-dropdown/navbar-dropdown.comp
 })
 export class NavbarComponent implements OnInit {
 
-  @Input()
   state: "loggedOut" | "company" | "developer" = "loggedOut";
 
   @Input()
@@ -20,9 +21,11 @@ export class NavbarComponent implements OnInit {
   showCompanyLogin: boolean = false;
   showCandidateLogin: boolean = false;
 
-  constructor() { }
+  constructor(private appState: AppStateService) { }
 
   ngOnInit(): void {
+    this.appState.appState.subscribe((state) => this.state = state);
+    this.appState.loginAsDeveloper();
   }
 
   getLoginOptions(): {label: string, link: string}[] {
