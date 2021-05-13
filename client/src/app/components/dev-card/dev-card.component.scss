@@ -7,6 +7,7 @@
   align-items: center;
   width: 63vw;
   height: 71vh;
+  max-width: 700px;
   margin-bottom: 2vh;
   
   @include components.container_style;
