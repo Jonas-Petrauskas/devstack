@@ -1,60 +1,44 @@
-  <app-navbar></app-navbar>
 
-  <div class="home">
+<div class="home-container">
 
-    <!-- Main display and pictures -->
-    <div class="home__main-display">
-      <app-home-main-display></app-home-main-display>
+  <div class="row">
+    <img
+      src="../../../assets/img/home-page-couple.jpg"
+      alt="couple looking at laptop"
+    >
+    <div class="get-started-container">
+
+      <div class="header">Welcome to<br>Devstack</div>
+
+      <div class="large-text">
+        DevStack is Europe's leading developer-focused
+        job platform. <br> Create a profile and
+        let companies apply to you.
+      </div>
+
+      <div class="button-row">
+        <button>Find Me a Job!</button>
+        <div style="width: 3rem;"></div>
+        <button>I'm Hiring</button>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Job card text -->
-    <div class="home__header">
-      Top Jobs for Top Tech Talent
-    </div>
-    <div class="home__subheader">
+  <div class="cards-container">
+
+    <div class="header">Top Jobs for Top Tech Talent</div>
+
+    <div class="dim-subheader">
       Be part of the top 10% and connect with Europe’s top tech companies.
     </div>
 
-
-    <!-- Job cards -->
-    <div class="home__job-cards">
-
-      <app-home-job-card
-        [name]="cards[0]['name']"
-        [title]="cards[0]['title']"
-        [description] = "cards[0]['description']"
-      ></app-home-job-card>
-
-      <app-home-job-card
-        [name]="cards[0]['name']"
-        [title]="cards[0]['title']"
-        [description] = "cards[0]['description']"
-      ></app-home-job-card>
-
-      <app-home-job-card
-        [name]="cards[0]['name']"
-        [title]="cards[0]['title']"
-        [description] = "cards[0]['description']"
-      ></app-home-job-card>
-
+    <div class="cards">
+      <app-home-job-card [cardData]="card1" ></app-home-job-card>
+      <app-home-job-card [cardData]="card2" class="cards__middle"></app-home-job-card>
+      <app-home-job-card [cardData]="card3" ></app-home-job-card>
     </div>
-
-
-    <div class="home__header">
-      +100 companies have already hired using DevStack
-    </div>
-
-    <div class="home__company-icons">
-      <app-home-company-icons></app-home-company-icons>
-    </div>
-
-    <div class="home__header">Sounds interesting?</div>
-
-    <div class="home__job-button">
-      <app-home-button
-        buttonName="Find Me a Job"
-      ></app-home-button>
-    </div>
-    <a class="home__employer-link">I'm an employer</a>
 
   </div>
+
+</div>
