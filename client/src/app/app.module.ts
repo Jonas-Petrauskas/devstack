@@ -10,6 +10,10 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
 import { CompanyLoginComponent } from './components/company-login/company-login.component';
 import { CompanySignUpComponent } from './components/company-sign-up/company-sign-up.component';
 import { DevCardComponent } from './components/dev-card/dev-card.component';
+import { DeveloperDashboardComponent } from './components/developer-dashboard/developer-dashboard.component';
+import { DeveloperDashboardChatComponent } from './components/developer-dashboard-chat/developer-dashboard-chat.component';
+import { DeveloperDashboardMainComponent } from './components/developer-dashboard-main/developer-dashboard-main.component';
+import { DeveloperDashboardOtherComponent } from './components/developer-dashboard-other/developer-dashboard-other.component';
 import { DeveloperLoginComponent } from './components/developer-login/developer-login.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { HomeComponent } from './components/home/home.component';
@@ -28,6 +32,10 @@ import { SvgItemComponent } from './components/svg-item/svg-item.component';
     CompanyLoginComponent,
     CompanySignUpComponent,
     DevCardComponent,
+    DeveloperDashboardComponent,
+    DeveloperDashboardChatComponent,
+    DeveloperDashboardMainComponent,
+    DeveloperDashboardOtherComponent,
     DeveloperLoginComponent,
     DropdownComponent,
     HomeComponent,
