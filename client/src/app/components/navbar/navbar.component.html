@@ -1,5 +1,10 @@
 
-<nav class="navbar" [ngClass]="blurBackground ? 'blurred' : ''">
+<nav 
+  class="navbar" 
+  [ngClass]="blurBackground || mouseIn ? 'blurred' : ''" 
+  (mouseenter)="mouseenterHandler()" 
+  (mouseleave)="mouseleaveHandler()"
+>
   <div class="navbar__logo" routerLink="/">DevStack</div>
 
   <div *ngIf="state === 'loggedOut'" class="navbar__buttons" >

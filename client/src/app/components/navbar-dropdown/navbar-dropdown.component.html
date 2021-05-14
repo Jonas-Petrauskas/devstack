@@ -16,7 +16,7 @@
   <div
     *ngIf="expanded"
     class="button__dropdowns"
-    [ngClass]="blurBackground ? 'blurred' : ''"
+    [ngClass]="blurBackground || expanded ? 'blurred' : ''"
   >
     <div
       *ngFor="let option of dropdownOptions"

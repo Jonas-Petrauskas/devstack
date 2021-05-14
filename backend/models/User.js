@@ -43,7 +43,8 @@ module.exports = (sequelize, Datatypes) => {
   User.associate = (model) => {
     User.hasOne(model.UserCredentials);
 
-    User.hasMany(model.EmploymentHistory);
+    User.hasMany(model.EmploymentHistory, {foreignKey: 'user_id', as: 'employment_history'});
+    User.hasMany(model.EducationHistory, {foreignKey: 'user_id', as: 'education_history'});
 
     User.belongsTo(model.Country, {
       foreignKey: {

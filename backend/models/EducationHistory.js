@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
-  const EmploymentHistory = sequelize.define('EmploymentHistory', {
-    company: {
+  const EducationHistory = sequelize.define('EducationHistory', {
+    institution: {
       type: Datatypes.STRING,
       allowNull: false,
     },
@@ -18,13 +18,13 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
     },
   }, {
-    tableName: 'employment_history',
+    tableName: 'education_history',
     updatedAt: true,
     createdAt: true
   });
 
-  EmploymentHistory.associate = (model) => {
-    EmploymentHistory.belongsTo(model.Country, {
+  EducationHistory.associate = (model) => {
+    EducationHistory.belongsTo(model.Country, {
       foreignKey: {
         name: 'country_id',
         allowNull: false,
@@ -32,7 +32,7 @@ module.exports = (sequelize, Datatypes) => {
       as: 'country',
       onDelete: 'cascade'
     });
-    EmploymentHistory.belongsTo(model.User, {
+    EducationHistory.belongsTo(model.User, {
       foreignKey: {
         name: 'user_id',
         allowNull: false,
@@ -42,5 +42,5 @@ module.exports = (sequelize, Datatypes) => {
     });
   };
 
-  return EmploymentHistory;
+  return EducationHistory;
 };

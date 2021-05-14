@@ -16,7 +16,12 @@ export interface User {
   eligible_countries: Country[],
   bio: string,
   developer_type: DeveloperType,
-  experience_level: ExperienceLevel
+  experience_level: ExperienceLevel,
+  linkedin: string,
+  github: string,
+  photo_path: string,
+
+
 
 }
 
@@ -33,5 +38,8 @@ export const defaultUser: User = {
   bio: '',
   developer_type: {id: -1, name: ''},
   experience_level: {name: '', id: -1},
+  linkedin: '',
+  github: ',',
+  photo_path: '',
 }
 
