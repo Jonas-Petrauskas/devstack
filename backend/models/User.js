@@ -14,6 +14,22 @@ module.exports = (sequelize, Datatypes) => {
       type: Datatypes.STRING,
       allowNull: false,
     },
+    linkedin: {
+      type: Datatypes.STRING,
+      allowNull: true,
+    },
+    github: {
+      type: Datatypes.STRING,
+      allowNull: true,
+    },
+    bio: {
+      type: Datatypes.TEXT,
+      allowNull: true,
+    },
+    photo_path: {
+      type: Datatypes.STRING,
+      allowNull: true,
+    },
     min_salary: {
       type: Datatypes.INTEGER,
       allowNull: true,

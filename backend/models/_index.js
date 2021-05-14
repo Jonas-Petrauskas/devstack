@@ -1,6 +1,6 @@
 'use strict';
 
-const env = process.env.NODE_ENV || 'dev';
+const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config')[env];
 
 const { readdirSync } = require('fs');

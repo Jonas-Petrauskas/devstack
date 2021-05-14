@@ -1,45 +1,35 @@
 
-<div class="main-container">
+<div class="signup">
 
-  <div class="signup">
+  <form class="signup__form">
 
-    <form
-      class="signup__form"
-      action="https://formspree.io/f/xbjqgdbz"
-      method="POST"
+    <div class="signup__title">Get in Touch</div>
+
+    <input
+      required
+      type="text"
+      class="signup__form__line"
+      placeholder="Company name"
     >
 
-      <div class="signup__title">Sign Up</div>
+    <input
+      required
+      type="email"
+      class="signup__form__line"
+      placeholder="Email"
+      name="email"
+    >
 
-      <input
-        formControlName="username"
-        required
-        type="text"
-        class="signup__form__line"
-        placeholder="Company name"
-      >
+    <textarea
+      rows="5"
+      cols="5"
+      name="txt"
+      class="signup__form__textbox"
+      placeholder="Message"
+    ></textarea>
 
-      <input
-        formControlName="email"
-        required
-        type="email"
-        class="signup__form__line"
-        placeholder="Email"
-        name="email"
-      >
+    <button>Send</button>
 
-      <textarea
-        formControlName="message"
-        rows="5"
-        cols="5"
-        name="txt"
-        class="signup__form__textbox"
-        placeholder="Message"
-      ></textarea>
+  </form>
 
-      <button type="submit">Send</button>
-
-    </form>
-
-  </div>
 </div>

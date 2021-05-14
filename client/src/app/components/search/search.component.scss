@@ -22,4 +22,9 @@
 
 .selected-option {
   background-color: color.$dropdown_selected;
+  cursor: pointer;
+}
+
+.option {
+  cursor: pointer;
 }

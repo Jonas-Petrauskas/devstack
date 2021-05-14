@@ -6,8 +6,8 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
       unique: true,
     },
-    is_european_union: {
-      type: Datatypes.BOOLEAN,
+    region: {
+      type: Datatypes.STRING,
       allowNull: false,
     },
   }, {
