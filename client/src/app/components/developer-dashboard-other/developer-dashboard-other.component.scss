@@ -9,15 +9,40 @@
   @include components.container_style;
 }
 
-.info-container__info {
-  display: flex;
-  flex-direction: row;
+.dev-experience-container,
+.dev-education-container {
+  padding: 2vh;
 }
 
-.bio,
-.name-text,
-.exp-item {
-  margin: 0.5rem;
-  text-align: center;
-  padding: 0.5rem;
+.dev__exp__position,
+.dev__edu__school {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 50px 2px 100px;
+}
+
+.dev__exp,
+.dev__edu {
+  padding: 5px 50px 2px 100px;
+}
+
+.dev__exp__description {
+  padding: 40px 80px 50px 100px;
+  line-height: 1.4;
+}
+
+.dev__experience__title,
+.dev__education__title {
+  padding: 20px 0 20px 50px;
+  font-size: 1.5rem;
+}
+
+.dev__line {
+  border-top: 1px solid gray;
+  width: 100%;
+  height: 2px;
+}
+
+.dev__edu__year {
+  padding: 5px 80px 25px 100px;
 }
