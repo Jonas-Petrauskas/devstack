@@ -12,16 +12,7 @@ import { User } from 'src/app/interfaces/User';
 })
 export class DeveloperDashboardComponent implements OnInit {
 
-  // experience1 = experience1;
-  // experience2 = experience2;
-  // experience3 = experience3;
-  // education1 = education1;
-  // education2 = education2;
-  // education3 = education3;
-
-
   user?: User;
-
 
   constructor(private client: ApiClientService) { }
 
@@ -32,6 +23,6 @@ export class DeveloperDashboardComponent implements OnInit {
 
   getUsers(): void {
     this.client.getAllUsers()
-    .subscribe((users) => this.user = users[3]);
+    .subscribe((users) => this.user = users[6]);
   }
 }
