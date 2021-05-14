@@ -9,15 +9,31 @@
   @include components.container_style;
 }
 
-.info-container__info {
-  display: flex;
-  flex-direction: row;
+.dev-experience-container {
+  padding: 2vh;
 }
 
-.bio,
-.name-text,
-.exp-item {
-  margin: 0.5rem;
-  text-align: center;
-  padding: 0.5rem;
+.dev__exp__title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 1vh;
+}
+
+.dev-experience-container,
+.dev__exp {
+  padding: 1vh 1vh 1vh 2vh;
+}
+
+.dev-education-container {
+  padding: 2vh;
+}
+
+.dev-education-container,
+.dev__edu {
+  padding: 1vh 1vh 1vh 2vh;
+}
+
+.dev__edu__title {
+  font-size: 1.5rem;
+  padding-bottom: 1vh;
 }

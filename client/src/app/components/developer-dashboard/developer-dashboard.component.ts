@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from 'src/app/services/api-client.service';
 import { User } from 'src/app/interfaces/User';
+// import { experience1, experience2, experience3, education1, education2, education3 } from '../developer-dashboard-other/experience-education';
 
 
 
@@ -10,6 +11,14 @@ import { User } from 'src/app/interfaces/User';
   styleUrls: ['./developer-dashboard.component.scss']
 })
 export class DeveloperDashboardComponent implements OnInit {
+
+  // experience1 = experience1;
+  // experience2 = experience2;
+  // experience3 = experience3;
+  // education1 = education1;
+  // education2 = education2;
+  // education3 = education3;
+
 
   user?: User;
 
