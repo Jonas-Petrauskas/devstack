@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
-  const EmploymentHistory = sequelize.define('EmploymentHistory', {
-    company: {
+  const EducationHistory = sequelize.define('EducationHistory', {
+    institution: {
       type: Datatypes.STRING,
       allowNull: false,
     },
@@ -27,10 +27,10 @@ module.exports = (sequelize, Datatypes) => {
     createdAt: true
   });
 
-  EmploymentHistory.associate = (model) => {
-    EmploymentHistory.belongsTo(model.Country);
-    EmploymentHistory.belongsTo(model.User);
+  EducationHistory.associate = (model) => {
+    EducationHistory.belongsTo(model.Country);
+    EducationHistory.belongsTo(model.User);
   };
 
-  return EmploymentHistory;
+  return EducationHistory;
 };
