@@ -10,12 +10,4 @@
 .user-main-container {
   display: flex;
   flex-direction: column;
-  margin-left: 10vw;
-}
-
-.user-chat-container {
-  width: 20%;
-  height: 600px;
-  margin-top: 10vh;
-  @include components.container_style;
 }

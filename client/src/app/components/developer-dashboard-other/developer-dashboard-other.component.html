@@ -1,20 +1,27 @@
 
 <div class="info-container">
 
-  <div class="dev-experience-container">
-    <div class="dev__exp__title">Experience</div>
-    <div class="dev__exp">{{exp.possition}}</div>
-    <div class="dev__exp">{{exp.company}}</div>
-    <div class="dev__exp">{{exp.date}}</div>
-    <div class="dev__exp">{{exp.location}}</div>
-    <div class="dev__exp">{{exp.description}}</div>
+  <!-- developer experiene container -->
+  <div class="dev__experience__title">Experience</div>
+
+  <div class="dev-experience-container" *ngFor="let experience of experienceHistory">
+    <div class="dev__exp__position">{{experience.position}}</div>
+    <div class="dev__exp">{{experience.company}}</div>
+    <div class="dev__exp">{{experience.location}}</div>
+    <div class="dev__exp">{{experience.date}}</div>
+    <div class="dev__exp__description">{{experience.description}}</div>
+    <div class="dev__line"></div>
   </div>
 
-  <div class="dev-education-container">
-    <div class="dev__edu__title">Education</div>
-    <div class="dev__edu">{{edu.school}}</div>
-    <div class="dev__edu">{{edu.degree}}</div>
-    <div class="dev__edu">{{edu.year}}</div>
+  <!-- developer education container -->
+
+  <div class="dev__education__title">Education</div>
+
+  <div class="dev-education-container" *ngFor="let education of educationHistory">
+    <div class="dev__edu__school">{{education.school}}</div>
+    <div class="dev__edu">{{education.degree}}</div>
+    <div class="dev__edu__year">{{education.year}}</div>
+    <div class="dev__line"></div>
   </div>
 
 </div>

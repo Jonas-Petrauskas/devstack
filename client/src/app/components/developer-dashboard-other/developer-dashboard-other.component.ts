@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 // import { User } from 'src/app/interfaces/User';
 import { ApiClientService } from 'src/app/services/api-client.service';
-import { experience1, education1 } from './experience-education';
+import { experienceHistoryMock } from './experienceHistory';
+import { educationHistoryMock } from './educationHistory';
 
 
 
@@ -12,8 +13,9 @@ import { experience1, education1 } from './experience-education';
 })
 export class DeveloperDashboardOtherComponent implements OnInit {
 
-  @Input() exp = experience1;
-  @Input() edu = education1;
+  @Input() experienceHistory = experienceHistoryMock;
+  @Input() educationHistory = educationHistoryMock;
+  // @Input() edu = education1;
 
   // @Input()
   // photo: {url: string, id: number} = {url: 'https://ca.slack-edge.com/T0WU5R8NT-U014XEG2PJ4-bb2847571bc1-512', id: 1};

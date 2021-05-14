@@ -9,31 +9,40 @@
   @include components.container_style;
 }
 
-.dev-experience-container {
-  padding: 2vh;
-}
-
-.dev__exp__title {
-  font-weight: bold;
-  font-size: 1.5rem;
-  padding-bottom: 1vh;
-}
-
 .dev-experience-container,
-.dev__exp {
-  padding: 1vh 1vh 1vh 2vh;
-}
-
 .dev-education-container {
   padding: 2vh;
 }
 
-.dev-education-container,
-.dev__edu {
-  padding: 1vh 1vh 1vh 2vh;
+.dev__exp__position,
+.dev__edu__school {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 50px 2px 100px;
 }
 
-.dev__edu__title {
+.dev__exp,
+.dev__edu {
+  padding: 5px 50px 2px 100px;
+}
+
+.dev__exp__description {
+  padding: 40px 80px 50px 100px;
+  line-height: 1.4;
+}
+
+.dev__experience__title,
+.dev__education__title {
+  padding: 20px 0 20px 50px;
   font-size: 1.5rem;
-  padding-bottom: 1vh;
+}
+
+.dev__line {
+  border-top: 1px solid gray;
+  width: 100%;
+  height: 2px;
+}
+
+.dev__edu__year {
+  padding: 5px 80px 25px 100px;
 }
