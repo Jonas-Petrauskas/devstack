@@ -141,6 +141,7 @@
 .tech {
   flex: 1;
   padding:0 1vw;
+  
 }
 
 .bioButton {
@@ -149,9 +150,49 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 54px;
+  border-radius: 4px;
+  background-color: #cbd1d79e;
 }
 
 .arrow {
   padding-bottom: 6px;
   margin-left: 3px;
+  width: 23px;
+  margin-top: 6px;
+
+}
+
+.arrow-down {
+  padding-bottom: 6px;
+  margin-left: 3px;
+  width: 23px;
+  margin-bottom: 6px;
+  transform: rotate(180deg);
+}
+
+.career {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.carreerButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 115px;
+  border-radius: 4px;
+  background-color: #cbd1d79e;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.carreer-text {
+  margin-bottom: 5px;
 }
