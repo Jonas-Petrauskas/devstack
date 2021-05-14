@@ -5,10 +5,6 @@ module.exports = (sequelize, Datatypes) => {
       type: Datatypes.STRING,
       allowNull: false,
     },
-    country: {
-      type: Datatypes.STRING,
-      allowNull: false,
-    },
     start_date: {
       type: Datatypes.DATE,
       allowNull: false,
@@ -22,14 +18,28 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
     },
   }, {
-    tableName: 'employment_histories',
+    tableName: 'employment_history',
     updatedAt: true,
     createdAt: true
   });
 
   EmploymentHistory.associate = (model) => {
-    EmploymentHistory.belongsTo(model.Country);
-    EmploymentHistory.belongsTo(model.User);
+    EmploymentHistory.belongsTo(model.Country, {
+      foreignKey: {
+        name: 'country_id',
+        allowNull: false,
+      },
+      as: 'country',
+      onDelete: 'cascade'
+    });
+    EmploymentHistory.belongsTo(model.User, {
+      foreignKey: {
+        name: 'user_id',
+        allowNull: false,
+      },
+      as: 'user',
+      onDelete: 'cascade'
+    });
   };
 
   return EmploymentHistory;
