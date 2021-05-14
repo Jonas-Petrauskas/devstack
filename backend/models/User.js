@@ -44,6 +44,7 @@ module.exports = (sequelize, Datatypes) => {
     User.hasOne(model.UserCredentials);
 
     User.hasMany(model.EmploymentHistory);
+    User.hasMany(model.EducationHistory);
 
     User.belongsTo(model.Country, {
       foreignKey: {
