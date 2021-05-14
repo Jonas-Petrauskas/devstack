@@ -33,6 +33,7 @@ export class DevCardComponent implements OnInit {
     if (selectedDrop === 'career') {
       !this.careerExpanded ? this.careerExpanded = true : this.careerExpanded = false
     }
+    console.log(this.user)
   }
   
 }
