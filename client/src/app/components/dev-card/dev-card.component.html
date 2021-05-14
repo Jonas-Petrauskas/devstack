@@ -46,14 +46,30 @@
   </div>
 
   <div class="button" (click)="showExpanded('bio')">
-    <div *ngIf="expanded === false" class="bioButton">Bio<div class="arrow">⌄</div></div>
-    <div *ngIf="expanded">Bio ⌃</div>
+    <div *ngIf="expanded === false" class="bioButton">Bio<img class="arrow"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png">
+    </div>
+
+    <div *ngIf="expanded" class="bioButton">Bio<img
+      class="arrow-down"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png"
+    ></div>
   </div>
   <div class="bio" *ngIf="expanded">
-    <div>Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor.</div>
-    <div (click)="showExpanded('career')" class="expand"><div class="arrow">Job History ⌄</div></div>
-    <div *ngIf="careerExpanded" >In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim.</div>
+    <div>Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor.</div>   
+  </div>
 
+  <div class="career" *ngIf="expanded">
+    
+    <div class="carreerButton" (click)="showExpanded('career')" *ngIf="careerExpanded === false">Job History<img
+      class="arrow"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png"
+    ></div>
+    <div class="carreerButton" (click)="showExpanded('career')" *ngIf="careerExpanded">Job History<img
+      class="arrow-down"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png"
+    ></div>
+    <div *ngIf="careerExpanded" class="carreer-text">In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim.</div>
   </div>
 
 
