@@ -29,7 +29,27 @@ const getUsers = async (req, res) => {
           model: db.Country,
           through: 'UserEligibleCountries',
           as: 'eligible_countries'
-        }
+        },
+        {
+          model: db.EducationHistory,
+          as: 'education_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
+        {
+          model: db.EmploymentHistory,
+          as: 'employment_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
       ]
     });
 
@@ -76,7 +96,27 @@ const getFilteredUsers = async (req, res) => {
           model: db.Country,
           through: 'UserEligibleCountries',
           as: 'eligible_countries'
-        }
+        },
+        {
+          model: db.EducationHistory,
+          as: 'education_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
+        {
+          model: db.EmploymentHistory,
+          as: 'employment_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
       ]
     });
 

@@ -1,0 +1,33 @@
+[
+  {
+    "userId": 1,
+    "history": [
+      {
+        "company": "Google",
+        "start_date": "2019-05-24T13:23:03.904Z",
+        "end_date": "2020-01-24T13:23:03.904Z",
+        "description": "This was an even cooler job and stuff.",
+        "country_id": 2
+      },
+      {
+        "company": "Amazon",
+        "start_date": "2018-05-24T13:23:03.904Z",
+        "end_date": "2019-03-24T13:23:03.904Z",
+        "description": "This was a cool job and stuff.",
+        "country_id": 2
+      }
+    ]
+  },
+  {
+    "userId": 2,
+    "history": [
+      {
+        "company": "Facebook",
+        "start_date": "2021-01-20T13:23:03.904Z",
+        "end_date": "2022-05-20T13:23:03.904Z",
+        "description": "I worked here for some time.",
+        "country_id": 1
+      }
+    ]
+  }
+]
