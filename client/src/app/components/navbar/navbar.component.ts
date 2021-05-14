@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
 
   @Input()
   blurBackground: boolean = false;
+  mouseIn: boolean = false;
 
   loginExpanded: boolean = false;
   signupExpanded: boolean = false;
@@ -32,6 +33,9 @@ export class NavbarComponent implements OnInit {
     this.appState.companyLoginShown.subscribe((state) => this.showCompanyLogin = state);
     this.appState.developerLoginShown.subscribe((state) => this.showDeveloperLogin = state);
   }
+
+  mouseenterHandler() { this.mouseIn = true; }
+  mouseleaveHandler() { this.mouseIn = false; }
 
   getLoginOptions(): {label: string, link: string}[] {
     return [

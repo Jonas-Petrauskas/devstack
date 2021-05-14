@@ -3,7 +3,7 @@
 
   <div class="photo-name">
     <div class="photo-container">
-      <img [src]="photo.url" alt="" class="user-photo">
+      <img [src]="user.photo_path" alt="" class="user-photo">
     </div>
 
     <div class="name-location">
@@ -46,14 +46,9 @@
   </div>
 
   <div class="button" (click)="showExpanded('bio')">
-    <div *ngIf="expanded === false" class="bioButton">Bio<img class="arrow"
+    <div  class="bioButton">Bio<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
       src="../../../assets/img/navbar-dropdown-down-arrow.png">
     </div>
-
-    <div *ngIf="expanded" class="bioButton">Bio<img
-      class="arrow-down"
-      src="../../../assets/img/navbar-dropdown-down-arrow.png"
-    ></div>
   </div>
   <div class="bio" *ngIf="expanded">
     <div>{{user.bio}}</div>   

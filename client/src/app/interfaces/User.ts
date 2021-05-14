@@ -19,6 +19,8 @@ export interface User {
   experience_level: ExperienceLevel,
   linkedin: string,
   github: string,
+  photo_path: string,
+
 
 
 }
@@ -37,6 +39,7 @@ export const defaultUser: User = {
   developer_type: {id: -1, name: ''},
   experience_level: {name: '', id: -1},
   linkedin: '',
-  github: ','
+  github: ',',
+  photo_path: '',
 }
 
