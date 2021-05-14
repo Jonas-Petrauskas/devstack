@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const express = require('express');
+const http = require('http');
+const setupSocketIO = require('./socketio/socketio');
 const cors = require('cors');
 
 // * ROUTERS
@@ -9,6 +11,7 @@ const publicRouter = require('./routes/public-router');
 
 // * SERVER INSTANCE
 const app = express();
+const server = http.createServer(app);
 
 const corsConfig = {
   origin: process.env.CLIENT_HOST,
@@ -35,7 +38,10 @@ const db = require('./models/_index');
   // * DATABASE SEEDER
   await require('./seeders/_seeder')(db);
 
-  app.listen(port, () => {
+  // * SETUP SOCKET IO
+  await setupSocketIO(server);
+
+  server.listen(port, () => {
     console.log(`Server listening on: http://${host}:${port}/`);
   });
 })();
