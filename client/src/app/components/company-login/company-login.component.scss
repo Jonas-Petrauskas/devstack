@@ -6,7 +6,11 @@ a {
 }
 
 .login {
-  background-color: $gray;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(200, 200, 200),
+    rgb(60, 90, 90)
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -14,12 +18,11 @@ a {
   height: 100vh;
   width: 40rem;
   border-radius: 0.5rem 0rem 0rem 0.5rem;
-  box-shadow: 0px 0px 5px 0px #202020;
 }
 
 .login__title {
   font-size: 28px;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 30px;
   user-select: none;
 }
@@ -31,8 +34,8 @@ a {
   box-sizing: border-box;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0px 0px 5px 0px #000000;
   outline-width: 0;
+  background-color: white;
 }
 
 .login__form__remember-me {
@@ -57,5 +60,11 @@ a {
   box-sizing: border-box;
   border: none;
   border-radius: 0.5rem;
-  box-shadow: 0px 0px 5px 0px #000000;
+  background-color: white;
+}
+
+.line {
+  border-top: 1px solid #202020;
+  width: 35rem;
+  padding-bottom: 30px;
 }
