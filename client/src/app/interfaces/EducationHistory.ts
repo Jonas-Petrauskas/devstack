@@ -1,9 +1,10 @@
 
-export interface EmploymentHistory {
+export interface EducationHistory {
   id: number,
   user_id: number,
-  company: string,
-  title: string,
+  institution: string,
+  degree: string,
+  field: string,
   country: string,
   start_date: Date,
   end_date: Date,
