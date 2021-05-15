@@ -23,6 +23,6 @@ export class DeveloperDashboardComponent implements OnInit {
 
   getUsers(): void {
     this.client.getAllUsers()
-    .subscribe((users) => this.user = users[6]);
+    .subscribe((users) => this.user = users[2]);
   }
 }
