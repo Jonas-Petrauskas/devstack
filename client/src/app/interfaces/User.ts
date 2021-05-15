@@ -1,5 +1,6 @@
 import { Country } from './Country';
 import { DeveloperType } from './DeveloperType';
+import { EducationHistory } from './EducationHistory';
 import { EmploymentHistory } from './EmploymentHistory';
 import { ExperienceLevel } from './ExperienceLevel';
 import { Technology } from './Technology';
@@ -11,6 +12,7 @@ export interface User {
   last_name: string,
   min_salary: number,
   technologies: Technology[],
+  education_history: EducationHistory[],
   employment_history: EmploymentHistory[],
   country: Country,
   eligible_countries: Country[],
@@ -20,9 +22,6 @@ export interface User {
   linkedin: string,
   github: string,
   photo_path: string,
-
-
-
 }
 
 export const defaultUser: User = {
@@ -32,6 +31,7 @@ export const defaultUser: User = {
   last_name: '',
   min_salary: 0,
   technologies: [],
+  education_history: [],
   employment_history: [],
   country: { id: 1, name: "Argentina", is_european_union : false},
   eligible_countries: [],
@@ -42,4 +42,3 @@ export const defaultUser: User = {
   github: ',',
   photo_path: '',
 }
-

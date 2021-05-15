@@ -4,6 +4,8 @@
     "history": [
       {
         "institution": "Harvard University",
+        "degree": "BSc",
+        "field": "Computer Science",
         "start_date": "2017-05-24T13:23:03.904Z",
         "end_date": "2020-01-24T13:23:03.904Z",
         "description": "This was an even cooler education and stuff.",
@@ -11,6 +13,8 @@
       },
       {
         "institution": "東京大学",
+        "degree": "学士",
+        "field": "ソフトウェアエンジニアリング",
         "start_date": "2018-05-24T13:23:03.904Z",
         "end_date": "2019-03-24T13:23:03.904Z",
         "description": "ここではいろんなことを勉強していました。",
@@ -23,6 +27,8 @@
     "history": [
       {
         "institution": "University of Barcelona",
+        "degree": "MSc",
+        "field": "Software Engineering",
         "start_date": "2015-01-20T13:23:03.904Z",
         "end_date": "2022-05-20T13:23:03.904Z",
         "description": "I studied here for some time.",

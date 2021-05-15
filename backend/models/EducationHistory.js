@@ -5,6 +5,14 @@ module.exports = (sequelize, Datatypes) => {
       type: Datatypes.STRING,
       allowNull: false,
     },
+    degree: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },
+    field: {
+      type: Datatypes.STRING,
+      allowNull: false,
+    },
     start_date: {
       type: Datatypes.DATE,
       allowNull: false,
