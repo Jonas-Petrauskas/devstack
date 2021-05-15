@@ -3,7 +3,8 @@
 
   <div class="photo-name">
     <div class="photo-container">
-      <img [src]="photo.url" alt="" class="user-photo">
+      <img [src]="user.photo_path" alt="" class="user-photo">
+      <div class="country">📍{{user.country.name}}</div>
     </div>
 
     <div class="name-location">
@@ -25,16 +26,16 @@
       </div>
 
       <div class="links">
-        <div class="country">📍{{user.country.name}}</div>
       </div>
       
     </div>
       <!-- end of first container with photo name and location -->
   </div>
-
-  <div class="exp-position">
-    
+  
+  <div class="bio">
+    Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim. Labore est nostrud exercitation cupidatat ea qui consectetur voluptate nisi deserunt exercitation.
   </div>
+  <div class="dev__line"></div>
 
   <div class="techs-container">
     <div *ngFor="let tech of user.technologies">
@@ -50,9 +51,6 @@
 
   </div>
 
-  <div class="bio">
-    Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim. Labore est nostrud exercitation cupidatat ea qui consectetur voluptate nisi deserunt exercitation.
-  </div>
 
 
 </div>
