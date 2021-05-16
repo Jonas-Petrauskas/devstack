@@ -1,11 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiClientService } from 'src/app/services/api-client.service';
-import { User } from 'src/app/interfaces/User';
-
-import { experienceHistoryMock } from './experienceHistory';
-import { educationHistoryMock } from './educationHistory';
-
-
+import { EducationHistory } from'src/app/interfaces/EducationHistory';
+import { EmploymentHistory } from 'src/app/interfaces/EmploymentHistory';
 
 @Component({
   selector: 'app-developer-dashboard-other',
@@ -14,14 +10,13 @@ import { educationHistoryMock } from './educationHistory';
 })
 export class DeveloperDashboardOtherComponent implements OnInit {
 
-  // @Input()
-  // user?: User;
-
-  @Input() experienceHistory = experienceHistoryMock;
-  @Input() educationHistory = educationHistoryMock;
-
+  @Input()
+  educationHistory?: EducationHistory[];
+  @Input()
+  employmentHistory?: EmploymentHistory[];
+    
   constructor(private client: ApiClientService) { }
-
+  
   ngOnInit(): void {
   }
 
