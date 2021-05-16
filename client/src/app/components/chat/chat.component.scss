@@ -1,0 +1,57 @@
+.chat-container {
+  width: 255px;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.btn-down {
+  cursor: pointer;
+  transform: scaleY(-1);
+  transition: all .5s;
+}
+
+.btn:hover {
+  background-color: #c7c8cf;
+}
+
+.chat-bar {
+  display: flex;
+  flex-direction: row;
+  padding: 1px;
+  width: 213px;
+  height: 54px;
+}
+
+img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+
+.user-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-icons {
+  display: flex;
+  flex-direction: row;
+  width: 170px;
+  justify-content: flex-end;
+  align-items: center;
+  svg {
+    margin: 0 6px;
+  }
+
+}
