@@ -72,6 +72,7 @@ export class NavbarComponent implements OnInit {
     if ($event === '/company/signup') this.router.navigate([$event]);
     if ($event === '/developer/login') this.showDeveloperLogin = true;
     if ($event === '/developer/signup') this.router.navigate([$event]);
+    this.mouseIn = false;
   }
 
   hideLogin() { this.appState.hideLogins(); }
