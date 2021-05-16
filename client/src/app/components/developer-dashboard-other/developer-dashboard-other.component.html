@@ -1,17 +1,21 @@
 
-<div class="info-container">
+<div class="info-container" *ngIf="educationHistory">
 
   <!-- developer experiene container -->
   <div class="dev__experience__title">Experience</div>
-  <div class="dev_title_line"></div>
+  <div class="dev_title_line" *ngIf="employmentHistory"></div>
   
   
-  <div class="dev-experience-container" *ngFor="let experience of experienceHistory">
-    <div class="dev__exp__position">{{experience.position}}</div>
-    <div class="dev__exp">{{experience.company}}</div>
-    <div class="dev__exp">{{experience.location}}</div>
-    <div class="dev__exp">{{experience.date}}</div>
-    <div class="dev__exp__description">{{experience.description}}</div>
+  <div class="dev-experience-container" *ngFor="let employment of employmentHistory">
+    <div class="dev__exp__position">{{employment.company}}</div>
+    <div class="dev__exp">{{employment.title}}</div>
+    <div class="dev__exp">{{employment.country.name}}</div>
+    <div class="date-container">
+      <div class="date">{{employment.start_date | date: 'MMM d, y'}}</div>
+      <div class="date__line"></div>
+      <div class="date">{{employment.end_date | date: 'MMM d, y'}}</div>
+    </div>
+    <div class="dev__exp__description">{{employment.description}}</div>
     <div class="dev__line"></div>
   </div>
 
@@ -20,9 +24,16 @@
   <div class="dev__education__title">Education</div>
 
   <div class="dev-education-container" *ngFor="let education of educationHistory">
-    <div class="dev__edu__school">{{education.school}}</div>
+    <div class="dev__edu__school">{{education.institution}}</div>
     <div class="dev__edu">{{education.degree}}</div>
-    <div class="dev__edu__year">{{education.year}}</div>
+    <div class="dev__edu">{{education.field}}</div>
+    <div class="dev__edu">{{education.country.name}}</div>
+    <div class="date-container">
+      <div class="dev__edu__year">{{education.start_date | date: 'MMM d, y'}}</div>
+      <div class="date__line"></div>
+      <div class="dev__edu__year">{{education.end_date | date: 'MMM d, y'}}</div>
+    </div>
+    <div class="dev__edu__description">{{education.description}}</div>
     <div class="dev__line"></div>
   </div>
 
