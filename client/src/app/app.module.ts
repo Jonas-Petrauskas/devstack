@@ -23,6 +23,7 @@ import { NavbarDropdownComponent } from './components/navbar-dropdown/navbar-dro
 import { NavbarLogoutComponent } from './components/navbar-logout/navbar-logout.component';
 import { SearchComponent } from './components/search/search.component';
 import { SvgItemComponent } from './components/svg-item/svg-item.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { SvgItemComponent } from './components/svg-item/svg-item.component';
     SearchComponent,
     SvgItemComponent,
     NavbarLogoutComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

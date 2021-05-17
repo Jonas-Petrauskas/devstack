@@ -1,0 +1,33 @@
+<div class="chat-container">
+
+  <div class="chat-bar" >
+    <div class="user-photo"><img src="https://media-exp1.licdn.com/dms/image/C5603AQG6T8basbHZMg/profile-displayphoto-shrink_100_100/0/1567594283688?e=1626307200&v=beta&t=-2qovDNl8h4yKrmQB0yWCq2Eqf30yE_JvHNG0RXzNQ0" alt=""></div>
+    <div class="svg-icons">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false"><path d="M15 2.53a1.51 1.51 0 01-.44 1L9.15 9 6 10l1-3.12 5.44-5.44A1.5 1.5 0 0115 2.53zM12 11a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1h3V2H5a3 3 0 00-3 3v6a3 3 0 003 3h6a3 3 0 003-3V8h-2z"></path></svg> -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false"><path d="M3 9.5A1.5 1.5 0 114.5 8 1.5 1.5 0 013 9.5zM11.5 8A1.5 1.5 0 1013 6.5 1.5 1.5 0 0011.5 8zm-5 0A1.5 1.5 0 108 6.5 1.5 1.5 0 006.5 8z"></path></svg>
+      <div (click)="expandChat()" [ngClass]="!expanded? 'btn' : 'btn-down'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false"><path d="M15 11L8 6.39 1 11V8.61L8 4l7 4.61z"></path></svg></div>
+    </div>
+  </div>
+
+  <div class="expanded-chat" *ngIf="expanded">
+
+    <div class="chat-preview" *ngFor="let chat of chats">
+      <div class="chat-photo"><img [src]="chat.sender.photo_path" alt="user photo"></div>
+      <div class="chat-text" (click)="selectChat(chat)">
+        <div class="name-date">
+          <div>{{chat.sender.first_name}}</div>
+          <div>{{chat.date | date}}</div>
+        </div>
+        <div class="last-messge">
+          {{chat.messages[0].messageText}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="opened-chat" *ngIf="chatIsOpen">
+    <div (click)="closeChat()">back</div>
+  </div>
+
+
+</div>
