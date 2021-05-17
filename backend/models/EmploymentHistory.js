@@ -36,12 +36,12 @@ module.exports = (sequelize, Datatypes) => {
       as: 'country',
       onDelete: 'cascade'
     });
-    EmploymentHistory.belongsTo(model.User, {
+    EmploymentHistory.belongsTo(model.Developer, {
       foreignKey: {
-        name: 'user_id',
+        name: 'developer_id',
         allowNull: false,
       },
-      as: 'user',
+      as: 'developer',
       onDelete: 'cascade'
     });
   };

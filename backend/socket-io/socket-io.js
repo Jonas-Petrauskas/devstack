@@ -12,21 +12,43 @@ const setupSocketIO = (io, db) => {
 
     // * DEVELOPER SOCKET SETUP
     if (userId && token && userType === 'developer') {
-      socket.join(`user_${userId}`);
+      socket.join(`developer_${userId}`);
 
       // * EMIT MESSAGE HISTORY ON CONNECTION
       const messageHistory = await db.Message.findAll({
-        where: { user_id: userId }
+        where: { developer_id: userId },
+        order: [['timestamp', 'DESC']],
+        include: [
+          { model: db.Company, as: 'company' },
+          { model: db.Developer, as: 'developer' }
+        ]
       });
+      const chatsHistory = {};
+      messageHistory.forEach((msg) => {
+        const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+
+        if (!chatsHistory[developer_id]) {
+          chatsHistory[developer_id] = {
+            company,
+            developer,
+            last_timestamp: timestamp,
+            messages: [{id, message, timestamp, company_id, developer_id, is_from_developer}]
+          }
+        }
+        else {
+          chatsHistory[developer_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+        }
+      });
+
       socket.emit('message-history', messageHistory);
 
       // * HANDLE DEVELOPER MESSAGE
       socket.on('client-message', async ({message, targetId}) => {
         const msg = await db.Message.create({
           company_id: targetId,
-          user_id: userId,
+          developer_id: userId,
           message: message,
-          is_from_user: true,
+          is_from_developer: true,
           timestamp: Date.now()
         });
 
@@ -41,21 +63,43 @@ const setupSocketIO = (io, db) => {
 
       // * EMIT MESSAGE HISTORY ON CONNECTION
       const messageHistory = await db.Message.findAll({
-        where: { company_id: userId }
+        where: { company_id: userId },
+        order: [['timestamp', 'DESC']],
+        include: [
+          { model: db.Company, as: 'company' },
+          { model: db.Developer, as: 'developer' }
+        ]
       });
-      socket.emit('message-history', messageHistory);
+      const chatsHistory = {};
+      messageHistory.forEach((msg) => {
+        const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+
+        if (!chatsHistory[developer_id]) {
+          chatsHistory[developer_id] = {
+            company,
+            developer,
+            last_timestamp: timestamp,
+            messages: [{id, message, timestamp, company_id, developer_id, is_from_developer}]
+          }
+        }
+        else {
+          chatsHistory[developer_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+        }
+      });
+
+      socket.emit('message-history', Object.values(chatsHistory));
 
       // * HANDLE COMPANY MESSAGE
       socket.on('client-message', async ({message, targetId}) => {
         const msg = await db.Message.create({
           company_id: userId,
-          user_id: targetId,
+          developer_id: targetId,
           message: message,
-          is_from_user: false,
+          is_from_developer: false,
           timestamp: Date.now()
         });
 
-        io.to(`user_${targetId}`).emit('server-message', msg);
+        io.to(`developer_${targetId}`).emit('server-message', msg);
         io.emit('server-message', msg);
       });
     }

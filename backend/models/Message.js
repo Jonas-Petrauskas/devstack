@@ -10,7 +10,7 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
       default: Date.now()
     },
-    is_from_user: {
+    is_from_developer: {
       type: Datatypes.BOOLEAN,
       allowNull: false,
     }
@@ -22,12 +22,12 @@ module.exports = (sequelize, Datatypes) => {
 
   Message.associate = (model) => {
 
-    Message.belongsTo(model.User, {
+    Message.belongsTo(model.Developer, {
       foreignKey: {
-        name: 'user_id',
+        name: 'developer_id',
         allowNull: false,
       },
-      as: 'user',
+      as: 'developer',
       onDelete: 'cascade'
     });
 

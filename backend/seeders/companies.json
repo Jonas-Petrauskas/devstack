@@ -1,10 +1,10 @@
 [
   {
     "name": "Codeworks",
-    "logo_path": "https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/330/original/codeworks-logo.png"
+    "photo_path": "https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/330/original/codeworks-logo.png"
   },
   {
     "name": "Google",
-    "logo_path": "https://i.pinimg.com/originals/46/c0/f7/46c0f7ba7e750939590904afcdaa7851.png"
+    "photo_path": "https://i.pinimg.com/originals/46/c0/f7/46c0f7ba7e750939590904afcdaa7851.png"
   }
 ]

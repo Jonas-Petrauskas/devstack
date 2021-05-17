@@ -1,6 +1,6 @@
 module.exports = (sequelize, Datatypes) => {
 
-  const UserCredentials = sequelize.define('UserCredentials', {
+  const DeveloperCredentials = sequelize.define('DeveloperCredentials', {
     // * TO BE HASHED WITH BCRYPT
     username: {
       type: Datatypes.STRING,
@@ -13,14 +13,14 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: false,
     },
   }, {
-    tableName: 'user_credentials',
+    tableName: 'developer_credentials',
     updatedAt: true,
     createdAt: true
   });
 
-  UserCredentials.associate = (model) => {
-    UserCredentials.belongsTo(model.User);
+  DeveloperCredentials.associate = (model) => {
+    DeveloperCredentials.belongsTo(model.Developer);
   };
 
-  return UserCredentials;
+  return DeveloperCredentials;
 };
