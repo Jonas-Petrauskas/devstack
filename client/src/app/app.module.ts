@@ -11,7 +11,6 @@ import { CompanyLoginComponent } from './components/company-login/company-login.
 import { CompanySignUpComponent } from './components/company-sign-up/company-sign-up.component';
 import { DevCardComponent } from './components/dev-card/dev-card.component';
 import { DeveloperDashboardComponent } from './components/developer-dashboard/developer-dashboard.component';
-import { DeveloperDashboardChatComponent } from './components/developer-dashboard-chat/developer-dashboard-chat.component';
 import { DeveloperDashboardMainComponent } from './components/developer-dashboard-main/developer-dashboard-main.component';
 import { DeveloperDashboardOtherComponent } from './components/developer-dashboard-other/developer-dashboard-other.component';
 import { DeveloperLoginComponent } from './components/developer-login/developer-login.component';
@@ -24,6 +23,7 @@ import { NavbarLogoutComponent } from './components/navbar-logout/navbar-logout.
 import { SearchComponent } from './components/search/search.component';
 import { SvgItemComponent } from './components/svg-item/svg-item.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { MessageComponent } from './components/message/message.component';
 import { CompanyLogosComponent } from './components/company-logos/company-logos.component';
 
 
@@ -35,7 +35,6 @@ import { CompanyLogosComponent } from './components/company-logos/company-logos.
     CompanySignUpComponent,
     DevCardComponent,
     DeveloperDashboardComponent,
-    DeveloperDashboardChatComponent,
     DeveloperDashboardMainComponent,
     DeveloperDashboardOtherComponent,
     DeveloperLoginComponent,
@@ -49,7 +48,8 @@ import { CompanyLogosComponent } from './components/company-logos/company-logos.
     SvgItemComponent,
     NavbarLogoutComponent,
     ChatComponent,
-    CompanyLogosComponent,
+    MessageComponent,
+    CompanyLogosComponent
   ],
   imports: [
     BrowserModule,
