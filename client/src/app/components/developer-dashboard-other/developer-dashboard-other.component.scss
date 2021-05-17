@@ -19,6 +19,31 @@
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 50px 2px 100px;
+  height: 30px;
+  transition: height 0.5s;
+}
+
+.dev__exp__position:hover,
+.dev__edu__school:hover {
+  height: 50px;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 50px 2px 100px;
+}
+
+.date,
+.dev__edu__year {
+  margin-right: 1rem;
+}
+
+.date__line {
+  border-top: 1px solid #202020;
+  width: 3rem;
+  margin-top: 8px;
+  margin-right: 1rem;
 }
 
 .dev__exp,
@@ -26,7 +51,8 @@
   padding: 5px 50px 2px 100px;
 }
 
-.dev__exp__description {
+.dev__exp__description,
+.dev__edu__description {
   padding: 40px 80px 50px 100px;
   line-height: 1.5;
 }
@@ -49,6 +75,16 @@
   height: 2px;
 }
 
-.dev__edu__year {
-  padding: 5px 80px 25px 100px;
-}
+// .dev__edu__year {
+//   padding: 5px 80px 25px 100px;
+// }
+
+// .date-container1 {
+//   display: flex;
+//   flex-direction: row;
+//   border: 2px solid red;
+// }
+
+// .dev__edu__year {
+//   border: 2px solid green;
+// }

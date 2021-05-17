@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from 'src/app/services/api-client.service';
 import { User } from 'src/app/interfaces/User';
-// import { experience1, experience2, experience3, education1, education2, education3 } from '../developer-dashboard-other/experience-education';
-
-
 
 @Component({
   selector: 'app-developer-dashboard',
@@ -23,6 +20,7 @@ export class DeveloperDashboardComponent implements OnInit {
 
   getUsers(): void {
     this.client.getAllUsers()
-    .subscribe((users) => this.user = users[2]);
+    .subscribe((users) => this.user = users[0]);
   }
+
 }
