@@ -5,7 +5,7 @@ import { ApiClientService } from 'src/app/services/api-client.service';
 import { DeveloperType } from 'src/app/interfaces/DeveloperType';
 import { Technology } from 'src/app/interfaces/Technology';
 import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
-import { User, defaultUser } from 'src/app/interfaces/User';
+import { Developer, defaultDeveloper } from 'src/app/interfaces/Developer';
 import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({
@@ -24,7 +24,7 @@ export class CompanyDashboardComponent implements OnInit {
   selectedTechs: Technology[] = [];
   selectedExp: ExperienceLevel = {name: 'name', id: 0};
   searchQuery: string = '';
-  filteredUsers: User[] = [];
+  filteredUsers: Developer[] = [];
   selectedSkills: TaggedItem[] = [];
   searchAlertMessage: boolean = false;
 
