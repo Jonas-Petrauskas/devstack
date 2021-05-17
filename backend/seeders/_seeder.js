@@ -20,6 +20,6 @@ module.exports = async (db) => {
   await companiesSeeder(db);
   await developersSeeder(db);
 
-  // await educationHistorySeeder(db);
-  // await employmentHistorySeeder(db);
+  await educationHistorySeeder(db);
+  await employmentHistorySeeder(db);
 }
