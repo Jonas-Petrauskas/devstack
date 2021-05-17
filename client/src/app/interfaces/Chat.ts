@@ -1,18 +1,19 @@
-import { Message, testMessage } from "./Message";
+import { Message } from "./Message";
 import { defaultDeveloper, Developer } from "./Developer";
+import { Company, defaultCompany } from "./Company";
 
 
 export interface Chat {
-  sender: Developer,
-  date: Date,
-  lastMessageTime: Date,
+  company: Company,
+  developer: Developer,
+  last_timestamp: Date,
   messages: Message[],
 }
 
 export const defaultChat: Chat = {
-  sender: defaultDeveloper,
-  date: new Date,
-  lastMessageTime: new Date,
-  messages: [testMessage]
+  company: defaultCompany,
+  developer: defaultDeveloper,
+  last_timestamp: new Date,
+  messages: []
 
 }

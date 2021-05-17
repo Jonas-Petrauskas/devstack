@@ -23,6 +23,7 @@ import { NavbarLogoutComponent } from './components/navbar-logout/navbar-logout.
 import { SearchComponent } from './components/search/search.component';
 import { SvgItemComponent } from './components/svg-item/svg-item.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { MessageComponent } from './components/message/message.component';
 import { CompanyLogosComponent } from './components/company-logos/company-logos.component';
 
 
@@ -47,7 +48,8 @@ import { CompanyLogosComponent } from './components/company-logos/company-logos.
     SvgItemComponent,
     NavbarLogoutComponent,
     ChatComponent,
-    CompanyLogosComponent,
+    MessageComponent,
+    CompanyLogosComponent
   ],
   imports: [
     BrowserModule,

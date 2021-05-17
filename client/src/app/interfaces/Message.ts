@@ -1,13 +1,9 @@
 import { defaultDeveloper, Developer } from "./Developer";
 
 export interface Message {
-  sender: Developer,
-  messageText: string,
+  company_id: string,
+  developer_id: string,
   timestamp: Date,
-}
-
-export const testMessage: Message = {
-  sender: defaultDeveloper,
-  messageText: " a message",
-  timestamp: new Date,
+  message: string,
+  is_from_developer: boolean
 }

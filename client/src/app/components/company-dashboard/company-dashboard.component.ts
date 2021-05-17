@@ -5,7 +5,8 @@ import { ApiClientService } from 'src/app/services/api-client.service';
 import { DeveloperType } from 'src/app/interfaces/DeveloperType';
 import { Technology } from 'src/app/interfaces/Technology';
 import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
-import { Developer } from 'src/app/interfaces/Developer';
+
+import { Developer, defaultDeveloper } from 'src/app/interfaces/Developer';
 import { TaggedItem } from 'src/app/interfaces/TaggedItem';
 
 @Component({

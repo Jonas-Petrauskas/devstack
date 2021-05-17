@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ChatService } from '../../services/chat.service';
 import { Chat, defaultChat } from 'src/app/interfaces/Chat';
+import { AppStateService } from 'src/app/services/app-state.service';
 
 @Component({
   selector: 'app-chat',
@@ -10,17 +11,28 @@ import { Chat, defaultChat } from 'src/app/interfaces/Chat';
 })
 export class ChatComponent implements OnInit {
 
-  expanded: boolean = true;
-  // TODO chats interface
-  chats?: Chat[]= [defaultChat];
+  expanded: boolean = false;
+  chats: Chat[]= [];
   openChat: Chat = defaultChat;
-  chatIsOpen: boolean = false;
+  chatIsOpen: boolean = true;
+  appState: 'loggedOut'|'company'|'developer' = 'loggedOut'
 
-  constructor(private chatService: ChatService) { }
+  constructor(
+    private chatService: ChatService,
+    private appStateService: AppStateService
+    ) { }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+    this.appStateService.appState.subscribe((state) =>{
+      this.appState = state
+      if (this.appState !== 'loggedOut') {
+            this.chatService.signIn(this.appState, '1')
+      }
+    })
+    
     this.chatService.chats.subscribe((chats) => {
-      // this.chats = chats;
+      this.chats = chats;
+      console.log(chats)
     })
   }
 
@@ -42,6 +54,7 @@ export class ChatComponent implements OnInit {
 
   sendMessage(message: string): void {
     this.chatService.sendMessage(message,'1');
+    console.log(this.appState)
   }
 
 
