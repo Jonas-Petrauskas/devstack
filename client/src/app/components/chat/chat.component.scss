@@ -1,11 +1,14 @@
 .chat-container {
-  width: 255px;
+  width: 275px;
   background-color: rgb(255, 255, 255);
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
 }
 
 .btn {
@@ -26,9 +29,10 @@
 .chat-bar {
   display: flex;
   flex-direction: row;
-  padding: 1px;
-  width: 213px;
+  // padding: 1px;
+  width: 274px;
   height: 54px;
+  border-bottom: 1px solid #c7c8cf;
 }
 
 img {
@@ -42,16 +46,48 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 9px
 }
 
 .svg-icons {
   display: flex;
   flex-direction: row;
-  width: 170px;
+  width: 225px;
   justify-content: flex-end;
   align-items: center;
   svg {
     margin: 0 6px;
   }
+}
 
+.expanded-chat {
+  border-bottom: 1px solid #c7c8cf;
+  height: 500px;
+  width: 100%;
+}
+.chat-preview {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #c7c8cf;
+  cursor: pointer;
+  .chat-photo {
+    margin-left: 9px;
+  }
+  .chat-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    .name-date {
+      display: flex;
+      flex-direction: row;
+      div {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.opened-chat {
+  height: 334px;
 }

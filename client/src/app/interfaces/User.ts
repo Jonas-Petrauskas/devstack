@@ -40,5 +40,5 @@ export const defaultUser: User = {
   experience_level: {name: '', id: -1},
   linkedin: '',
   github: ',',
-  photo_path: '',
+  photo_path: 'https://media-exp1.licdn.com/dms/image/C5603AQG6T8basbHZMg/profile-displayphoto-shrink_100_100/0/1567594283688?e=1626307200&v=beta&t=-2qovDNl8h4yKrmQB0yWCq2Eqf30yE_JvHNG0RXzNQ0',
 }
