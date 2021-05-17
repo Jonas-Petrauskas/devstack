@@ -6,7 +6,7 @@ const processUserQueryParams = require('../functions/user-query-params-getter');
 
 const getDevelopers = async (req, res) => {
   try {
-    let developers = await db.User.findAll({
+    let developers = await db.Developer.findAll({
       include: [
         {
           model: db.Country,
@@ -53,9 +53,9 @@ const getDevelopers = async (req, res) => {
       ]
     });
 
-    users = users.map(user => user.toJSON());
+    developers = developers.map(developer => developer.toJSON());
 
-    res.status(200).json(users);
+    res.status(200).json(developers);
   }
   catch (error) {
     res.status(500).send(error);
@@ -143,8 +143,8 @@ const getFilteredDevelopers = async (req, res) => {
 
 const postDeveloper = async (req, res) => {
   try { // TODO !
-    const users = await db.User.findAll();
-    res.status(201).json(users);
+    const developers = await db.Developer.findAll();
+    res.status(201).json(developers);
   }
   catch (error) {
     res.status(500).send(error);
