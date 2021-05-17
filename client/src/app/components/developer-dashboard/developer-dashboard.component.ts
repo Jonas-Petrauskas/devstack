@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiClientService } from 'src/app/services/api-client.service';
-import { User } from 'src/app/interfaces/User';
+import { Developer } from 'src/app/interfaces/Developer';
 
 @Component({
   selector: 'app-developer-dashboard',
@@ -9,7 +9,7 @@ import { User } from 'src/app/interfaces/User';
 })
 export class DeveloperDashboardComponent implements OnInit {
 
-  user?: User;
+  user?: Developer;
 
   constructor(private client: ApiClientService) { }
 

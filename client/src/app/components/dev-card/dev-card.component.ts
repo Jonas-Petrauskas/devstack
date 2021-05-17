@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User, defaultUser } from 'src/app/interfaces/User';
+import { Developer } from 'src/app/interfaces/Developer';
 import { ApiClientService } from 'src/app/services/api-client.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class DevCardComponent implements OnInit {
   bio: {desc: string, id: number} = {desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', id: 1};
 
   @Input()
-  user?: User;
+  user?: Developer;
 
   expanded: boolean = false;
   careerExpanded: boolean = false; 
