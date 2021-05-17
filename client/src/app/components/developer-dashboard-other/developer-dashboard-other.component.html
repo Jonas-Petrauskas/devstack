@@ -5,36 +5,53 @@
   <div class="dev__experience__title">Experience</div>
   <div class="dev_title_line" *ngIf="employmentHistory"></div>
   
-  
   <div class="dev-experience-container" *ngFor="let employment of employmentHistory">
-    <div class="dev__exp__position">{{employment.company}}</div>
-    <div class="dev__exp">{{employment.title}}</div>
-    <div class="dev__exp">{{employment.country.name}}</div>
-    <div class="date-container">
-      <div class="date">{{employment.start_date | date: 'MMM d, y'}}</div>
-      <div class="date__line"></div>
-      <div class="date">{{employment.end_date | date: 'MMM d, y'}}</div>
+    
+    <div class="dev-flex">
+
+      <div class="date-container">
+        <div class="date">{{employment.end_date | date: 'MMM d, y'}}</div>
+        <div class="date__line"></div>
+        <div class="date">{{employment.start_date | date: 'MMM d, y'}}</div>
+      </div>
+
+      <div class="experience">
+        <div class="dev__exp__position">{{employment.company}}</div>
+        <div class="dev__exp">{{employment.title}}</div>
+        <div class="dev__exp">{{employment.country.name}}</div>
+        <div class="dev__exp__description">{{employment.description}}</div>
+      </div>
+      
     </div>
-    <div class="dev__exp__description">{{employment.description}}</div>
-    <div class="dev__line"></div>
+
   </div>
+  <div class="dev__line"></div>
 
   <!-- developer education container -->
 
   <div class="dev__education__title">Education</div>
 
   <div class="dev-education-container" *ngFor="let education of educationHistory">
-    <div class="dev__edu__school">{{education.institution}}</div>
-    <div class="dev__edu">{{education.degree}}</div>
-    <div class="dev__edu">{{education.field}}</div>
-    <div class="dev__edu">{{education.country.name}}</div>
-    <div class="date-container">
-      <div class="dev__edu__year">{{education.start_date | date: 'MMM d, y'}}</div>
-      <div class="date__line"></div>
-      <div class="dev__edu__year">{{education.end_date | date: 'MMM d, y'}}</div>
+    
+    <div class="dev-flex">
+
+      <div class="date-container">
+        <div class="date">{{education.end_date | date: 'MMM d, y'}}</div>
+        <div class="date__line"></div>
+        <div class="date">{{education.start_date | date: 'MMM d, y'}}</div>
+      </div>
+  
+      <div class="education">
+        <div class="dev__edu__school">{{education.institution}}</div>
+        <div class="dev__edu">{{education.degree}}</div>
+        <div class="dev__edu">{{education.field}}</div>
+        <div class="dev__edu">{{education.country.name}}</div>
+        <div class="dev__edu__description">{{education.description}}</div>
+      </div>
+      
     </div>
-    <div class="dev__edu__description">{{education.description}}</div>
-    <div class="dev__line"></div>
+    
+    
   </div>
 
 </div>
