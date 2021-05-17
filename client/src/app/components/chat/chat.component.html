@@ -12,14 +12,14 @@
   <div class="expanded-chat" *ngIf="expanded">
 
     <div class="chat-preview" *ngFor="let chat of chats">
-      <div class="chat-photo"><img [src]="chat.sender.photo_path" alt="user photo"></div>
+      <div class="chat-photo"><img [src]="" alt="user photo"></div>
       <div class="chat-text" (click)="selectChat(chat)">
         <div class="name-date">
-          <div>{{chat.sender.first_name}}</div>
-          <div>{{chat.date | date}}</div>
+          <div>first Name</div>
+          <div>date</div>
         </div>
         <div class="last-messge">
-          {{chat.messages[0].messageText}}
+          last message
         </div>
       </div>
     </div>
@@ -27,6 +27,12 @@
 
   <div class="opened-chat" *ngIf="chatIsOpen">
     <div (click)="closeChat()">back</div>
+    <div *ngFor="let message of openChat.messages">
+      <app-message [message]="message"></app-message>
+    </div>
+    <div (click)="sendMessage('test message')">send message</div>
+
+
   </div>
 
 

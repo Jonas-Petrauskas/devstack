@@ -23,11 +23,16 @@ export class ChatService {
       auth: { token: 'abc' }
     });
 
+    this.socket.on('connect', () => {
+      console.log('connected at:', this.socket.id)
+    })
+
+    this.socket.on('disconnect', () => {
+      console.log('disconnected at:', this.socket.id)
+    })
+
     this.socket.on('message-history', (messageHistory: Message[]) => {
-      messageHistory.sort((a, b) => Number(a.timestamp) - Number(b.timestamp))
-        // .forEach( (message) => {
-        //   if (this.chats.contains())
-        // })
+      console.log(messageHistory)
     });
 
     this.socket.on('server-message', (message: Message) => {
@@ -36,6 +41,7 @@ export class ChatService {
   }
 
   sendMessage( message: string, targetId: string) {
+    console.log(message, targetId)
     this.socket.emit('client-message', { message, targetId });
   }
 
