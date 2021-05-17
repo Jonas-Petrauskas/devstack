@@ -27,8 +27,8 @@ const setupSocketIO = (io, db) => {
       messageHistory.forEach((msg) => {
         const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
 
-        if (!chatsHistory[developer_id]) {
-          chatsHistory[developer_id] = {
+        if (!chatsHistory[company_id]) {
+          chatsHistory[company_id] = {
             company,
             developer,
             last_timestamp: timestamp,
@@ -36,7 +36,7 @@ const setupSocketIO = (io, db) => {
           }
         }
         else {
-          chatsHistory[developer_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+          chatsHistory[company_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
         }
       });
 
