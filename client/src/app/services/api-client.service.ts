@@ -8,7 +8,7 @@ import { Country } from '../interfaces/Country';
 import { DeveloperType } from '../interfaces/DeveloperType';
 import { ExperienceLevel } from '../interfaces/ExperienceLevel';
 import { Technology } from '../interfaces/Technology';
-import { User } from '../interfaces/User';
+import { Developer } from '../interfaces/Developer';
 
 
 @Injectable({
@@ -18,10 +18,7 @@ export class ApiClientService {
 
   baseUrl: string = 'http://localhost:3005';
 
-  constructor(
-    private http: HttpClient,
-    // private otherService: OtherService, // * other services
-  ) { }
+  constructor(private http: HttpClient) { }
 
   getCountries(): Observable<Country[]> {
     return this.http
@@ -51,16 +48,16 @@ export class ApiClientService {
       .pipe(catchError(this.handleError<Technology[]>([])));
   }
 
-  getAllUsers(): Observable<User[]> {
+  getAllUsers(): Observable<Developer[]> {
     return this.http
-      .get<User[]>(`${this.baseUrl}/users`)
-      .pipe(catchError(this.handleError<User[]>([])));
+      .get<Developer[]>(`${this.baseUrl}/developers`)
+      .pipe(catchError(this.handleError<Developer[]>([])));
   }
 
-  getFilteredUsers(query: string): Observable<User[]> {
+  getFilteredUsers(query: string): Observable<Developer[]> {
     return this.http
-      .get<User[]>(`${this.baseUrl}/users/${query}`)
-      .pipe(catchError(this.handleError<User[]>([])));
+      .get<Developer[]>(`${this.baseUrl}/developers/${query}`)
+      .pipe(catchError(this.handleError<Developer[]>([])));
   }
 
   private handleError<T>(result?: T) {

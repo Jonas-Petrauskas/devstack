@@ -1,13 +1,13 @@
-import { defaultUser, User } from "./User";
+import { defaultDeveloper, Developer } from "./Developer";
 
 export interface Message {
-  sender: User,
+  sender: Developer,
   messageText: string,
   timestamp: Date,
 }
 
 export const testMessage: Message = {
-  sender: defaultUser,
+  sender: defaultDeveloper,
   messageText: " a message",
   timestamp: new Date,
 }
