@@ -5,7 +5,7 @@ import { EmploymentHistory } from './EmploymentHistory';
 import { ExperienceLevel } from './ExperienceLevel';
 import { Technology } from './Technology';
 
-export interface User {
+export interface Developer {
   id: number,
   email: string,
   first_name: string,
@@ -24,7 +24,7 @@ export interface User {
   photo_path: string,
 }
 
-export const defaultUser: User = {
+export const defaultDeveloper: Developer = {
   id: -1,
   email: '',
   first_name: '',
