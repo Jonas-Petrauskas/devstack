@@ -1,6 +1,6 @@
 [
   {
-    "userId": 1,
+    "developerId": 1,
     "history": [
       {
         "company": "Google",
@@ -21,7 +21,7 @@
     ]
   },
   {
-    "userId": 2,
+    "developerId": 2,
     "history": [
       {
         "company": "Facebook",

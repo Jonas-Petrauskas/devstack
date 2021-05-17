@@ -11,8 +11,8 @@
     "country_id": 1,
     "developer_type_id": 1,
     "experience_level_id": 2,
-    "technologies": [12, 5, 9, 25],
-    "eligible_countries": [9, 3]
+    "technology_ids": [12, 5, 9, 25],
+    "eligible_country_ids": [9, 3]
   },
   {
     "email": "bernat_duran@gmail.com",
@@ -26,8 +26,8 @@
     "country_id": 5,
     "developer_type_id": 2,
     "experience_level_id": 1,
-    "technologies": [5, 6, 23],
-    "eligible_countries": [5, 7]
+    "technology_ids": [5, 6, 23],
+    "eligible_country_ids": [5, 7]
   },
   {
     "email": "sean_dillon@gmail.com",
@@ -41,8 +41,8 @@
     "country_id": 10,
     "developer_type_id": 1,
     "experience_level_id": 2,
-    "technologies": [1, 2, 3, 7, 8, 9],
-    "eligible_countries": [1, 2, 9, 11]
+    "technology_ids": [1, 2, 3, 7, 8, 9],
+    "eligible_country_ids": [1, 2, 9, 11]
   },
   {
     "email": "alex_zanardi@gmail.com",
@@ -56,8 +56,8 @@
     "country_id": 13,
     "developer_type_id": 3,
     "experience_level_id": 1,
-    "technologies": [12, 13, 5, 7, 8, 9],
-    "eligible_countries": [1, 2, 9, 11, 19, 15]
+    "technology_ids": [12, 13, 5, 7, 8, 9],
+    "eligible_country_ids": [1, 2, 9, 11, 19, 15]
   },
   {
     "email": "berta_cumellas@gmail.com",
@@ -71,8 +71,8 @@
     "country_id": 19,
     "developer_type_id": 1,
     "experience_level_id": 4,
-    "technologies": [1, 2, 3, 4, 5, 7, 8, 9, 16, 17, 24],
-    "eligible_countries": [19, 20, 21]
+    "technology_ids": [1, 2, 3, 4, 5, 7, 8, 9, 16, 17, 24],
+    "eligible_country_ids": [19, 20, 21]
   },
   {
     "email": "sara_samain@hotmail.com",
@@ -86,8 +86,8 @@
     "country_id": 20,
     "developer_type_id": 2,
     "experience_level_id": 1,
-    "technologies": [6, 11, 12, 15, 16, 19],
-    "eligible_countries": [5, 7, 19, 20, 21]
+    "technology_ids": [6, 11, 12, 15, 16, 19],
+    "eligible_country_ids": [5, 7, 19, 20, 21]
   },
   {
     "email": "stefan_sarmir@yahoo.com",
@@ -101,8 +101,8 @@
     "country_id": 12,
     "developer_type_id": 2,
     "experience_level_id": 2,
-    "technologies": [13, 17, 18, 20],
-    "eligible_countries": [5, 7, 19, 20, 21]
+    "technology_ids": [13, 17, 18, 20],
+    "eligible_country_ids": [5, 7, 19, 20, 21]
   },
   {
     "email": "bill_gates@yahoo.com",
@@ -116,7 +116,7 @@
     "country_id": 20,
     "developer_type_id": 2,
     "experience_level_id": 2,
-    "technologies": [13, 17, 18, 20],
-    "eligible_countries": [5, 7, 19, 20, 21]
+    "technology_ids": [13, 17, 18, 20],
+    "eligible_country_ids": [5, 7, 19, 20, 21]
   }
 ]

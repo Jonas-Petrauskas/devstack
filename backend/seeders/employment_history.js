@@ -7,11 +7,11 @@ module.exports = async (db) => {
   if(notEmpty) return;
 
   employment_history.forEach(async (data) => {
-    const userId = data.userId;
+    const developerId = data.developerId;
     const history = data.history;
-    const user = await db.User.findOne({
-      where: { id: userId }
+    const developer = await db.Developer.findOne({
+      where: { id: developerId }
     });
-    history.forEach(async (entry) => await user.createEmployment_history(entry));
+    history.forEach(async (entry) => await developer.createEmployment_history(entry));
   })
 };

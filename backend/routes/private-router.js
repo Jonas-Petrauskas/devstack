@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-const userController = require('../controllers/UserController');
+const developerController = require('../controllers/DeveloperController');
 
-router.get('/users', userController.getUsers);
-router.get('/users/:query', userController.getFilteredUsers);
+router.get('/developers', developerController.getDevelopers);
+router.get('/developers/:query', developerController.getFilteredDevelopers);
 
 module.exports = router;

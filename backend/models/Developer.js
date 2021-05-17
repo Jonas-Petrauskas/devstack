@@ -1,6 +1,6 @@
 module.exports = (sequelize, Datatypes) => {
 
-  const User = sequelize.define('User', {
+  const Developer = sequelize.define('Developer', {
     email: {
       type: Datatypes.STRING,
       allowNull: false,
@@ -35,18 +35,18 @@ module.exports = (sequelize, Datatypes) => {
       allowNull: true,
     },
   }, {
-    tableName: 'users',
+    tableName: 'developers',
     updatedAt: true,
     createdAt: true
   });
 
-  User.associate = (model) => {
-    User.hasOne(model.UserCredentials);
+  Developer.associate = (model) => {
+    Developer.hasOne(model.DeveloperCredentials);
 
-    User.hasMany(model.EmploymentHistory, {foreignKey: 'user_id', as: 'employment_history'});
-    User.hasMany(model.EducationHistory, {foreignKey: 'user_id', as: 'education_history'});
+    Developer.hasMany(model.EmploymentHistory, {foreignKey: 'developer_id', as: 'employment_history'});
+    Developer.hasMany(model.EducationHistory, {foreignKey: 'developer_id', as: 'education_history'});
 
-    User.belongsTo(model.Country, {
+    Developer.belongsTo(model.Country, {
       foreignKey: {
         name: 'country_id',
         allowNull: false,
@@ -55,7 +55,7 @@ module.exports = (sequelize, Datatypes) => {
       onDelete: 'cascade'
     });
 
-    User.belongsTo(model.DeveloperType, {
+    Developer.belongsTo(model.DeveloperType, {
       foreignKey: {
         name: 'developer_type_id',
         allowNull: false,
@@ -64,7 +64,7 @@ module.exports = (sequelize, Datatypes) => {
       onDelete: 'cascade'
     });
 
-    User.belongsTo(model.ExperienceLevel, {
+    Developer.belongsTo(model.ExperienceLevel, {
       foreignKey: {
         name: 'experience_level_id',
         allowNull: false,
@@ -73,9 +73,9 @@ module.exports = (sequelize, Datatypes) => {
       onDelete: 'cascade'
     });
 
-    User.belongsToMany(model.Technology, { as: 'technologies', through: 'UserTechnologies'} );
-    User.belongsToMany(model.Country, { as: 'eligible_countries', through: 'UserEligibleCountries'});
+    Developer.belongsToMany(model.Technology, { as: 'technologies', through: 'DeveloperTechnologies'} );
+    Developer.belongsToMany(model.Country, { as: 'eligible_countries', through: 'DeveloperEligibleCountries'});
   };
 
-  return User;
+  return Developer;
 };

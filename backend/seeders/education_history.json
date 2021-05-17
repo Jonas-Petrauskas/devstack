@@ -1,6 +1,6 @@
 [
   {
-    "userId": 1,
+    "developerId": 1,
     "history": [
       {
         "institution": "Harvard University",
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "userId": 2,
+    "developerId": 2,
     "history": [
       {
         "institution": "University of Barcelona",
