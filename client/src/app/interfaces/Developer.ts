@@ -6,7 +6,7 @@ import { ExperienceLevel } from './ExperienceLevel';
 import { Technology } from './Technology';
 
 export interface Developer {
-  id: number,
+  id: string,
   email: string,
   first_name: string,
   last_name: string,
@@ -25,7 +25,7 @@ export interface Developer {
 }
 
 export const defaultDeveloper: Developer = {
-  id: -1,
+  id: '',
   email: '',
   first_name: '',
   last_name: '',

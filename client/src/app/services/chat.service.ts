@@ -31,12 +31,24 @@ export class ChatService {
       console.log('disconnected at:', this.socket.id)
     })
 
-    this.socket.on('message-history', (messageHistory: Message[]) => {
-      console.log(messageHistory)
+    this.socket.on('message-history', (chatHistory: Chat[]) => {
+      console.log(chatHistory)
+      this.chats.next(chatHistory);
     });
 
-    this.socket.on('server-message', (message: Message) => {
-
+    this.socket.on('server-message', (chat: Chat) => {
+      const newChats = this.chats.value.slice();
+      let isNewChat = true;
+      for (let i = 0; i < newChats.length; ++i) {
+        if ( newChats[i].company.id === chat.company.id && newChats[i].developer.id === chat.developer.id) {
+          newChats[i] = chat;
+          isNewChat = false;
+          break
+        }
+      }
+      isNewChat ? newChats.push(chat) : false;
+      newChats.sort((a,b) => Number(a.last_timestamp) - Number(b.last_timestamp))
+      this.chats.next(newChats);
     });
   }
 

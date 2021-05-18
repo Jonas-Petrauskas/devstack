@@ -13,8 +13,8 @@ export class ChatComponent implements OnInit {
 
   expanded: boolean = false;
   chats: Chat[]= [];
-  openChat: Chat = defaultChat;
-  chatIsOpen: boolean = true;
+  chatIsOpen: boolean = false;
+  openIndex: number = 0;
   appState: 'loggedOut'|'company'|'developer' = 'loggedOut'
 
   constructor(
@@ -26,13 +26,13 @@ export class ChatComponent implements OnInit {
     this.appStateService.appState.subscribe((state) =>{
       this.appState = state
       if (this.appState !== 'loggedOut') {
-            this.chatService.signIn(this.appState, '1')
+        this.chatService.signIn(this.appState, '5')
       }
     })
     
     this.chatService.chats.subscribe((chats) => {
       this.chats = chats;
-      console.log(chats)
+      // console.log(chats);
     })
   }
 
@@ -40,8 +40,8 @@ export class ChatComponent implements OnInit {
     this.expanded ? this.expanded = false : this.expanded = true;
   }
 
-  selectChat(chat: Chat): void {
-    this.openChat = chat;
+  selectChat(index: number): void {
+    this.openIndex = index;
     this.expanded = false;
     this.chatIsOpen = true;
   }
@@ -55,6 +55,10 @@ export class ChatComponent implements OnInit {
   sendMessage(message: string): void {
     this.chatService.sendMessage(message,'1');
     console.log(this.appState)
+    this.chatService.chats.subscribe((chats) => {
+      this.chats = chats;
+      console.log(chats)
+    })
   }
 
 

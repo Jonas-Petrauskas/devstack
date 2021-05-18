@@ -40,7 +40,7 @@ const setupSocketIO = (io, db) => {
         }
       });
 
-      socket.emit('message-history', messageHistory);
+      socket.emit('message-history', Object.values(chatsHistory));
 
       // * HANDLE DEVELOPER MESSAGE
       socket.on('client-message', async ({message, targetId}) => {
@@ -61,7 +61,7 @@ const setupSocketIO = (io, db) => {
           ]
         });
 
-        const updatedChat = {};
+        let updatedChat = {};
         updatedChatMessages.forEach((msg) => {
           const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
 
@@ -133,7 +133,7 @@ const setupSocketIO = (io, db) => {
             { model: db.Developer, as: 'developer' }
           ]
         });
-        const updatedChat = {};
+        let updatedChat = {};
         updatedChatMessages.forEach((msg) => {
           const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
 
