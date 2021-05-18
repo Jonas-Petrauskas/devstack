@@ -10,7 +10,8 @@ import { Developer } from '../interfaces/Developer';
 export class AppStateService {
 
   appState = new BehaviorSubject<'loggedOut'|'company'|'developer'>('loggedOut');
-  activeUser = new BehaviorSubject<Company | Developer | null>(null);
+  activeCompany = new BehaviorSubject<Company | null>(null);
+  activeDeveloper = new BehaviorSubject<Developer | null>(null);
 
   companyLoginShown = new BehaviorSubject<boolean>(false);
   developerLoginShown = new BehaviorSubject<boolean>(false);
@@ -19,17 +20,18 @@ export class AppStateService {
 
   logout() {
     this.appState.next('loggedOut');
-    this.activeUser.next(null);
+    this.activeCompany.next(null);
+    this.activeDeveloper.next(null);
   }
 
   setCompany(company: Company) {
     this.appState.next('company');
-    this.activeUser.next(company);
+    this.activeCompany.next(company);
   }
 
   setDeveloper(developer: Developer) {
     this.appState.next('developer');
-    this.activeUser.next(developer);
+    this.activeDeveloper.next(developer);
   }
 
   showCompanyLogin() { this.companyLoginShown.next(true); }
