@@ -3,18 +3,28 @@
     "developerId": 1,
     "history": [
       {
-        "company": "Google",
-        "title": "Junior Software Developer",
+        "company": "ION",
+        "title": "Software Developer",
         "start_date": "2019-05-24T13:23:03.904Z",
         "end_date": "2020-01-24T13:23:03.904Z",
-        "description": "This job position consist of providing immaculate service though phone/email/chat. From the consumer's perspective, we are considered as Brand Experts therefore it requires superior knowledge in all sports/products from each brand.",        "country_id": 2
+        "description": "Product Manager overseeing metals strategy across ION's multiple commodity trading and risk management products including Aspect, Allegro Horizon and Openlink Endur.",
+        "country_id": 2
       },
       {
-        "company": "Amazon",
-        "title": "Junior Software Developer",
+        "company": "Brady PLC",
+        "title": "Software Developer",
         "start_date": "2018-05-24T13:23:03.904Z",
         "end_date": "2019-03-24T13:23:03.904Z",
-        "description": "This job position consist of providing immaculate service though phone/email/chat. From the consumer's perspective, we are considered as Brand Experts therefore it requires superior knowledge in all sports/products from each brand.",        "country_id": 2
+        "description": "Product Manager for commodities derivatives solutions. Responsible for delivering a new product to ensure compliance with MIFID2 regulation for major investment banks and trading companies.",
+        "country_id": 2
+      },
+      {
+        "company": "regMan",
+        "title": "Software Developer",
+        "start_date": "2018-04-24T13:23:03.904Z",
+        "end_date": "2019-02-24T13:23:03.904Z",
+        "description": "I joined a 4-person development team, responsible for product maintenance. I set up a continuous integration pipeline and test automation framework. I increased the test coverage of the system by over 50 percentage points.",
+        "country_id": 2
       }
     ]
   },
@@ -22,11 +32,27 @@
     "developerId": 2,
     "history": [
       {
-        "company": "Facebook",
-        "title": "Senior Software Developer",
-        "start_date": "2021-01-20T13:23:03.904Z",
-        "end_date": "2022-05-20T13:23:03.904Z",
-        "description": "I worked here for some time.",
+        "company": "Codeworks",
+        "title": "Full Stack Developer and Instructor",
+        "start_date": "2021-04-20T13:23:03.904Z",
+        "end_date": "2022-02-20T13:23:03.904Z",
+        "description": "Deliver lectures to students on web development - Javascript, React, NodeJs and Express Provide feedback and code reviews. Perform code demonstrations. Maintain and develop internal tools and help students to realise their potential.",
+        "country_id": 1
+      },
+      {
+        "company": "Fairpoint",
+        "title": "Software Developer",
+        "start_date": "2020-09-20T13:23:03.904Z",
+        "end_date": "2021-03-20T13:23:03.904Z",
+        "description": "FairPoint is a news-aggregator that allows you read current news and track the political bias of what you’re reading.",
+        "country_id": 1
+      },
+      {
+        "company": "Bountifull",
+        "title": "Software Egineer",
+        "start_date": "2019-11-20T13:23:03.904Z",
+        "end_date": "2020-06-20T13:23:03.904Z",
+        "description": "Designed, developed, and deployed a full-stack mobile nutrition tracker with a team of 4 developers.",
         "country_id": 1
       }
     ]
