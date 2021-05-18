@@ -1,14 +1,14 @@
 
 <div class="message-container">
   
-  <div><img [src]="" alt="sender photo"></div>
+  <div><img [src]="photo" alt="sender photo"></div>
 
   <div class="message-info">
     <div class="name-date">
-      <div class="name">First Last</div>
-      <div>12:00</div>
+      <div class="name">{{names}}</div>
+      <div class="time">{{message.timestamp | date :'shortTime'}}</div>
     </div>
-    <div class="message">this is a message</div>
+    <div class="message">{{message.text_content}}</div>
   </div>
 
   

@@ -141,6 +141,67 @@ const getFilteredDevelopers = async (req, res) => {
   }
 }
 
+const loginDeveloper = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const developer = await db.Developer.findOne({
+      where: {
+        email: email,
+      },
+      include: [
+        {
+          model: db.Country,
+          as: 'country'
+        },
+        {
+          model: db.ExperienceLevel,
+          as: 'experience_level'
+        },
+        {
+          model: db.DeveloperType,
+          as: 'developer_type'
+        },
+        {
+          model: db.Technology,
+          through: 'UserTechnologies',
+          as: 'technologies'
+        },
+        {
+          model: db.Country,
+          through: 'UserEligibleCountries',
+          as: 'eligible_countries'
+        },
+        {
+          model: db.EducationHistory,
+          as: 'education_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
+        {
+          model: db.EmploymentHistory,
+          as: 'employment_history',
+          include: [
+            {
+              model: db.Country,
+              as: 'country'
+            }
+          ]
+        },
+      ]
+    })
+
+    res.status(200).json(developer);
+  }
+  catch (error) {
+    res.status(500).send(error);
+  }
+}
+
 const postDeveloper = async (req, res) => {
   try { // TODO !
     const developers = await db.Developer.findAll();
@@ -154,5 +215,6 @@ const postDeveloper = async (req, res) => {
 module.exports = {
   getDevelopers,
   getFilteredDevelopers,
+  loginDeveloper,
   postDeveloper,
 }

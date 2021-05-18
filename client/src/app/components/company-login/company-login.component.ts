@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { ApiClientService } from 'src/app/services/api-client.service';
 import { AppStateService } from 'src/app/services/app-state.service';
 
 @Component({
@@ -16,24 +17,25 @@ export class CompanyLoginComponent implements OnInit {
   constructor(
     private router: Router,
     private appState: AppStateService,
+    private apiClientService: ApiClientService
   ) { }
 
   ngOnInit(): void {
   }
 
   submit() {
-    console.log(this.username);
-    console.log(this.password);
-
-    // TODO: Authentication here!
-    if (true) {
-      this.router.navigate(['company/dashboard']);
-      this.appState.loginAsCompany();
-      this.appState.hideLogins();
-    }
-    else {
-      console.log('INVALID CREDENTIALS!');
-    }
+    const subscription = this.apiClientService.loginAsCompany(this.username, this.password)
+    .subscribe((company) => {
+      if (company !== null) {
+        this.appState.setCompany(company);
+        this.appState.hideLogins();
+        this.router.navigate(['company/dashboard']);
+      }
+      else {
+        console.log('INVALID CREDENTIALS!');
+      }
+    });
+  subscription.unsubscribe();
   }
 
   submitOnEnter(event: { keyCode: number }) {

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+import { Company } from '../interfaces/Company';
 import { Country } from '../interfaces/Country';
 import { DeveloperType } from '../interfaces/DeveloperType';
 import { ExperienceLevel } from '../interfaces/ExperienceLevel';
@@ -48,16 +49,28 @@ export class ApiClientService {
       .pipe(catchError(this.handleError<Technology[]>([])));
   }
 
-  getAllUsers(): Observable<Developer[]> {
+  getAllDevelopers(): Observable<Developer[]> {
     return this.http
       .get<Developer[]>(`${this.baseUrl}/developers`)
       .pipe(catchError(this.handleError<Developer[]>([])));
   }
 
-  getFilteredUsers(query: string): Observable<Developer[]> {
+  getFilteredDevelopers(query: string): Observable<Developer[]> {
     return this.http
       .get<Developer[]>(`${this.baseUrl}/developers/${query}`)
       .pipe(catchError(this.handleError<Developer[]>([])));
+  }
+
+  loginAsCompany(username: string, password: string): Observable<Company | null> {
+    return this.http
+      .post<Company>(`${this.baseUrl}/login/company`, { username, password })
+      .pipe(catchError(this.handleError<Company | null>(null)));
+  }
+
+  loginAsDeveloper(email: string, password: string): Observable<Developer | null> {
+    return this.http
+      .post<Developer>(`${this.baseUrl}/login/developer`, { email, password })
+      .pipe(catchError(this.handleError<Developer | null>(null)));
   }
 
   private handleError<T>(result?: T) {
