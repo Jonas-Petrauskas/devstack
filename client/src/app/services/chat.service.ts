@@ -5,17 +5,26 @@ import { io } from 'socket.io-client';
 
 import { Chat } from '../interfaces/Chat';
 import { Message } from '../interfaces/Message';
+import { AppStateService } from './app-state.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChatService {
+export class ChatService  {
 
   socket?: any;
+  state: 'loggedOut'|'company'|'developer' = 'loggedOut';
   
   chats = new BehaviorSubject<Chat[]>([]);
   
-  constructor() { }
+  constructor(
+    private appState: AppStateService
+  ) {
+    this.appState.appState.subscribe((state) => {
+      this.state = state;
+      console.log("sumfins", state)
+    });
+  }
 
   signIn(userType: 'company' | 'developer', userId: string): void {
     this.socket = io(`http://localhost:3005`, {
@@ -57,5 +66,31 @@ export class ChatService {
     this.socket.emit('client-message', { message, targetId });
   }
 
+  readMessages(targetId: string) {
+    this.socket.emit('client-read-message', { targetId });
 
+    const newChats = this.chats.value.slice();
+
+    for (let i = 0; i < newChats.length; ++i) {
+      if (this.state === 'developer') {
+        if (newChats[i].company.id === targetId) {
+          newChats[i].developer_unreads = 0;
+          newChats[i].messages.forEach((msg) => {
+            msg.was_read_by_developer = true;
+          })
+          break;
+        }
+      }
+      else if (this.state === 'company') {
+        if (newChats[i].developer.id === targetId) {
+          newChats[i].company_unreads = 0;
+          newChats[i].messages.forEach((msg) => {
+            msg.was_read_by_company = true;
+          })
+          break;
+        }
+      }
+    }
+    this.chats.next(newChats);
+  }
 }
