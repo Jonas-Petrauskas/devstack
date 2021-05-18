@@ -1,7 +1,7 @@
 module.exports = (sequelize, Datatypes) => {
 
   const Message = sequelize.define('Message', {
-    message: {
+    text_content: {
       type: Datatypes.STRING,
       allowNull: false,
     },
@@ -12,7 +12,15 @@ module.exports = (sequelize, Datatypes) => {
     },
     is_from_developer: {
       type: Datatypes.BOOLEAN,
-      allowNull: false,
+      allowNull: false
+    },
+    was_read_by_company: {
+      type: Datatypes.BOOLEAN,
+      default: false
+    },
+    was_read_by_developer: {
+      type: Datatypes.BOOLEAN,
+      default: false
     }
   }, {
     tableName: 'messages',

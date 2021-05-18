@@ -25,18 +25,35 @@ const setupSocketIO = (io, db) => {
       });
       const chatsHistory = {};
       messageHistory.forEach((msg) => {
-        const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+        const {
+          id,
+          text_content,
+          timestamp,
+          developer_id,
+          company_id,
+          is_from_developer,
+          developer,
+          company,
+          was_read_by_company,
+          was_read_by_developer
+        } = msg.dataValues;
+
+        const message = {id, text_content, timestamp, company_id, developer_id, is_from_developer, was_read_by_company, was_read_by_developer};
 
         if (!chatsHistory[company_id]) {
           chatsHistory[company_id] = {
             company,
             developer,
             last_timestamp: timestamp,
-            messages: [{id, message, timestamp, company_id, developer_id, is_from_developer}]
+            company_unreads: was_read_by_company ? 0 : 1,
+            developer_unreads: was_read_by_developer ? 0 : 1,
+            messages: [message]
           }
         }
         else {
-          chatsHistory[company_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+          chatsHistory[company_id].messages.push(message);
+          if (!was_read_by_company) ++chatsHistory[company_id].company_unreads;
+          if (!was_read_by_developer) ++chatsHistory[company_id].developer_unreads;
         }
       });
 
@@ -44,11 +61,13 @@ const setupSocketIO = (io, db) => {
 
       // * HANDLE DEVELOPER MESSAGE
       socket.on('client-message', async ({message, targetId}) => {
-        const msg = await db.Message.create({
+        await db.Message.create({
           company_id: targetId,
           developer_id: userId,
-          message: message,
+          text_content: message,
           is_from_developer: true,
+          was_read_by_company: false,
+          was_read_by_developer: true,
           timestamp: Date.now()
         });
 
@@ -63,18 +82,35 @@ const setupSocketIO = (io, db) => {
 
         let updatedChat = {};
         updatedChatMessages.forEach((msg) => {
-          const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+          const {
+            id,
+            text_content,
+            timestamp,
+            developer_id,
+            company_id,
+            is_from_developer,
+            developer,
+            company,
+            was_read_by_company,
+            was_read_by_developer
+          } = msg.dataValues;
+
+          const message = {id, text_content, timestamp, company_id, developer_id, is_from_developer, was_read_by_company, was_read_by_developer};
 
           if (!updatedChat.last_timestamp) {
             updatedChat = {
               company,
               developer,
               last_timestamp: timestamp,
-              messages: [msg]
+              company_unreads: was_read_by_company ? 0 : 1,
+              developer_unreads: was_read_by_developer ? 0 : 1,
+              messages: [message]
             }
           }
           else {
-            updatedChat.messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+            updatedChat.messages.push(message);
+            if (!was_read_by_company) ++updatedChat.company_unreads;
+            if (!was_read_by_developer) ++updatedChat.developer_unreads;
           }
         });
 
@@ -98,18 +134,35 @@ const setupSocketIO = (io, db) => {
       });
       const chatsHistory = {};
       messageHistory.forEach((msg) => {
-        const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+        const {
+          id,
+          text_content,
+          timestamp,
+          developer_id,
+          company_id,
+          is_from_developer,
+          developer,
+          company,
+          was_read_by_company,
+          was_read_by_developer
+        } = msg.dataValues;
+
+        const message = {id, text_content, timestamp, company_id, developer_id, is_from_developer, was_read_by_company, was_read_by_developer};
 
         if (!chatsHistory[developer_id]) {
           chatsHistory[developer_id] = {
             company,
             developer,
             last_timestamp: timestamp,
-            messages: [{id, message, timestamp, company_id, developer_id, is_from_developer}]
+            company_unreads: was_read_by_company ? 0 : 1,
+            developer_unreads: was_read_by_developer ? 0 : 1,
+            messages: [message]
           }
         }
         else {
-          chatsHistory[developer_id].messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+          chatsHistory[developer_id].messages.push(message);
+          if (!was_read_by_company) ++chatsHistory[developer_id].company_unreads;
+          if (!was_read_by_developer) ++chatsHistory[developer_id].developer_unreads;
         }
       });
 
@@ -117,11 +170,13 @@ const setupSocketIO = (io, db) => {
 
       // * HANDLE COMPANY MESSAGE
       socket.on('client-message', async ({message, targetId}) => {
-        const msg = await db.Message.create({
+        await db.Message.create({
           company_id: userId,
           developer_id: targetId,
-          message: message,
+          text_content: message,
           is_from_developer: false,
+          was_read_by_company: true,
+          was_read_by_developer: false,
           timestamp: Date.now()
         });
 
@@ -135,18 +190,35 @@ const setupSocketIO = (io, db) => {
         });
         let updatedChat = {};
         updatedChatMessages.forEach((msg) => {
-          const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+          const {
+            id,
+            text_content,
+            timestamp,
+            developer_id,
+            company_id,
+            is_from_developer,
+            developer,
+            company,
+            was_read_by_company,
+            was_read_by_developer
+          } = msg.dataValues;
+
+          const message = {id, text_content, timestamp, company_id, developer_id, is_from_developer, was_read_by_company, was_read_by_developer};
 
           if (!updatedChat.last_timestamp) {
             updatedChat = {
               company,
               developer,
               last_timestamp: timestamp,
-              messages: [msg]
+              company_unreads: was_read_by_company ? 0 : 1,
+              developer_unreads: was_read_by_developer ? 0 : 1,
+              messages: [message]
             }
           }
           else {
-            updatedChat.messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+            updatedChat.messages.push(message);
+            if (!was_read_by_company) ++updatedChat.company_unreads;
+            if (!was_read_by_developer) ++updatedChat.developer_unreads;
           }
         });
 
