@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppStateService {
 
-  appState = new BehaviorSubject<'loggedOut'|'company'|'developer'>('loggedOut');
+  appState = new BehaviorSubject<'loggedOut'|'company'|'developer'>('developer');
 
   companyLoginShown = new BehaviorSubject<boolean>(false);
   developerLoginShown = new BehaviorSubject<boolean>(false);
