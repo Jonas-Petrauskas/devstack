@@ -52,8 +52,34 @@ const setupSocketIO = (io, db) => {
           timestamp: Date.now()
         });
 
-        io.to(`company_${targetId}`).emit('server-message', msg);
-        io.emit('server-message', msg);
+        const updatedChatMessages = await db.Message.findAll({
+          where: { company_id: targetId, developer_id: userId },
+          order: [['timestamp', 'DESC']],
+          include: [
+            { model: db.Company, as: 'company' },
+            { model: db.Developer, as: 'developer' }
+          ]
+        });
+
+        const updatedChat = {};
+        updatedChatMessages.forEach((msg) => {
+          const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+
+          if (!updatedChat.last_timestamp) {
+            updatedChat = {
+              company,
+              developer,
+              last_timestamp: timestamp,
+              messages: [msg]
+            }
+          }
+          else {
+            updatedChat.messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+          }
+        });
+
+        io.to(`company_${targetId}`).emit('server-message', updatedChat);
+        io.emit('server-message', updatedChat);
       });
     }
 
@@ -99,8 +125,33 @@ const setupSocketIO = (io, db) => {
           timestamp: Date.now()
         });
 
-        io.to(`developer_${targetId}`).emit('server-message', msg);
-        io.emit('server-message', msg);
+        const updatedChatMessages = await db.Message.findAll({
+          where: { company_id: userId, developer_id: targetId },
+          order: [['timestamp', 'DESC']],
+          include: [
+            { model: db.Company, as: 'company' },
+            { model: db.Developer, as: 'developer' }
+          ]
+        });
+        const updatedChat = {};
+        updatedChatMessages.forEach((msg) => {
+          const { id, message, timestamp, developer_id, company_id, is_from_developer, developer, company } = msg.dataValues;
+
+          if (!updatedChat.last_timestamp) {
+            updatedChat = {
+              company,
+              developer,
+              last_timestamp: timestamp,
+              messages: [msg]
+            }
+          }
+          else {
+            updatedChat.messages.push({id, message, timestamp, company_id, developer_id, is_from_developer});
+          }
+        });
+
+        io.to(`developer_${targetId}`).emit('server-message', updatedChat);
+        io.emit('server-message', updatedChat);
       });
     }
 

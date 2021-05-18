@@ -1,13 +1,11 @@
 @font-face {
   font-family: "Roboto";
-  src: local("Roboto"),
-    url(../assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  src: url(../assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Saira";
-  src: local("Saira"),
-    url(../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
+  src: url(../assets/fonts/Saira/Saira-Regular.ttf) format("truetype");
 }
 
 $main: "Roboto";
