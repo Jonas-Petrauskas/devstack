@@ -34,8 +34,8 @@ export class DeveloperLoginComponent implements OnInit {
         else {
           console.log('INVALID CREDENTIALS!');
         }
+        subscription.unsubscribe();
       });
-    subscription.unsubscribe();
   }
 
 }
