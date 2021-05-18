@@ -24,18 +24,20 @@ export class CompanyLoginComponent implements OnInit {
   }
 
   submit() {
+    console.log('in the submit')
     const subscription = this.apiClientService.loginAsCompany(this.username, this.password)
-    .subscribe((company) => {
-      if (company !== null) {
-        this.appState.setCompany(company);
-        this.appState.hideLogins();
-        this.router.navigate(['company/dashboard']);
-      }
-      else {
-        console.log('INVALID CREDENTIALS!');
-      }
-    });
-  subscription.unsubscribe();
+      .subscribe((company) => {
+        console.log(company)
+        if (company !== null) {
+          this.appState.setCompany(company);
+          this.appState.hideLogins();
+          this.router.navigate(['company/dashboard']);
+        }
+        else {
+          console.log('INVALID CREDENTIALS!');
+        }
+        subscription.unsubscribe();
+      });
   }
 
   submitOnEnter(event: { keyCode: number }) {
