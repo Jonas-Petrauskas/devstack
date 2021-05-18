@@ -117,6 +117,13 @@ const setupSocketIO = (io, db) => {
         io.to(`company_${targetId}`).emit('server-message', updatedChat);
         io.emit('server-message', updatedChat);
       });
+
+      socket.on('client-read-message', async ({targetId}) => {
+        await db.Message.update(
+          {was_read_by_developer: true},
+          {where: { company_id: targetId, developer_id: userId }}
+        );
+      });
     }
 
     // * COMPANY SOCKET SETUP
@@ -225,10 +232,16 @@ const setupSocketIO = (io, db) => {
         io.to(`developer_${targetId}`).emit('server-message', updatedChat);
         io.emit('server-message', updatedChat);
       });
+
+      socket.on('client-read-message', async ({targetId}) => {
+        await db.Message.update(
+          {was_read_by_company: true},
+          {where: { company_id: userId, developer_id: targetId }}
+        );
+      });
     }
 
     else socket.disconnect();
-
   });
 
 }
