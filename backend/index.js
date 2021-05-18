@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { env } = process;
 
 const express = require('express');
 const http = require('http');
@@ -13,7 +14,7 @@ const app = express();
 const server = http.createServer(app);
 
 const corsConfig = {
-  origin: process.env.CLIENT_HOST,
+  origin: env.CLIENT_HOST,
   credentials: true,
 }
 app.use(cors(corsConfig));
@@ -23,8 +24,7 @@ app.use(publicRouter);
 // app.use(authentication); // TODO
 app.use(privateRouter);
 
-// * ENVIRONMENT
-const { env } = process;
+// * SERVER ENVIRONMENT
 const port = env.SERVER_PORT || 3000;
 const host = env.SERVER_HOST || 'localhost';
 
@@ -32,10 +32,7 @@ const host = env.SERVER_HOST || 'localhost';
 const db = require('./models/_index');
 
 (async () => {
-  await db.sequelize.sync({force: true});
-
-  // * DATABASE SEEDER
-  await require('./seeders/_seeder')(db);
+  await db.sequelize.sync();
 
   // * SOCKET IO
   const options = {

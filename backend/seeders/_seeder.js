@@ -1,4 +1,6 @@
-'use strict';
+require('dotenv').config({path:__dirname+'/../.env'});
+
+const database = require('../models/_index');
 
 const countriesSeeder = require('./countries');
 const developerTypesSeeder = require('./developer_types');
@@ -11,7 +13,7 @@ const developersSeeder = require('./developers');
 const educationHistorySeeder = require('./education_history');
 const employmentHistorySeeder = require('./employment_history');
 
-module.exports = async (db) => {
+const databaseSeeder = async (db) => {
   await countriesSeeder(db);
   await developerTypesSeeder(db);
   await experienceLevelsSeeder(db);
@@ -23,3 +25,8 @@ module.exports = async (db) => {
   await educationHistorySeeder(db);
   await employmentHistorySeeder(db);
 }
+
+(async () => {
+  await database.sequelize.sync({force: true});
+  await databaseSeeder(database);
+})();
