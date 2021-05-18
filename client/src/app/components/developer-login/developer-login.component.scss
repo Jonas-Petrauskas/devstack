@@ -12,11 +12,7 @@ a {
 }
 
 .login {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(200, 200, 200),
-    rgb(60, 90, 90)
-  );
+  background-image: linear-gradient(to bottom right, #7b8fbf, #ededed);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
