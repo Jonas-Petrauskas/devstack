@@ -46,19 +46,29 @@
   </div>
 
   <div class="button" (click)="showExpanded('bio')">
-    <div  class="bioButton">More Ifo<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
+    <div *ngIf="!expanded" class="bioButton">More Info<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png">
+    </div>
+    <div *ngIf="expanded"  class="bioButton">Less Info<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
       src="../../../assets/img/navbar-dropdown-down-arrow.png">
     </div>
   </div>
   <div class="bio" *ngIf="expanded">
+    <div class="about">About {{user.first_name}}</div>
     <div>{{user.bio}}</div>   
   </div>
 
   <div class="career" *ngIf="expanded">
-    
+    <div class="exp">Experience</div>
     
     <!-- <div class="carreerButton" *ngIf="expanded"></div> -->
-    <div *ngIf="expanded" class="carreer-text">In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim.</div>
+    <div *ngIf="expanded" class="carreer-text">
+      <div *ngFor="let job of user.employment_history" class="job">
+        <div class="job-company section">{{job.company}}</div>
+        <div class="job-title section">{{job.title}}</div>
+        <div class="job-length section"> <div>{{job.start_date | date}}</div> <div>{{job.end_date | date}}</div></div>
+      </div>
+    </div>
   </div>
 
 
