@@ -66,10 +66,24 @@
       <div *ngFor="let job of user.employment_history" class="job">
         <div class="job-company section">{{job.company}}</div>
         <div class="job-title section">{{job.title}}</div>
-        <div class="job-length section"> <div>{{job.start_date | date}}</div> <div>{{job.end_date | date}}</div></div>
+        <div class="job-length section"> <div>{{job.start_date | date}} - {{job.end_date | date}}</div></div>
       </div>
     </div>
+
+    <div class="exp">Education</div>
+
+    <div *ngIf="expanded" class="carreer-text">
+      <div *ngFor="let education of user.education_history" class="job">
+        <div class="job-company section">{{education.institution}}</div>
+        <div class="job-title section">{{education.degree}} in {{education.field}}</div>
+        <div class="job-length section"> <div>{{education.start_date | date}} - {{education.end_date | date}}</div></div>
+      </div>
+    </div>
+
+
   </div>
+
+  
 
 
 
