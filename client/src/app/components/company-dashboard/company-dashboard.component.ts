@@ -8,6 +8,9 @@ import { ExperienceLevel } from 'src/app/interfaces/ExperienceLevel';
 
 import { Developer, defaultDeveloper } from 'src/app/interfaces/Developer';
 import { TaggedItem } from 'src/app/interfaces/TaggedItem';
+import { ChatService } from 'src/app/services/chat.service';
+import { AppStateService } from 'src/app/services/app-state.service';
+import { Company, defaultCompany } from 'src/app/interfaces/Company';
 
 @Component({
   selector: 'app-company-dashboard',
@@ -29,11 +32,24 @@ export class CompanyDashboardComponent implements OnInit {
   selectedSkills: TaggedItem[] = [];
   searchAlertMessage: boolean = false;
 
+  currentCompany: Company = defaultCompany; 
 
-  constructor(private client: ApiClientService) { }
+
+  constructor(
+    private client: ApiClientService,
+    private chatService: ChatService,
+    private appService: AppStateService
+    ) { }
 
   ngOnInit(): void {
     this.getAllFields();
+    this.appService.activeCompany.subscribe((state) => {
+      if (state !== null) {
+        this.currentCompany = state;
+      } else {
+        this.currentCompany = defaultCompany;
+      }
+    })
   }
 
   getAllFields(): void {
@@ -43,7 +59,7 @@ export class CompanyDashboardComponent implements OnInit {
       .subscribe((expLvls) => this.experienceLevels = expLvls);
     this.client.getTechnologies()
       .subscribe((techs) => this.techs = techs);
-    this.client.getAllUsers()
+    this.client.getAllDevelopers()
     .subscribe((users) => this.filteredUsers = users);
     
   }
@@ -57,7 +73,7 @@ export class CompanyDashboardComponent implements OnInit {
       comaSeperated= comaSeperated.substr(0, comaSeperated.length-1);
       this.searchQuery = `technologies=${comaSeperated};developer_type=${this.selectedDevType.id};experience_level=${this.selectedExp.id}`
       
-      this.client.getFilteredUsers(this.searchQuery)
+      this.client.getFilteredDevelopers(this.searchQuery)
         .subscribe((users) => {
           this.filteredUsers = users
         })
@@ -76,5 +92,9 @@ export class CompanyDashboardComponent implements OnInit {
   }
   updateSelectedExperience(selectedExps: any): void {
     this.selectedExp = selectedExps;
+  }
+
+  initiateChat(developer: Developer) {
+    this.chatService.openNewChat(this.currentCompany, developer);
   }
 }

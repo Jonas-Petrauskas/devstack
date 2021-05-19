@@ -9,6 +9,14 @@
   position: fixed;
   bottom: 3px;
   right: 5px;
+  margin-top: 60px;
+}
+
+.active-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 8px;
 }
 
 .btn {
@@ -56,6 +64,7 @@ img {
   padding-right: 4px;
   .back-button {
     cursor: pointer;
+    transform: rotate(-90deg);
   }
   svg {
     margin: 0 6px;
@@ -74,12 +83,9 @@ img {
   flex-direction: row;
   border-bottom: 1px solid #c7c8cf;
   cursor: pointer;
-  padding-top: 3px;
+  padding: 3px 6px 0 6px;
   .chat-photo {
     margin-left: 9px;
-  }
-  .time {
-    font-size: 13px;
   }
   .chat-text {
     display: flex;
@@ -92,18 +98,22 @@ img {
     .name-date {
       display: flex;
       flex-direction: row;
-      div {
-        flex: 1;
+      
+      .time {
+        font-size: 13px;
+        color: #909090;
+        margin-left: auto;
       }
     }
   }
 }
 
-.opened-chat {
+.msg-container {
   display: flex;
   flex-flow: column-reverse;
   overflow-y: scroll;
   height: 334px;
+  padding: 0 5px;
 }
 
 .user-input {
@@ -116,3 +126,4 @@ img {
   margin-top: 3px;
   background-color: ghostwhite;
 }
+

@@ -4,6 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { io } from 'socket.io-client';
 
 import { Chat } from '../interfaces/Chat';
+import { Company } from '../interfaces/Company';
+import { Developer } from '../interfaces/Developer';
 import { Message } from '../interfaces/Message';
 import { AppStateService } from './app-state.service';
 
@@ -16,6 +18,7 @@ export class ChatService  {
   state: 'loggedOut'|'company'|'developer' = 'loggedOut';
   
   chats = new BehaviorSubject<Chat[]>([]);
+  chatExpanded = new BehaviorSubject<boolean>(false);
   
   constructor(
     private appState: AppStateService
@@ -41,7 +44,7 @@ export class ChatService  {
     })
 
     this.socket.on('message-history', (chatHistory: Chat[]) => {
-      console.log(chatHistory)
+      chatHistory.sort((a,b) => +new Date(b.last_timestamp) - +new Date(a.last_timestamp))
       this.chats.next(chatHistory);
     });
 
@@ -55,10 +58,14 @@ export class ChatService  {
           break
         }
       }
-      isNewChat ? newChats.push(chat) : false;
-      newChats.sort((a,b) => Number(a.last_timestamp) - Number(b.last_timestamp))
+      isNewChat ? newChats.unshift(chat) : false;
+      newChats.sort((a,b) => +new Date(b.last_timestamp) - +new Date(a.last_timestamp))
       this.chats.next(newChats);
     });
+  }
+
+  signOut() {
+    if (this.socket) this.socket.disconnect();
   }
 
   sendMessage( message: string, targetId: string) {
@@ -92,5 +99,20 @@ export class ChatService  {
       }
     }
     this.chats.next(newChats);
+  }
+
+  openNewChat(company: Company, developer: Developer) {
+    const newChat: Chat = {
+      company,
+      developer,
+      last_timestamp: new Date(),
+      company_unreads: 0,
+      developer_unreads: 0,
+      messages: []
+    }
+    const newChats = this.chats.value.slice();
+    newChats.unshift(newChat);
+    this.chats.next(newChats);
+    this.chatExpanded.next(true);
   }
 }
