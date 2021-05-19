@@ -1,6 +1,9 @@
 .logos-container {
   display: flex;
   justify-content: center;
+  .logo {
+    margin: 10px 5px;
+  }
 }
 
 img {
