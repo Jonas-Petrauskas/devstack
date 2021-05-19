@@ -18,16 +18,21 @@ img {
 }
 
 .message-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-  .name-date {
+  .name-date {    
     display: flex;
     flex-direction: row;
+    align-items: center;
     .name {
       margin: 0  5px;
     }
-
+    .time {
+      color: #909090;
+      margin-left: auto;
+    }
   }
 
   .message {

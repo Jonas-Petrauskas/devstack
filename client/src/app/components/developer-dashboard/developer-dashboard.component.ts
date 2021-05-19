@@ -24,5 +24,4 @@ export class DeveloperDashboardComponent implements OnInit {
       if (developer !== null ) this.user = developer
     });
   }
-
 }
