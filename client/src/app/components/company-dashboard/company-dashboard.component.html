@@ -25,7 +25,7 @@
 
     <div class="user-container">
       
-      <div *ngFor="let user of filteredUsers" class="user-card" (click)="initiateChat(user)">
+      <div *ngFor="let user of filteredUsers" class="user-card">
         <app-dev-card [user]="user"></app-dev-card>
       </div>
     </div>

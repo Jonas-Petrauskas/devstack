@@ -1,7 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Company, defaultCompany } from 'src/app/interfaces/Company';
 
 import { Developer, defaultDeveloper } from 'src/app/interfaces/Developer';
 import { ApiClientService } from 'src/app/services/api-client.service';
+import { AppStateService } from 'src/app/services/app-state.service';
+import { ChatService } from 'src/app/services/chat.service';
 
 @Component({
   selector: 'app-dev-card',
@@ -20,11 +23,22 @@ export class DevCardComponent implements OnInit {
 
   expanded: boolean = false;
   careerExpanded: boolean = false; 
+  currentCompany: Company = defaultCompany;
 
-
-  constructor(private client: ApiClientService) { }
+  constructor(
+    private client: ApiClientService,
+    private chatService: ChatService,
+    private appState: AppStateService,
+    ) { }
 
   ngOnInit(): void {
+    this.appState.activeCompany.subscribe((state) => {
+      if (state !== null) {
+        this.currentCompany = state;
+      } else {
+        this.currentCompany = defaultCompany;
+      }
+    })
   }
 
   showExpanded(selectedDrop: string): void {
@@ -36,5 +50,8 @@ export class DevCardComponent implements OnInit {
     }
     console.log(this.user)
   }
-  
+
+  initiateChat(developer: Developer) {
+    this.chatService.openNewChat(this.currentCompany, developer);
+  }
 }
