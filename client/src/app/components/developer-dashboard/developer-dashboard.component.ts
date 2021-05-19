@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiClientService } from 'src/app/services/api-client.service';
-import { Developer } from 'src/app/interfaces/Developer';
+import { AppStateService } from 'src/app/services/app-state.service';
+import { defaultDeveloper, Developer } from 'src/app/interfaces/Developer';
 
 @Component({
   selector: 'app-developer-dashboard',
@@ -9,9 +9,9 @@ import { Developer } from 'src/app/interfaces/Developer';
 })
 export class DeveloperDashboardComponent implements OnInit {
 
-  user?: Developer;
+  user: Developer = defaultDeveloper;
 
-  constructor(private client: ApiClientService) { }
+  constructor(private appStateService: AppStateService) { }
 
   ngOnInit(): void {
     this.getUsers();
@@ -19,8 +19,9 @@ export class DeveloperDashboardComponent implements OnInit {
 
 
   getUsers(): void {
-    this.client.getAllDevelopers()
-    .subscribe((users) => this.user = users[0]);
+    this.appStateService.activeDeveloper
+    .subscribe((developer) => {
+      if (developer !== null ) this.user = developer
+    });
   }
-
 }

@@ -104,7 +104,8 @@ section {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: white;
+  // background-color: white;
+  background: linear-gradient(#ffffff 70%, #a8aac4);
 }
 
 .app-logos {
@@ -126,13 +127,13 @@ section {
 }
 
 .line {
-  border-top: 1px solid #c4c4c4;
+  border-top: 1px solid #606060;
   width: 90%;
   margin-top: 140px;
 }
 
 .term-and-legal {
-  color: #c4c4c4;
+  color: #606060;
   margin-top: 20px;
 }
 

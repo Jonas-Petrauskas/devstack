@@ -44,5 +44,74 @@
         "country_id": 30
       }
     ]
+  },
+  {
+    "developerId": 3,
+    "history": [
+      {
+        "institution": "University of Barcelona",
+        "degree": "Bachelor's degree",
+        "field": "Software Engineering",
+        "start_date": "2015-01-20T13:23:03.904Z",
+        "end_date": "2022-05-20T13:23:03.904Z",
+        "description": "Learner a lot in sofware engineering",
+        "country_id": 18
+      },
+      {
+        "institution": "University of Prague",
+        "degree": "Bachelor's degree",
+        "field": "Mechanics",
+        "start_date": "2015-01-20T13:23:03.904Z",
+        "end_date": "2022-04-20T13:23:03.904Z",
+        "description": "Learned a lot",
+        "country_id": 20
+      }
+    ]
+  },
+  {
+    "developerId": 4,
+    "history": [
+      {
+        "institution": "University of Panama",
+        "degree": "Bachelor's degree",
+        "field": "Auto Mechanic",
+        "start_date": "2010-11-20T13:23:03.904Z",
+        "end_date": "2013-05-20T13:23:03.904Z",
+        "description": "Build cards and robots",
+        "country_id": 8
+      },
+      {
+        "institution": "University of Vilnius",
+        "degree": "Bachelor's degree",
+        "field": "Human resources",
+        "start_date": "2015-01-20T13:23:03.904Z",
+        "end_date": "2022-04-20T13:23:03.904Z",
+        "description": "Studies took 3 year, was really worth it",
+        "country_id": 21
+      }
+    ]
+  },
+  {
+    "developerId": 5,
+    "history": [
+      {
+        "institution": "Stanford University.",
+        "degree": "Masters degree",
+        "field": "Physics",
+        "start_date": "2006-01-20T13:23:03.904Z",
+        "end_date": "2010-06-20T13:23:03.904Z",
+        "description": "Build cards and robots",
+        "country_id": 11
+      },
+      {
+        "institution": "University of Helsinki",
+        "degree": "Bachelor's degree",
+        "field": "Tourism and hospitality management",
+        "start_date": "2011-03-20T13:23:03.904Z",
+        "end_date": "2014-09-20T13:23:03.904Z",
+        "description": "Learned a lot about traveling and was able to implement my studies in practical use",
+        "country_id": 3
+      }
+    ]
   }
 ]
