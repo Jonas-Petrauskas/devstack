@@ -67,6 +67,12 @@
   div {
     margin: 0 3px;
   }
+  .new-chat-bttn {
+    height: 22px;
+    width: 22px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
   a {
     font-size: 32;
     margin-left: .5rem;
@@ -128,6 +134,12 @@
   margin-top: .5rem;
   text-align: center;
   padding: .5rem;
+  max-width: 429px;
+  .about {
+    margin:8px 0;
+    font-size: 17px;
+  }
+
 }
 
 .techs-container {
@@ -150,7 +162,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 54px;
+  width: 110px;
   border-radius: 4px;
   // background-color: #cbd1d79e;
 }
@@ -182,9 +194,10 @@
   display: flex;
   text-align: center;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 90%;
+  .exp {font-size: 21px;}
 }
 
 .carreerButton {
@@ -201,5 +214,27 @@
 }
 
 .carreer-text {
+  margin-top: 15px;
   margin-bottom: 5px;
+  text-align: left;
+  .job {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1px ;
+    border-bottom: 1px solid #b5babfcb;
+    .section {
+      margin: 5px;
+    }
+    .job-company {}
+    .job-title {}
+    .job-length {
+      display: flex;
+      flex-direction: row;
+      .div {
+        margin: 0 2px;
+      }
+    }
+
+  }
+
 }
