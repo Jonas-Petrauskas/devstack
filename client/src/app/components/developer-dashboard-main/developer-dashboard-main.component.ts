@@ -9,11 +9,7 @@ import { ApiClientService } from 'src/app/services/api-client.service';
   styleUrls: ['./developer-dashboard-main.component.scss']
 })
 export class DeveloperDashboardMainComponent implements OnInit {
-  @Input()
-  photo: {url: string, id: number} = {url: 'https://ca.slack-edge.com/T0WU5R8NT-U014XEG2PJ4-bb2847571bc1-512', id: 1};
-  @Input()
-  bio: {desc: string, id: number} = {desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam', id: 1};
-
+  
   @Input()
   user?: Developer;
   

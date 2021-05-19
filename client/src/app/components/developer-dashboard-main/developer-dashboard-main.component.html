@@ -21,8 +21,7 @@
       <div class="dev__line"></div>
 
       <div class="carreer-details">
-        <div class="exp-item">{{user.experience_level.name}}</div>
-        <div class="exp-item">{{user.developer_type.name}} Developer</div>
+        <div class="exp-item">{{user.experience_level.name + ' ' + user.developer_type.name + ' Developer'}}</div>
       </div>
 
       <div class="links">
@@ -33,8 +32,9 @@
   </div>
   
   <div class="bio">
-    Veniam id do aliqua duis id nulla nisi occaecat incididunt occaecat id amet dolor laboris. In ipsum fugiat cillum dolore ex occaecat amet cupidatat. Ut minim non enim sint velit fugiat et ex velit deserunt occaecat tempor. Enim ipsum commodo ullamco enim. Labore est nostrud exercitation cupidatat ea qui consectetur voluptate nisi deserunt exercitation.
+    {{user.bio}}
   </div>
+  
   <div class="dev__line"></div>
 
   <div class="techs-container">
@@ -50,7 +50,5 @@
     </div>
 
   </div>
-
-
 
 </div>
