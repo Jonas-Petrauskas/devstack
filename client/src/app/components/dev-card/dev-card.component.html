@@ -49,9 +49,7 @@
     <div *ngIf="!expanded" class="bioButton">More Info<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
       src="../../../assets/img/navbar-dropdown-down-arrow.png">
     </div>
-    <div *ngIf="expanded"  class="bioButton">Less Info<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
-      src="../../../assets/img/navbar-dropdown-down-arrow.png">
-    </div>
+    
   </div>
   <div class="bio" *ngIf="expanded">
     <div class="about">About {{user.first_name}}</div>
@@ -80,10 +78,15 @@
       </div>
     </div>
 
+    
+
 
   </div>
 
-  
+  <div class="button" (click)="showExpanded('bio')">
+    <div *ngIf="expanded" class="bioButton">Less Info<img [ngClass]="expanded? 'arrow-down' : 'arrow'"
+      src="../../../assets/img/navbar-dropdown-down-arrow.png">
+    </div>
 
 
 
