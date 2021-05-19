@@ -215,19 +215,21 @@
 
 .carreer-text {
   margin-top: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   text-align: left;
+  width: 100%;
   .job {
     display: flex;
     flex-direction: column;
     margin-bottom: 1px ;
-    border-bottom: 1px solid #b5babfcb;
+    border-bottom: 1px solid #21212152;
     .section {
       margin: 5px;
     }
-    .job-company {}
-    .job-title {}
+    .job-company { font-size: 17px;}
+    .job-title { font-size: 15px;}
     .job-length {
+      font-size: 13px;
       display: flex;
       flex-direction: row;
       .div {
