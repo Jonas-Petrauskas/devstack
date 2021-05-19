@@ -1,12 +1,11 @@
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { io } from 'socket.io-client';
 
 import { Chat } from '../interfaces/Chat';
 import { Company } from '../interfaces/Company';
 import { Developer } from '../interfaces/Developer';
-import { Message } from '../interfaces/Message';
 import { AppStateService } from './app-state.service';
 
 @Injectable({
@@ -16,17 +15,14 @@ export class ChatService  {
 
   socket?: any;
   state: 'loggedOut'|'company'|'developer' = 'loggedOut';
-  
+
   chats = new BehaviorSubject<Chat[]>([]);
-  chatExpanded = new BehaviorSubject<boolean>(false);
-  
+  openTheNewChat = new BehaviorSubject<number>(-999);
+
   constructor(
     private appState: AppStateService
   ) {
-    this.appState.appState.subscribe((state) => {
-      this.state = state;
-      console.log("sumfins", state)
-    });
+    this.appState.appState.subscribe((state) => this.state = state);
   }
 
   signIn(userType: 'company' | 'developer', userId: string): void {
@@ -111,8 +107,22 @@ export class ChatService  {
       messages: []
     }
     const newChats = this.chats.value.slice();
-    newChats.unshift(newChat);
+    let newOpenIndex = -1;
+
+    for (let i = 0; i < newChats.length; ++i) {
+      if (newChats[i].developer.id === developer.id && newChats[i].company.id === company.id) {
+        newOpenIndex = i;
+        break;
+      }
+    }
+
+    if (newOpenIndex === -1) {
+      newChats.unshift(newChat);
+      newOpenIndex = 0;
+    }
     this.chats.next(newChats);
-    this.chatExpanded.next(true);
+    this.openTheNewChat.next(newOpenIndex);
+    this.openTheNewChat.next(-999);
   }
+
 }

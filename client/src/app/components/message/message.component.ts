@@ -19,20 +19,15 @@ export class MessageComponent implements OnInit {
   photo:string = '';
   names:string = '';
 
-
-
-  
-
   constructor() { }
 
   ngOnInit(): void {
-
     if (this.message.is_from_developer) {
-      this.photo = this.developer?.photo_path;
-      this.names = `${this.developer?.first_name} ${this.developer?.last_name}`;
+      this.photo = this.developer.photo_path;
+      this.names = `${this.developer.first_name} ${this.developer.last_name}`;
     } else {
-      this.photo = this.company?.photo_path;
-      this.names = this.company?.name;
+      this.photo = this.company.photo_path;
+      this.names = this.company.name;
     }
   }
 

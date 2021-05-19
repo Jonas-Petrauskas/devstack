@@ -115,7 +115,7 @@ const setupSocketIO = (io, db) => {
         });
 
         io.to(`company_${targetId}`).emit('server-message', updatedChat);
-        io.emit('server-message', updatedChat);
+        io.to(`developer_${userId}`).emit('server-message', updatedChat);
       });
 
       socket.on('client-read-message', async ({targetId}) => {
@@ -230,7 +230,7 @@ const setupSocketIO = (io, db) => {
         });
 
         io.to(`developer_${targetId}`).emit('server-message', updatedChat);
-        io.emit('server-message', updatedChat);
+        io.to(`company_${userId}`).emit('server-message', updatedChat);
       });
 
       socket.on('client-read-message', async ({targetId}) => {

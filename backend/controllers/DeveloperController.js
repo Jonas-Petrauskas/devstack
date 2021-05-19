@@ -2,7 +2,7 @@
 
 const db = require('../models/_index');
 
-const processUserQueryParams = require('../functions/user-query-params-getter');
+const processDeveloperQueryParams = require('../functions/developer-query-params-getter');
 
 const getDevelopers = async (req, res) => {
   try {
@@ -22,12 +22,12 @@ const getDevelopers = async (req, res) => {
         },
         {
           model: db.Technology,
-          through: 'UserTechnologies',
+          through: 'DeveloperTechnologies',
           as: 'technologies'
         },
         {
           model: db.Country,
-          through: 'UserEligibleCountries',
+          through: 'DeveloperEligibleCountries',
           as: 'eligible_countries'
         },
         {
@@ -65,7 +65,7 @@ const getDevelopers = async (req, res) => {
 const getFilteredDevelopers = async (req, res) => {
   try {
     const { query } = req.params;
-    const queries = processUserQueryParams(query);
+    const queries = processDeveloperQueryParams(query);
 
     const where = {}
 
@@ -89,12 +89,12 @@ const getFilteredDevelopers = async (req, res) => {
         },
         {
           model: db.Technology,
-          through: 'UserTechnologies',
+          through: 'DeveloperTechnologies',
           as: 'technologies'
         },
         {
           model: db.Country,
-          through: 'UserEligibleCountries',
+          through: 'DeveloperEligibleCountries',
           as: 'eligible_countries'
         },
         {
@@ -122,11 +122,11 @@ const getFilteredDevelopers = async (req, res) => {
 
     // TODO: FIX THIS TO BE DONE ON THE QUERY ABOVE
     if (queries.technologies && Number.isInteger(queries.technologies[0])) {
-      developers = users.filter((developer) => {
-        const userTechIds = developer.technologies.map(tech => tech.dataValues.id);
+      developers = developers.filter((developer) => {
+        const developerTechIds = developer.technologies.map(tech => tech.dataValues.id);
 
         for (let i = 0; i < queries.technologies.length; ++i) {
-          if (!userTechIds.includes(queries.technologies[i])) return false;
+          if (!developerTechIds.includes(queries.technologies[i])) return false;
         }
 
         return true;
@@ -164,12 +164,12 @@ const loginDeveloper = async (req, res) => {
         },
         {
           model: db.Technology,
-          through: 'UserTechnologies',
+          through: 'DeveloperTechnologies',
           as: 'technologies'
         },
         {
           model: db.Country,
-          through: 'UserEligibleCountries',
+          through: 'DeveloperEligibleCountries',
           as: 'eligible_countries'
         },
         {
