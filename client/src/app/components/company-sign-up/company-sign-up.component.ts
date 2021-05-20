@@ -8,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanySignUpComponent implements OnInit {
 
+  form = { companyName: '', email: '', message: '' };
+  renderConfirmation: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
+  submit() {
+    this.form = { companyName: '', email: '', message: '' };
+    this.renderConfirmation = true;
+  }
+
+  hideConfirmation() {
+    this.renderConfirmation = false;
+  }
 }
